@@ -12,9 +12,10 @@ WGETOPTIONS="-q"
 . ./bootstrap.sh $2
 WGETOPTIONS=$PREVOPS
 
-PATH="$TBIN:$WD/bin:$PATH"
+PATH="$TBIN:$PATH"
+
 export GOROOT="$TOOLCHAIN/go"
-export GOPATH="$WD"
+export GOPATH="$TOOLCHAIN/hugo"
 
 function do_clean {
   rm -rf "$GOPATH/pkg"
@@ -43,15 +44,14 @@ build)
     toolchain_get "go" $2
     abort_on_error "$?" "no se puede descargar go"
 
-    ensure_dir "$WD/src"
-    ensure_dir "$WD/src/teky"
+    ensure_dir "$GOPATH"
+    cd "$GOPATH"
 
     go get -v github.com/spf13/hugo
     abort_on_error "$?" "no se puede instalar github.com/spf13/hugo"
 
-    #cd "$WD/src"
-    #go install ./...
-    #abort_on_error "$?" "no se pueden compilar los paquetes"
+    ensure_link "$GOPATH/bin/hugo" "$TBIN/hugo"
+
     cd "$WD"
     ;;
 test)
