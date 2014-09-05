@@ -2,3 +2,7 @@ base_util.sh
 bootstrap.sh
 bootstrap.tgz
 config.sh
+bin
+pkg
+tmp
+toolchain
