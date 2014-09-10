@@ -59,7 +59,9 @@ server)
     $ECHO "serving"
 
     cd "$WD/www"
-
+    ensure_dir "$WD/www/archetypes"
+    ensure_dir "$WD/www/content"
+    ensure_dir "$WD/www/layout"
     hugo server -w
 
     cd "$WD"
