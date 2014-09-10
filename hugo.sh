@@ -54,6 +54,16 @@ build)
 
     cd "$WD"
     ;;
+server)
+    $ECHO
+    $ECHO "serving"
+
+    cd "$WD/www"
+
+    hugo server -w
+
+    cd "$WD"
+    ;;
 test)
     $ECHO
     ensure_dir "$TMP"
@@ -85,7 +95,7 @@ env)
     $ECHO "Missing parameter"
     $ECHO
     $ECHO "Modo de uso:"
-    $ECHO "./hugo.sh [clean|realclean|build|test|package|env] flags"
+    $ECHO "./hugo.sh [clean|realclean|build|test|package|env|server] flags"
     $ECHO "flags: --ignore-tati-toolchain solo da warning si falla el wget"
     exit 2
 esac

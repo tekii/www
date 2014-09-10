@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>Palantir</title>
+    <link>https://palantir.com</link>
+    <description>Palantir builds software that connects data, technologies, humans and environments.</description>
+    <copyright>2014 Palantir Technologies</copyright>
+    <pubDate>Thu, 07 Aug 2014 16:01:48 -0700</pubDate>
+    <item>
+      <title>Analyzing the Present and Possible Futures of the U.S. Veterans Population with CNAS and Palantir Metropolis</title>
+      <link>https://palantir.com/2014/08/analyzing-the-present-and-possible-futures-of-the-us-veterans-population-with-cnas-and-palantir-metropolis</link>
+      <description>&lt;p&gt;The U.S. veteran population includes more than 21 million men and women who have served their country in uniform, ranging from veterans of the “greatest generation” who fought in World War II to veterans completing their first enlistment.  Within this population are 6 million “Gulf War-era” veterans who were part of, or have served since, the first Gulf conflict in the early 1990s.&lt;/p&gt;
+
+</description>
+      <pubDate>Thu, 07 Aug 2014 16:01:48 -0700</pubDate>
+      <guid>https://palantir.com/2014/08/analyzing-the-present-and-possible-futures-of-the-us-veterans-population-with-cnas-and-palantir-metropolis</guid>
+      <content:encoded>&lt;p&gt;The U.S. veteran population includes more than 21 million men and women who have served their country in uniform, ranging from veterans of the “greatest generation” who fought in World War II to veterans completing their first enlistment.  Within this population are 6 million “Gulf War-era” veterans who were part of, or have served since, the first Gulf conflict in the early 1990s.&lt;/p&gt;
+
+&lt;p&gt;The available data on veterans is scattered, inconsistent, and in differing formats. This is a major challenge for the government agencies and NGOs that seek to serve veterans, as they often have to plan how to dedicate financial and human resources across a wide geography, and plan for major projects and facilities years in advance.  Veterans service organizations often struggle to connect with veterans because they lack data relevant to the geographic areas they serve. With the help of Palantir Metropolis, researchers from the DC-based think tank Center for a New American Security (CNAS) are analyzing the present veterans populations and developing projections to understand the possible future paths of this population.&lt;/p&gt;
+
+&lt;p&gt;The Center for a New American Security (CNAS) is the only think tank of its kind with a research team dedicated to veterans and military personnel.  To better understand the current veterans population and its changing needs, this team is using the Palantir Metropolis platform to fuse a multitude of publicly available datasets from various government agencies, including U.S. Department of Veterans Affairs (VA), the Census Bureau, the Department of Defense, and the U.S. Department of Housing and Urban Development (HUD). These public datasets consist solely in high-level, aggregated data and can be accessed through government agency websites including the &lt;a href=&quot;http://www.census.gov/hhes/veterans/&quot;&gt;Census Bureau&lt;/a&gt;, &lt;a href=&quot;http://www.va.gov/vetdata/veteran_population.asp&quot;&gt;VA&lt;/a&gt;, &lt;a href=&quot;http://open.defense.gov/Data.aspx&quot;&gt;DOD&lt;/a&gt; and &lt;a href=&quot;https://www.onecpd.info/resource/3300/2013-ahar-part-1-pit-estimates-of-homelessness/&quot;&gt;HUD&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;At the CNAS Annual Conference in June, senior fellow &lt;a href=&quot;http://www.cnas.org/CarterPhillip&quot;&gt;Phil Carter&lt;/a&gt; presented a number of findings from this initiative and discussed their implications for veterans policy going forward. (Full video of presentation available &lt;a href=&quot;http://www.cnas.org/video/cnas2014/visualizing-todays-vets-population-phillip-carter&quot;&gt;here&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-assets/posts/2014/08/Chart.png&quot; title=&quot;Cohort analysis of veteran population&quot; /&gt;&lt;br /&gt;
+Data source:  Department of Veterans affairs, powered by Metropolis&lt;/p&gt;
+
+&lt;p&gt;For example, in 2015, Gulf-war era veterans will overtake Vietnam veterans as the largest segment of the veteran population; with this shift comes a new set of concerns for the Department of Veterans Affairs and other government agencies tasked with serving veterans.  Instead of retirement and geriatric care, younger veterans seek employment and rehabilitative sports medicine.  They often have young families, are more diverse racially and by gender, and are more likely to move to cities.  &lt;/p&gt;
+
+&lt;p&gt;Additionally, the current veteran populations is most heavily concentrated in the Sunbelt regions of the south and southwestern United States, reflecting a primarily retirement-age population, as seen in the map below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-assets/posts/2014/08/USMap.png&quot; title=&quot;Map of veteran population density in the U.S.&quot; /&gt;&lt;br /&gt;
+Data Source:  US Census Bureau, powered by Palantir Metropolis&lt;/p&gt;
+
+&lt;p&gt;However, employment opportunities in urban areas, near military bases, or related to specific events like the American energy boom are likely to attract younger veterans and shift this population significantly in coming years.  &lt;/p&gt;
+
+&lt;p&gt;This kind of analysis can also help illuminate the situation for veterans in more specific areas and enables better planning by the VA and veterans service organizations.  In the wake of the recent problems with VA waiting lists at facilities in Phoenix, AZ, for example, CNAS looked at Arizona counties by veterans population and VA spending to better understand the situation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-assets/posts/2014/08/AZmaps.png&quot; title=&quot;Absolute and per capita veteran population and veteran benefit spending in Arizona&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The top two maps show the Arizona veterans population by county in absolute numbers (top left) and per capita (top right), as well as the amount spent by the VA annually in these counties (GDX) in absolute terms (bottom left) and per capita (bottom right).  These maps are interesting because in both cases the absolute highest number of veterans and highest amount of money spent is, unsurprisingly, in Maricopa County, where Phoenix is located.  However, a more complicated picture emerges when looking at per capita population and spending, where Maricopa County is no longer the highest.  The wide disparity between per-veteran spending figures suggests a number of potential conclusions, including huge economies of scale for serving urban veterans, and concentrations of high-need veterans in rural areas where it may be most expensive for the VA to serve them. Further analysis of this kind is necessary to understand what’s really going on in Phoenix VA facilities and how to better allocate resources and plan for the future care of veterans in those facilities.&lt;/p&gt;
+
+&lt;p&gt;At the conclusion of the conference presentation, CNAS débuted the first Palantir Metropolis dashboards to ever be completely public-facing, with no log-in required.  They invited fellow researchers, policy makers, and veterans to join their effort to use veterans data to conduct better analysis and make better policy decisions for the future of America’s veterans and the government agencies that serve them.  &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-assets/posts/2014/08/UI.png&quot; title=&quot;Screenshots of Palantir Metropolis dashboards at veteransdata.org&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To learn more about this exciting initiative, check out the &lt;a href=&quot;http://youtu.be/1Lp71Aa45vE&quot;&gt;CNAS conference presentation&lt;/a&gt; and the CNAS Palantir Metropolis dashboards at &lt;a href=&quot;http://veteransdata.org&quot;&gt;www.veteransdata.org&lt;/a&gt;.&lt;/p&gt;
+</content:encoded>
+      <dc:date>2014-08-07T16:01:48-07:00</dc:date>
+    </item>
+    <item>
+      <title>AtlasDB: Transactions for Distributed Key-Value Stores (Part I)</title>
+      <link>https://palantir.com/2014/06/atlasdb-transactions-for-distributed-key-value-stores-part-i</link>
+      <description>&lt;p&gt;&lt;em&gt;AtlasDB is a massively scalable datastore and transactional layer that
+can be placed on top of any key-value store to give it ACID properties.
+This is the first of several blog posts that will introduce AtlasDB and
+describe how we built it at Palantir&lt;/em&gt;.&lt;/p&gt;
+
+</description>
+      <pubDate>Thu, 19 Jun 2014 16:01:48 -0700</pubDate>
+      <guid>https://palantir.com/2014/06/atlasdb-transactions-for-distributed-key-value-stores-part-i</guid>
+      <content:encoded>&lt;p&gt;&lt;em&gt;AtlasDB is a massively scalable datastore and transactional layer that
+can be placed on top of any key-value store to give it ACID properties.
+This is the first of several blog posts that will introduce AtlasDB and
+describe how we built it at Palantir&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;building-atlasdb-the-inspiration&quot;&gt;Building AtlasDB: the Inspiration&lt;/h2&gt;
+
+&lt;p&gt;In 2010, Daniel Peng and Frank Debek of Google put out a paper entitled,
+&lt;em&gt;“&lt;a href=&quot;http://research.google.com/pubs/pub36726.html&quot;&gt;Large-scale Incremental Processing Using Distributed Transactions and
+Notifications&lt;/a&gt;“&lt;/em&gt;. The
+paper describes a system in use at Google named Percolator, which sits
+on top of &lt;a href=&quot;http://research.google.com/archive/bigtable.html&quot;&gt;BigTable&lt;/a&gt;,
+Google’s distributed key-value store.&lt;/p&gt;
+
+&lt;p&gt;Google needed transactions with
+&lt;a href=&quot;https://en.wikipedia.org/wiki/ACID&quot;&gt;ACID&lt;/a&gt; properties. They also needed
+a highly fault-tolerant system to deal with the potential failure of key
+parts of their system under load at massive scales. This drove them to
+push the accounting data for the transactions into BigTable as well, as
+BigTable already handled both replication of its data and fault
+tolerance.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, due to the number of writes involved in the transaction
+accounting, they saw an approximately 75% performance hit when using
+transactions. Percolator was built to enable incremental updates to the
+search indexes for the Google search engine, which was previously a
+periodic batch process. In this case, the extra reliability afforded by
+using BigTable to track the transactions was the important factor; even
+though there was a significant performance hit (over using raw
+BigTable), the overall performance was high enough to meet its design
+criteria.&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, at Palantir, we were hitting a similar obstacle. The
+interactive analytic core of Palantir Gotham, which was originally built
+with a traditional RDBMS as its backing store, was hitting the limits of
+economical and easy scaling. We needed to move to a distributed backing
+store for scalability, but we needed transactions to enable our
+higher-level Revisioning Database to work correctly.&lt;/p&gt;
+
+&lt;p&gt;Percolator presented interesting possibilities, but with a 75%
+performance hit, the latency would be too long for our users. We shoot
+for a maximum ten second wait time when doing interactive
+analysis—anything longer is an unacceptable interruption to our users’
+investigative flow. Studying the Percolator protocol, our engineers saw
+some places where design constraints could be relaxed to lower the
+latency of each operation.&lt;/p&gt;
+
+&lt;p&gt;And so, the idea for AtlasDB was born. Now it was just a matter of
+building it.&lt;/p&gt;
+
+&lt;h2 id=&quot;designing-atlasdb&quot;&gt;Designing AtlasDB&lt;/h2&gt;
+
+&lt;h3 id=&quot;understanding-data-and-development-at-palantir&quot;&gt;Understanding Data and Development at Palantir&lt;/h3&gt;
+
+&lt;p&gt;We take a human-centered design approach to building software. Instead
+of asking what technological problem we want to attack in isolation, we
+ask, “What features and infrastructure would a human analyst need to do
+his or her work?” To answer this question, we use a holistic
+understanding of how low-level data integration, scalable data servers,
+API layers, and an entire suite of user interface tools, when properly
+integrated, create an efficient, frictionless user experience for
+non-technical subject matter experts working with large-scale, disparate
+data to solve real-world problems. It’s an over-arching user experience
+(UX) play that decomposes into a lot of hard technical problems—similar
+to building something as complex and seamless as an iPhone.&lt;/p&gt;
+
+&lt;p&gt;When components already exist that serve our needs, we are happy to use
+them—our products use several of the high-quality open source
+datastores, map-reduce frameworks, and search engines. But we build new
+things whenever we identify a capability gap. Some examples of this in
+past:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The Revisioning Database, the heart of Palantir Gotham that enables
+Nexus Peering&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2013/07/nexus-peering-solving-the-inter-organizational-data-sharing-problem/&quot;&gt;Nexus
+Peering&lt;/a&gt;,
+a technology that allows a single Palantir Gotham instance to be
+distributed, or for multiple instances to securely and safely
+exchange data&lt;/li&gt;
+  &lt;li&gt;The Maps application, which
+allows the viewing of geospatial imagery and also the visualization
+and analysis of objects with associated coordinates&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2011/04/inside-horizon-interactive-analysis-at-cloud-scale/&quot;&gt;Horizon&lt;/a&gt;,
+an in-memory database that drives interactive querying over billions
+of objects in interactive time, used to back the Object Explorer
+application.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;scaling-round-1-federation-and-palantir-phoenix&quot;&gt;Scaling, Round 1: Federation and Palantir Phoenix&lt;/h3&gt;
+
+&lt;p&gt;In 2005, when we first started building Palantir Gotham, there wasn’t
+really a viable alternative to the RDBMS. The Revisioning Database, the
+Palantir Gotham persistent datastore, was originally an implementation
+of a special schema inside a SQL database. The SQL RDBMS performed well
+for our users until up to about a terabyte of data. But as the size and
+scope of Palantir Gotham-based analytic workflows pushed the database to
+its limits, there were only two available options if we stuck with a
+RDMBS:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Get a larger, more powerful computer&lt;/em&gt;. This works, but the price of
+computer hardware and advanced database software needed to support
+that scale grows super-linearly (sometimes exponentially) with the
+size of the data, making this approach really expensive, really
+fast.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Move to multiple computers and a &lt;a href=&quot;http://en.wikipedia.org/wiki/Shard_(database_architecture)&quot;&gt;sharded database
+architecture&lt;/a&gt;&lt;/em&gt;.
+While this can work well for certain database schema, our schema is
+not well-suited to this approach. Sharding can also add a lot of
+complexity to the application using it, leading to a more bug-prone
+and fragile code base.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We didn’t like either of these options, so we began considering
+non-RDBMS-based solutions. We started with a federated approach that let
+us address much larger scales of source data without scaling the core.
+We developed Palantir Phoenix, a petabyte-scale datastore that can run
+map-reduce and other batch-oriented processes to filter and classify
+data that needs to be reviewed by human analysts. By federating search
+and storage of massive-scale data out to Palantir Phoenix, and importing
+relevant results into Palantir Gotham on the fly, we could guarantee
+analysts would still have all the data they need at their fingertips
+without storing everything in the Palantir Gotham Revisioning Database.&lt;/p&gt;
+
+&lt;p&gt;For example, a cyber security workflow may include network flows data,
+proxy logs, malware scanning results, inventory data, authentication,
+and VPN logs. The vast majority of the data in these data sets are not
+of interest to cyber security analysts—they overwhelmingly represent
+legitimate traffic. But when something bad happens, &lt;a href=&quot;https://www.youtube.com/watch?v=_EhYezVO6EE&quot; title=&quot;Uncovering Malicious Behavior at Petabyte Scale&quot;&gt;such as malware
+being detected on a user’s laptop, analysts can pull the relevant and
+related narrow slices of data from Phoenix into Palantir Gotham to
+determine the extent and severity of the
+intrusion&lt;/a&gt;.
+Using our Dynamic Ontology, data is mapped into the Palantir object
+model and managed in three separate subsystems:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a search server for fast full-text and wildcard searching;&lt;/li&gt;
+  &lt;li&gt;a Horizon server for top-down filtering and comparisons of large
+sets of objects;&lt;/li&gt;
+  &lt;li&gt;the Revisioning Database for tracking changes to the data and
+allowing analysts to work independently while also sharing analytic
+insights with each other. (This is also where the metadata that
+enables &lt;a href=&quot;/wp-assets/wp-content/uploads/2012/06/ProtectingPrivacy_CivilLiberties_2012.pdf&quot;&gt;Palantir’s privacy and security
+controls&lt;/a&gt;
+is stored.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While the size of the data that ends up in Palantir Gotham can be much
+smaller than the total data size of an instance, it can still get pretty
+big. Moreover, it doesn’t help that all of the housekeeping Palantir
+Gotham does around the source of the data (e.g. the revisions and
+security information) requires us to store 2-5x more information than
+just the size of the initial imported source data.&lt;/p&gt;
+
+&lt;h3 id=&quot;scaling-round-2-nosql-k-v-stores&quot;&gt;Scaling, Round 2: NoSQL K/V stores&lt;/h3&gt;
+
+&lt;p&gt;It soon became clear that we were going to need to replace the datastore
+for the Revisioning Database. An obvious place to look for economical
+scalability was a class of datastores dubbed,
+‘&lt;a href=&quot;http://en.wikipedia.org/wiki/NoSQL&quot;&gt;NoSQL&lt;/a&gt;’.&lt;/p&gt;
+
+&lt;p&gt;NoSQL datastores use collections of commodity-class machines working in
+concert, enabling engineers to build a distributed system capable of
+scaling up to large data volumes and high performance with a smooth
+price curve—add more machines, get more capacity. When we first built
+the Revisioning Database in 2005, NoSQL systems offered intriguing
+potential as an approach but were still plagued with performance, scale,
+and most importantly, data loss and corruption problems. In the
+intervening years, these early problems have largely been engineered
+away.&lt;/p&gt;
+
+&lt;p&gt;Today, these systems underlie much of the modern web and are developed
+and used by companies like
+&lt;a href=&quot;http://research.google.com/archive/bigtable.html&quot;&gt;Google&lt;/a&gt;,
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Apache_Cassandra#History&quot;&gt;Facebook&lt;/a&gt;, and
+&lt;a href=&quot;http://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf&quot;&gt;Amazon&lt;/a&gt;).
+Many of these use a key-value model (K/V), wherein a short, unique
+identifier (the key) is used as a key to access an individual storage
+cell (the value). The storage cell may hold a simple value or a larger,
+complex data structure.&lt;/p&gt;
+
+&lt;p&gt;While NoSQL stores have great scaling properties, they don’t make great
+guarantees about the consistency of the system. Since each node of the
+system runs independently and any given value could lie on any node,
+it’s impossible to know if any read of more than one node is consistent,
+i.e., came from the same write. For many uses (e.g., updating fields on
+a social network profile page), this property (called &lt;em&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Eventual_consistency&quot;&gt;eventual
+consistency&lt;/a&gt;&lt;/em&gt;) is not
+a problem.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, for a system like Palantir Gotham, we’re not just storing
+individual values but sets of related values that need to read and write
+consistently, like many index entries along with a primary value. A lack
+of consistent read means that any operation that uses values from
+multiple keys can never be guaranteed to be correct.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, implementing transactions can solve this problem by
+providing four guarantees, referred to as ACID:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Atomicity&lt;/strong&gt; - every distinct operation of a transaction succeeds
+or the state is rolled back as if the transaction never happened;
+there is no way to partially complete the update of multiple fields&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Consistency&lt;/strong&gt; - data is in a consistent state at the beginning and
+at the end of a transaction&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Isolation&lt;/strong&gt; - the work taking place inside a transaction is
+invisible to any other operation taking place, so two transactions
+can be run concurrently without interfering&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Durability&lt;/strong&gt; - once a transaction commits successfully, the data
+must have been written to non-volatile storage in such a way that it
+won’t be lost in the event of a crash or power failure&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Aside from the formal guarantees provided by transactions there is a
+very practical consideration: without transactions, programmers have to
+reason very carefully about consistency and write a lot of code to try
+to manage it. As a result, development proceeds slowly and the code is
+much more fragile to future changes. Pushing the consistency (and by
+extension, correctness) logic down into a transaction layer is usually
+the right &lt;a href=&quot;http://en.wikipedia.org/wiki/Separation_of_concerns&quot;&gt;separation of
+concerns&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;setting-the-stage-for-atlasdb-a-transactional-api-for-key-value-stores&quot;&gt;Setting the Stage for AtlasDB: A Transactional API for Key-Value Stores&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-assets/posts/2014/06/atlas-db-architecture.png&quot; alt=&quot;AtlasDB Architecture&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The design of AtlasDB departs from Percolator in a few key aspects. By
+taking key locking out of the main datastore and into a dedicated lock
+server, the write overhead was lessened, increasing performance. Further
+improvements were gained by allowing the transaction accounting table to
+live in a datastore separate from the main scalable datastore. This
+decoupling allows the transaction data to live in a system that gains
+higher write performance in exchange for less scalability. Since the
+transaction accounting data is quite compact, this is a huge win for
+performance of the overall system. (We’ll cover the protocol and
+architecture in-depth in a later post.)&lt;/p&gt;
+
+&lt;p&gt;The NoSQL-transaction revolution still required a few more developments
+to make the burgeoning AtlasDB as engineer- and user-friendly as
+possible. Along with the core changes to the transaction protocol and
+system architecture, our team set about designing a system that could be
+used with almost any key-value store. Rather being tied to a particular
+key-value store, we decided to build an API layer that exposed
+transaction primitives. The API layer (effectively just a code library)
+along with a few lightweight network services created a system that
+could be applied to any key-value store. The writing of the driver for
+any new key-value store thus became a one-day task comprising, at most,
+a few hundred lines of code.&lt;/p&gt;
+
+&lt;p&gt;This is a good idea for a few reasons:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Deployment flexibility&lt;/strong&gt; - An application built on top of AtlasDB
+would always see the same API, allowing the key-value store to be
+switched out for different levels of scale. Palantir Gotham needs to
+run at scales as small as a single laptop, both as a development
+environment for creating customizations and enhancements and in
+order to support disconnected, self-contained operation for
+environments that don’t have any networking infrastructure. It also
+needs to operate at petabyte scale for large production systems.
+Key-value stores that run at massive scale are usually somewhat
+complex to setup and administer; the easy-to-set-up key-value stores
+don’t scale.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pace of change in NoSQL&lt;/strong&gt; - Though much more advanced than it was
+a decade ago, the NoSQL world has not yet reached full maturity. The
+capabilities, scale, and performance of different offerings is still
+rapidly evolving. Keeping AtlasDB free from committing to a single
+key-value store is essential, given the uncertainty around what the
+best options will be even a year or two from now.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Consistent API&lt;/strong&gt; - The bulk of the team’s work in completing
+AtlasDB was not building the transactional layer itself, but in
+porting our extensive, existing data fusion platform over from SQL
+to a key-value model of data storage. By abstracting the API into
+the AtlasDB transactional layer, we are preventing having to port
+the entire product to yet another API in the future—switching
+datastores is as easy as writing a new K/V driver.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;atlasdb-today&quot;&gt;AtlasDB today&lt;/h2&gt;
+
+&lt;p&gt;AtlasDB is now the default datastore inside of new production instances
+of Palantir Gotham and is already being re-purposed for other use cases
+that need both the scalability and consistency that it offers. Stay
+tuned for part two of the AtlasDB series, where we’ll do a deep dive
+into the system architecture and transaction protocol that make it go.&lt;/p&gt;
+</content:encoded>
+      <dc:date>2014-06-19T16:01:48-07:00</dc:date>
+    </item>
+    <item>
+      <title>Mapping the Syrian Crisis with the Carter Center</title>
+      <link>https://palantir.com/2014/06/mapping-the-syrian-crisis-with-the-carter-center</link>
+      <description>&lt;p&gt;&lt;img src=&quot;/wp-assets/posts/2014/06/syria_conflict_h1_2014.jpg&quot; /&gt;&lt;br /&gt;
+A heatmap of Syrian conflict events in the first half of 2014&lt;/p&gt;
+
+</description>
+      <pubDate>Thu, 05 Jun 2014 16:01:48 -0700</pubDate>
+      <guid>https://palantir.com/2014/06/mapping-the-syrian-crisis-with-the-carter-center</guid>
+      <content:encoded>&lt;p&gt;&lt;img src=&quot;/wp-assets/posts/2014/06/syria_conflict_h1_2014.jpg&quot; /&gt;&lt;br /&gt;
+A heatmap of Syrian conflict events in the first half of 2014&lt;/p&gt;
+
+&lt;p&gt;The Syrian conflict represents one of the largest humanitarian crises in the world today. With millions displaced, billions of dollars of aid flowing to refugees, and a war raging, the safe and effective delivery of humanitarian aid to the vulnerable populations affected by the conflict has become one of the world’s hardest problems. To help with this problem, our partners at the Carter Center’s &lt;a href=&quot;http://www.cartercenter.org/peace/conflict_resolution/syria-conflict-mapping.html&quot;&gt;Syria Conflict Mapping Project&lt;/a&gt; have been using Palantir Gotham to analyze the open source data around the conflict and understand the opposition’s political and military structure. The result is a living archive of active militant groups, what they are doing and where they are operating, and how they relate to other armed groups.&lt;/p&gt;
+
+&lt;iframe width=&quot;620&quot; height=&quot;360&quot; src=&quot;//www.youtube-nocookie.com/embed/9X6GqEAph2E&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;The Syrian conflict is notable for the amount of related open source information being published through social media platforms such as YouTube and Facebook. Analysts at the Carter Center have &lt;a href=&quot;https://www.cartercenter.org/news/features/p/conflict_resolution/mcnaboe-syria-mapping-project.html&quot;&gt;carefully coded over 70 attributes from thousands of videos&lt;/a&gt;, which together represent thousands of individual conflict events and the formation of over 5,600 armed groups in which some 100,000 fighters have appeared. Analysts coded information including where and when events occurred, what weapons they observed, symbolism and uniforms that appear in the videos, and evidence of mass atrocities.&lt;/p&gt;
+
+&lt;p&gt;The ability to integrate and interact with this kind of data within a unified analytic environment can dramatically improve the way humanitarian organizations respond to conflicts. As the Carter Center’s Christopher McNaboe said in a recent piece about the Syrian Conflict Mapping Project in &lt;a href=&quot;http://www.forbes.com/sites/federicoguerrini/2014/04/15/how-researchers-use-social-media-to-map-armed-forces-in-syria/&quot;&gt;Forbes&lt;/a&gt;,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The platform we use—Palantir Gotham—is one of the best analytical tools in existence today, and has already helped us find meaningful trends in our data that would otherwise have been lost in a series of disconnected network diagrams, Excel spreadsheets, and reports.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;By integrating and analyzing this information in Palantir Gotham (as in the video above), the Carter Center can better help humanitarian organizations deliver aid to those who need it most. In a rapidly evolving conflict where the security of aid workers and civilians is paramount, real-time data analysis provides international actors with situational awareness of the conflict as it unfolds, allowing them to operate both more efficiently and more safely. Furthermore, Palantir Gotham’s granular access controls and auditing capabilities allow for both raw data and analysis to be shared responsibly and securely, while ensuring that collaborators understand the sourcing and pedigree of the data in question.&lt;/p&gt;
+
+&lt;p&gt;If you want to learn more, some of the results of the Carter Center’s analysis can be seen in their &lt;a href=&quot;http://www.cartercenter.org/resources/pdfs/peace/conflict_resolution/syria-conflict/NationwideUpdate_march-14-2014.pdf&quot;&gt;latest public nationwide report&lt;/a&gt;. We are proud to be helping the Carter Center advance this critically important work.&lt;/p&gt;
+</content:encoded>
+      <dc:date>2014-06-05T16:01:48-07:00</dc:date>
+    </item>
+    <item>
+      <title>The Palantir Scholarship for Women in Engineering Finalists Are Here</title>
+      <link>https://palantir.com/2014/03/the-palantir-scholarship-for-women-in-engineering-finalists-are-here</link>
+      <description>&lt;p&gt;Virtual labs where doctors and prosthetic designers can collaborate in the same “room.” Touch screen interfaces for cars. Robots that work with autistic children. Sequencing the genome of cancer cells.&lt;/p&gt;
+
+</description>
+      <pubDate>Mon, 10 Mar 2014 16:01:48 -0700</pubDate>
+      <guid>https://palantir.com/2014/03/the-palantir-scholarship-for-women-in-engineering-finalists-are-here</guid>
+      <content:encoded>&lt;p&gt;Virtual labs where doctors and prosthetic designers can collaborate in the same “room.” Touch screen interfaces for cars. Robots that work with autistic children. Sequencing the genome of cancer cells.&lt;/p&gt;
+
+&lt;p&gt;These are just some of the projects that the 2013 &lt;a href=&quot;http://www.palantir.com/college/scholarship/&quot;&gt;Palantir Scholarship for Women in Engineering&lt;/a&gt; finalists are working on. These nine women were invited to visit Palantir’s Palo Alto headquarters on February 28 for a full day of demonstrations, interviews, panel discussions, and a tour. The event was meant to offer a taste of what a modern, collaborative working environment looks like, as well as a sampling of the kinds of issues involved in Palantir’s work. After a long day of conversation and discovery, the finalists and their Palantirian hosts were inspired by the variety of meaningful work being pursued by women in computer science and STEM fields.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&quot;Angela Muller&quot; src=&quot;/wp-assets/wp-content/uploads/2014/03/Women-Scholarship-1.jpg&quot; /&gt;&lt;br /&gt;
+The finalists in a session with Angela Muller&lt;/p&gt;
+
+&lt;p&gt;Palantir initially established the scholarship in 2012 to support underrepresented populations in computer science. This year the scholarship extended eligibility to women in all the STEM disciplines, from computer science to engineering, life sciences, and more. The goal behind this expansion was to provide opportunities not only to potential developers, but to women in all technical fields who might build or rely on technology like Palantir’s in their labs or elsewhere in their work.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&quot;Eugenia Gabrielova&quot; src=&quot;/wp-assets/wp-content/uploads/2014/03/Women-Scholarship-2.jpg&quot; /&gt;&lt;br /&gt;
+Eugenia Gabrielova&lt;/p&gt;
+
+&lt;p&gt;With this broader perspective in mind, the scholarship essay prompt this year asked applicants to choose a data set and describe how they might analyze it to find insights into how best to promote opportunities for women in technology. This year’s winner, Eugenia Gabrielova, suggested using the &lt;a href=&quot;http://www.githubarchive.org&quot;&gt;GitHub Archive&lt;/a&gt; data to analyze patterns of women’s contributions to software projects and to build mentorship networks. A third year Ph.D. student in Information and Computer Science at U.C. Irvine, Gabrielova is no stranger to the challenges scoped out in her proposal—she was the only woman in her graduating class at Northwestern to receive an engineering degree in Computer Science. She credits faculty members for treating her as an equal, not a special case. “They never pushed me to ‘represent ladies in C.S.,’” she said, “They met me where I was.”&lt;/p&gt;
+
+&lt;p&gt;Each of the finalists approached the scholarship with unique academic and professional interests, but they all shared a passion for supporting and nurturing women’s contributions in technology. Meena Boppana, an undergraduate at Harvard, started a math club for girls in low-income charter middle schools in response to the frustration she felt as the only girl on her own high school math team. Grace Gee, also at Harvard, is starting a national college initiative to help recognize and reward women involved in technology. She hopes her initiative will do for others what a similar program did for her as a high school student looking for ways to explore opportunities outside of her small hometown in southeast Texas.&lt;/p&gt;
+
+&lt;p&gt;The Palantir Scholarship for Women in Engineering is just one small part of a larger, growing movement to support women in technology. This movement stands to benefit not just individual women and their careers, but their professional and academic communities as well. “By excluding women, we’re missing a huge brain trust,” said Henny Admoni, a finalist and first-year Ph.D. at Yale University. Palantir is therefore pleased to congratulate all of its finalists on their achievement and commitment to their respective communities.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Eugenia Gabrielova&lt;/strong&gt; - &lt;em&gt;Ph.D. candidate, Information and Computer Science; University of California-Irvine&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Meena Boppana&lt;/strong&gt; -  &lt;em&gt;A.B. candidate, Computer Science; Harvard University&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Grace Gee&lt;/strong&gt; - &lt;em&gt;S.M. candidate, Computational Science and Engineering; A.B. candidate, Computer Science; Harvard University&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Annie Liu&lt;/strong&gt; - &lt;em&gt;Ph.D. candidate, Computer Science; Princeton University&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Henny Admoni&lt;/strong&gt; - &lt;em&gt;Ph.D. candidate, Computer Science; Yale University&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Edna Sanchez&lt;/strong&gt;  - &lt;em&gt;B.A.S. candidate, Computer Engineering; University of British Columbia&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Preeti Bhargava&lt;/strong&gt; - &lt;em&gt;Ph.D. candidate, Computer Science; University of Maryland&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tracy Ballinger&lt;/strong&gt; - &lt;em&gt;Ph.D. candidate, Bioinformatics; University of California-Santa Cruz&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Kayo Teramoto&lt;/strong&gt; - &lt;em&gt;B.S. candidate, Electrical Engineering and Computer Science; Yale University&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img title=&quot;Scholarship finalists&quot; src=&quot;/wp-assets/wp-content/uploads/2014/03/Women-Scholarship-3.jpg&quot; /&gt;&lt;br /&gt;
+The 2013 Finalists. Back row, left to right: Kayo Teramoto, Annie Liu, Tracy Ballinger, Henny Admoni, Edna Sanchez; Front row, left to right: Grace Gee, Preeti Bhargava, Eugenia Gabrielova&lt;/p&gt;
+</content:encoded>
+      <dc:date>2014-03-10T16:01:48-07:00</dc:date>
+    </item>
+    <item>
+      <title>Going International with the Palantir Council of Advisors on Privacy and Civil Liberties</title>
+      <link>https://palantir.com/2014/01/going-international-with-the-palantir-council-of-advisors-on-privacy-and-civil-liberties</link>
+      <description>&lt;p&gt;In 2012, &lt;a href=&quot;/2012/11/announcing-the-palantir-council-on-privacy-and-civil-liberties/&quot;&gt;our PCL team assembled&lt;/a&gt; the Palantir Council of Advisors on Privacy and Civil Liberties (PCAP), a body of experts in the privacy and civil liberties field who help us understand and address the complex privacy and civil liberties issues that arise in the course of building a sophisticated data analytics platform. The group continues to meet on a regular basis to discuss an ever-growing array of topics and provide invaluable advice to assist Palantir in enhancing the privacy and civil liberties protections built into our powerful analytic platforms.&lt;/p&gt;
+
+</description>
+      <pubDate>Wed, 29 Jan 2014 20:18:57 -0800</pubDate>
+      <guid>https://palantir.com/2014/01/going-international-with-the-palantir-council-of-advisors-on-privacy-and-civil-liberties</guid>
+      <content:encoded>&lt;p&gt;In 2012, &lt;a href=&quot;/2012/11/announcing-the-palantir-council-on-privacy-and-civil-liberties/&quot;&gt;our PCL team assembled&lt;/a&gt; the Palantir Council of Advisors on Privacy and Civil Liberties (PCAP), a body of experts in the privacy and civil liberties field who help us understand and address the complex privacy and civil liberties issues that arise in the course of building a sophisticated data analytics platform. The group continues to meet on a regular basis to discuss an ever-growing array of topics and provide invaluable advice to assist Palantir in enhancing the privacy and civil liberties protections built into our powerful analytic platforms.&lt;/p&gt;
+
+&lt;p&gt;In light of our growth in international markets and the general globalization of privacy, civil liberties, data protection, and human rights issues, the PCAP has decided to expand to add four new members who will bring more international expertise to the discussions. We are pleased to welcome the following new members to the PCAP:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://webershandwick.co.uk/#!/people/sector_heads_and_specialists&quot;&gt;Alex Deane&lt;/a&gt; – Currently the Head of Public Affairs at Weber Shandwick, Alex was also the founding Director of Big Brother Watch, a prominent U.K. civil liberties advocacy organization.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.bccc.ch/en/team/36-Sylvain%20M%C3%A9tille&quot;&gt;Sylvain Metille&lt;/a&gt; – Head of the Technology and Privacy practice at BCCC Attorneys-at-law LLC in Switzerland, where he specializes in data protection and surveillance issues.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://omertene.com/&quot;&gt;Omer Tene&lt;/a&gt; – Vice President of Research and Education at the International Association of Privacy Professionals, Managing Director of Tene &amp;amp; Associates, and Deputy Dean of the College of Management School of Law, Rishon Le Zion, Israel, Omer is also a senior fellow at the Future of Privacy Forum.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.ivir.nl/staff/vaneijk.html&quot;&gt;Nico van Eijk&lt;/a&gt; – Professor of Media and Telecommunications Law and the Director of the Institute for Information Law at the University of Amsterdam, Nico has written extensively on a number of highly technical topics.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The PCAP is looking forward to interesting new perspectives and valuable contributions from our new members.&lt;/p&gt;
+</content:encoded>
+      <dc:date>2014-01-29T20:18:57-08:00</dc:date>
+    </item>
+    <item>
+      <title>How Many Years a Slave?</title>
+      <link>https://palantir.com/2014/01/how-many-years-a-slave</link>
+      <description>&lt;p&gt;&lt;img title=&quot;Map of location of all potential trafficking cases&quot; src=&quot;/wp-assets/wp-content/uploads/2014/01/All_Location-of-all-potential-trafficking-cases-final.gif&quot; /&gt;&lt;br /&gt;
+Each year, human traffickers reap an estimated $32 billion in profits from &lt;a href=&quot;http://www.ilo.org/global/about-the-ilo/newsroom/comment-analysis/WCMS_181922/lang--it/index.htm&quot;&gt;the enslavement of 21 million people&lt;/a&gt; worldwide. And yet, for most of us, &lt;a href=&quot;http://www.cnn.com/2013/10/23/opinion/myles-slavery/index.html&quot;&gt;modern slavery remains invisible&lt;/a&gt;. Its victims, many of them living in the shadows of our own communities, pass by unnoticed. &lt;a href=&quot;http://www.polarisproject.org&quot;&gt;Polaris Project&lt;/a&gt;, which has been working to end modern slavery for over a decade, recently released a report on trafficking trends in the U.S. that draws on five years of its data. The conclusion? Modern slavery is rampant in our communities.&lt;/p&gt;
+
+</description>
+      <pubDate>Fri, 24 Jan 2014 04:40:34 -0800</pubDate>
+      <guid>https://palantir.com/2014/01/how-many-years-a-slave</guid>
+      <content:encoded>&lt;p&gt;&lt;img title=&quot;Map of location of all potential trafficking cases&quot; src=&quot;/wp-assets/wp-content/uploads/2014/01/All_Location-of-all-potential-trafficking-cases-final.gif&quot; /&gt;&lt;br /&gt;
+Each year, human traffickers reap an estimated $32 billion in profits from &lt;a href=&quot;http://www.ilo.org/global/about-the-ilo/newsroom/comment-analysis/WCMS_181922/lang--it/index.htm&quot;&gt;the enslavement of 21 million people&lt;/a&gt; worldwide. And yet, for most of us, &lt;a href=&quot;http://www.cnn.com/2013/10/23/opinion/myles-slavery/index.html&quot;&gt;modern slavery remains invisible&lt;/a&gt;. Its victims, many of them living in the shadows of our own communities, pass by unnoticed. &lt;a href=&quot;http://www.polarisproject.org&quot;&gt;Polaris Project&lt;/a&gt;, which has been working to end modern slavery for over a decade, recently released a report on trafficking trends in the U.S. that draws on five years of its data. The conclusion? Modern slavery is rampant in our communities.&lt;/p&gt;
+
+&lt;p&gt;January is National Slavery and Human Trafficking Prevention Month, and President Obama &lt;a href=&quot;http://www.whitehouse.gov/the-press-office/2013/12/31/presidential-proclamation-national-slavery-and-human-trafficking-prevent&quot;&gt;has called&lt;/a&gt; upon “businesses, national and community organizations, faith-based groups, families, and all Americans to recognize the vital role we can play in ending all forms of slavery.” The Polaris Project report, &lt;a href=&quot;http://www.polarisproject.org/resources/hotline-statistics/human-trafficking-trends-in-the-united-states&quot;&gt;Human Trafficking Trends in the United States&lt;/a&gt;, reveals insights into how anti-trafficking organizations can fight back against this global tragedy.&lt;/p&gt;
+
+&lt;p&gt;For the past year our Philanthropy Engineering team has partnered with Polaris Project to provide them with our software and engineering expertise. In addition to serving victims and advocating for anti-trafficking public policy, Polaris Project operates the National Human Trafficking Resource Center Hotline (NHTRC). Victims and witnesses of human trafficking can call the hotline to report tips, request help, and connect with anti-trafficking services. Palantir has been instrumental in helping victims and callers quickly access the resources and help they need.&lt;/p&gt;
+
+&lt;p&gt;Polaris Project CEO Bradley Myles recently sat down with us to discuss how our software enables Polaris to do more than respond to individual calls to the hotline by discovering connections between cases and identifying global trafficking patterns and networks.&lt;/p&gt;
+
+&lt;iframe src=&quot;//www.youtube.com/embed/zgDi9poJW0c&quot; frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;480&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;Footage of Polaris Project courtesy of William Caballero.&lt;/p&gt;
+
+&lt;p&gt;Polaris Project uses Palantir Gotham to leverage the data from nearly 100,000 calls. NHTRC may collect up to 170 different quantitative and qualitative variables per case record. These data originate from disparate sources—calls, emails, SMS, online tip reports, and publicly available information about trafficking. By integrating this data into a single platform, along with their national referral database of 3000 contacts that includes anti-trafficking organizations, legal service providers, shelters, coalitions, task forces, law enforcement, and social service agencies, Polaris can locate emergency response resources and identify critical services for victims of trafficking in a matter of seconds.&lt;/p&gt;
+
+&lt;p&gt;In September 2013, we were honored to host Bradley Myles at Palantir Night Live, where he described the full scale and scope of human trafficking worldwide and shared his thoughts on how technology can help eradicate this crime once and for all.&lt;/p&gt;
+
+&lt;iframe src=&quot;//www.youtube.com/embed/fXG8ys72dKo&quot; frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;480&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;We are proud to work with Polaris Project to help bring this issue back into the light, raise awareness, and combat the problem wherever it appears.&lt;/p&gt;
+</content:encoded>
+      <dc:date>2014-01-24T04:40:34-08:00</dc:date>
+    </item>
+    <item>
+      <title>New Office for NCMEC, New Possibilities</title>
+      <link>https://palantir.com/2013/12/new-office-for-ncmec-new-possibilities</link>
+      <description>&lt;p&gt;We officially welcomed our long-time partner &lt;a href=&quot;http://www.mercurynews.com/breaking-news/ci_24721960/national-center-missing-and-exploited-children-opens-office&quot;&gt;The National Center for Missing &amp;amp; Exploited Children (NCMEC) to Palo Alto&lt;/a&gt; last Thursday. Since 1984, NCMEC has worked tirelessly to protect children throughout the country from abduction and exploitation. It is a mission that we are extremely proud to support by donating our software and engineering expertise.&lt;/p&gt;
+
+</description>
+      <pubDate>Thu, 19 Dec 2013 20:26:03 -0800</pubDate>
+      <guid>https://palantir.com/2013/12/new-office-for-ncmec-new-possibilities</guid>
+      <content:encoded>&lt;p&gt;We officially welcomed our long-time partner &lt;a href=&quot;http://www.mercurynews.com/breaking-news/ci_24721960/national-center-missing-and-exploited-children-opens-office&quot;&gt;The National Center for Missing &amp;amp; Exploited Children (NCMEC) to Palo Alto&lt;/a&gt; last Thursday. Since 1984, NCMEC has worked tirelessly to protect children throughout the country from abduction and exploitation. It is a mission that we are extremely proud to support by donating our software and engineering expertise.&lt;/p&gt;
+
+&lt;p&gt;Though NCMEC maintains a regional southern California office, a local presence in Silicon Valley will further boost their efforts to work closely with the technology industry. A formidable technological response is required to stay ahead of child predators and track down missing and exploited children. Palantir has been assisting NCMEC in this regard since 2010, and their new proximity will make this partnership even more beneficial and productive.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&quot;NCMEC's new Palo Alto office&quot; src=&quot;/wp-assets/wp-content/uploads/2013/12/156_NCMEC-web.jpg&quot; /&gt;
+NCMEC’s new Palo Alto office.&lt;/p&gt;
+
+&lt;p&gt;With Palantir, NCMEC analysts can make sense of large volumes of dispersed data and draw connections to help law enforcement fight the abduction and sexual exploitation of children. Sources such as internal NCMEC databases, case reports, public records, open source data, websites, social media, maps, images, videos, can all contribute clues that can help bring children to safety. By integrating these databases into one place, analysts can search and investigate the data in minutes or seconds. This frees up time to do more work and provide greater assistance to law enforcement. Learn more about how NCMEC is using Palantir in the video below.&lt;/p&gt;
+
+&lt;iframe src=&quot;//www.youtube.com/embed/CO0poW-WaaU&quot; frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;480&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;NCMEC’s new location will help yield more success stories, like the case of a 17-year old girl who was reported missing and potentially involved in child sex trafficking. Through various searches, a NCMEC analyst was able to find multiple posts online that advertised this missing child for sex. Through information in the ads, the analyst was able to tie them to other posts from the same pimp. The analysis included more than 50 advertisements, 9 different females, and a trail that covered 5 different states. A link analysis graph was created using Palantir that allowed law enforcement to easily see the large scope of the ring. This insight helped law enforcement link the pimp to a multitude of other crimes and other girls that he victimized.&lt;/p&gt;
+
+&lt;p&gt;With NCMEC now firmly planted in Palo Alto, we encourage other tech firms to support NCMEC’s life-saving work. We are incredibly proud and inspired to work with NCMEC, and welcome them to the Valley.&lt;/p&gt;
+
+&lt;p&gt;To learn more about our work with NCMEC, download the latest &lt;a href=&quot;/pt_media/finding-missing-and-exploited-children/&quot;&gt;Impact Study&lt;/a&gt;.&lt;/p&gt;
+</content:encoded>
+      <dc:date>2013-12-19T20:26:03-08:00</dc:date>
+    </item>
+    <item>
+      <title>Announcing three open source projects for developing with TypeScript</title>
+      <link>https://palantir.com/2013/12/announcing-three-open-source-projects-for-developing-with-typescript</link>
+      <description>&lt;p&gt;Although Palantir is mostly known as a Java Swing shop, we have quietly (or not so &lt;a href=&quot;http://www.palantir.com/2012/11/introducing-code-33/&quot;&gt;quietly&lt;/a&gt;) been building for the web for a while now. From &lt;a href=&quot;http://d3js.org/&quot;&gt;D3&lt;/a&gt; for stunning graphics to &lt;a href=&quot;http://backbonejs.org/&quot;&gt;Backbone&lt;/a&gt; and &lt;a href=&quot;http://angularjs.org/&quot;&gt;Angular&lt;/a&gt; for large-scale applications, we are using the latest and greatest web technologies to build the next generation of our products. As we’ve made the transition from native to web applications, we’ve tried to preserve some features of the strong development process that has served us so well in the native world: robust unit and end-to-end testing, continuous integration builds, and most importantly, a developer experience that makes it easy and fun to write the data analysis platforms and applications that our customers rely on to solve their most important, most complex data problems. We found &lt;a href=&quot;http://www.typescriptlang.org/&quot;&gt;TypeScript&lt;/a&gt;’s optional typing and forward-looking adoption of certain &lt;a href=&quot;http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts&quot;&gt;ECMAScript 6&lt;/a&gt; features to be a great fit for those needs, but we wanted a bit more tooling. So today we’re pleased to announce three new open source projects we’ve undertaken to help fill out the TypeScript ecosystem.&lt;/p&gt;
+
+</description>
+      <pubDate>Tue, 17 Dec 2013 01:31:55 -0800</pubDate>
+      <guid>https://palantir.com/2013/12/announcing-three-open-source-projects-for-developing-with-typescript</guid>
+      <content:encoded>&lt;p&gt;Although Palantir is mostly known as a Java Swing shop, we have quietly (or not so &lt;a href=&quot;http://www.palantir.com/2012/11/introducing-code-33/&quot;&gt;quietly&lt;/a&gt;) been building for the web for a while now. From &lt;a href=&quot;http://d3js.org/&quot;&gt;D3&lt;/a&gt; for stunning graphics to &lt;a href=&quot;http://backbonejs.org/&quot;&gt;Backbone&lt;/a&gt; and &lt;a href=&quot;http://angularjs.org/&quot;&gt;Angular&lt;/a&gt; for large-scale applications, we are using the latest and greatest web technologies to build the next generation of our products. As we’ve made the transition from native to web applications, we’ve tried to preserve some features of the strong development process that has served us so well in the native world: robust unit and end-to-end testing, continuous integration builds, and most importantly, a developer experience that makes it easy and fun to write the data analysis platforms and applications that our customers rely on to solve their most important, most complex data problems. We found &lt;a href=&quot;http://www.typescriptlang.org/&quot;&gt;TypeScript&lt;/a&gt;’s optional typing and forward-looking adoption of certain &lt;a href=&quot;http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts&quot;&gt;ECMAScript 6&lt;/a&gt; features to be a great fit for those needs, but we wanted a bit more tooling. So today we’re pleased to announce three new open source projects we’ve undertaken to help fill out the TypeScript ecosystem.&lt;/p&gt;
+
+&lt;h2 id=&quot;eclipse-typescript-plug-in&quot;&gt;Eclipse TypeScript plug-in&lt;/h2&gt;
+
+&lt;p&gt;While we love &lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime Text&lt;/a&gt; at Palantir, we thought it would also be cool to have more of an IDE experience for TypeScript (probably because it is something we are familiar with from Java). Although there was already excellent support via &lt;a href=&quot;http://www.jetbrains.com/webstorm/&quot;&gt;WebStorm&lt;/a&gt;, we really wanted to have a first-class experience in Eclipse as well since it’s our primary development environment for our server code. We knew this would be a pretty involved task given all the functionality offered by a modern IDE, but one of our summer interns, &lt;a href=&quot;https://github.com/tyleradams&quot;&gt;Tyler Adams&lt;/a&gt;, bravely took on the project. The TypeScript team has done a great job of exposing a lot of the basic services necessary to build a robust IDE experience: auto-completion, syntax highlighting, code compilation, etc. All we had to do was figure out how to hook up these great services into Eclipse via a plug-in. One of the fun aspects of this project was that since parts of the plug-in are written in TypeScript, we were really motivated to get features done to make writing the plug-in itself easier. By the end of the summer we got pretty far (check out the &lt;a href=&quot;https://github.com/palantir/eclipse-typescript#features&quot;&gt;feature list&lt;/a&gt;) and were so happy with the plug-in that we converted all of our code over to TypeScript (more about this below). There is always room for more improvement though, so we’d love to have your suggestions and code contributions. You can check out the project here: &lt;a href=&quot;https://github.com/palantir/eclipse-typescript&quot;&gt;https://github.com/palantir/eclipse-typescript&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&quot;A screenshot of our Ecplise TypeScript plug-in&quot; src=&quot;/wp-assets/wp-content/uploads/2013/12/typescript_plugin.png&quot; /&gt;
+TypeScript auto-complete in Eclipse.&lt;/p&gt;
+
+&lt;h2 id=&quot;tslint&quot;&gt;TSLint&lt;/h2&gt;
+
+&lt;p&gt;Our backend code is mostly written in Java and we love tools like &lt;a href=&quot;http://findbugs.sourceforge.net/&quot;&gt;FindBugs&lt;/a&gt; and &lt;a href=&quot;http://checkstyle.sourceforge.net/&quot;&gt;Checkstyle&lt;/a&gt; for ensuring that coding best practices are followed and common pitfalls are avoided. One of our engineers in &lt;a href=&quot;http://www.palantir.com/careers/OpenPositionLandingLocation?lc=New%20York,%20NY&quot;&gt;NYC&lt;/a&gt;, &lt;a href=&quot;https://github.com/ashwinr&quot;&gt;Ashwin Ramaswamy&lt;/a&gt;, wanted to have some of those same assurances for our TypeScript code. He looked into using existing tools such as &lt;a href=&quot;http://www.jshint.com/&quot;&gt;JSHint&lt;/a&gt; or &lt;a href=&quot;https://github.com/nzakas/eslint&quot;&gt;ESLint&lt;/a&gt; but decided that we really needed something that would work directly on the TypeScript code. Each summer, we throw a &lt;a href=&quot;http://www.palantir.com/2013/08/hack-week-2013/&quot;&gt;Hack Week&lt;/a&gt; which is a week during which all normal work stops and everyone works in teams on fun projects they would like to see come to fruition. This past summer, Ashwin chose to create TSLint as his project. He didn’t just stop with the linter though – there are also plug-ins for Eclipse and &lt;a href=&quot;http://gruntjs.com/&quot;&gt;Grunt&lt;/a&gt; to make it easier to use. Check it out at: &lt;a href=&quot;https://github.com/palantir/tslint&quot;&gt;https://github.com/palantir/tslint&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;coffeescript-to-typescript-converter&quot;&gt;CoffeeScript to TypeScript converter&lt;/h2&gt;
+
+&lt;p&gt;We use &lt;a href=&quot;http://coffeescript.org/&quot;&gt;CoffeeScript&lt;/a&gt; for most of our projects at Palantir but we found that for some really large ones, optional typing can be a real boon to productivity. We learned this lesson the hard way after trying to maintain a medium-sized application and finding that we had to write an incredible amount of unit tests to be certain that even the simplest of edits (like renaming a variable) were safe. This summer, we asked one of our interns, &lt;a href=&quot;https://github.com/jaredp&quot;&gt;Jared Pochtar&lt;/a&gt;, to work on an automated method of converting our CoffeeScript code to TypeScript. He came up with the brilliant idea to slightly modify the CoffeeScript compiler to output TypeScript instead of JavaScript. If you’d like to try out converting your codebase to TypeScript as well you can check out his work here: &lt;a href=&quot;https://github.com/palantir/coffeescript-to-typescript&quot;&gt;https://github.com/palantir/coffeescript-to-typescript&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;With the recent release of TypeScript &lt;a href=&quot;http://blogs.msdn.com/b/typescript/archive/2013/12/05/announcing-typescript-0-9-5.aspx&quot;&gt;0.9.5&lt;/a&gt;, we’ve begun to see the path towards 1.0 really take shape. We think TypeScript is going to be a great addition to the web community. We are really looking forward to see where it goes next and what people do with it!&lt;/p&gt;
+</content:encoded>
+      <dc:date>2013-12-17T01:31:55-08:00</dc:date>
+    </item>
+    <item>
+      <title>How we're building an information infrastructure for Typhoon Haiyan response operations</title>
+      <link>https://palantir.com/2013/11/how-were-building-an-information-infrastructure-for-typhoon-haiyan-response-operations</link>
+      <description>&lt;p&gt;Typhoon Haiyan has claimed the lives of thousands and displaced millions more. Along with other aid organizations from around the world, our disaster response partners &lt;a href=&quot;http://www.teamrubiconusa.org&quot;&gt;Team Rubicon&lt;/a&gt; and &lt;a href=&quot;http://www.directrelief.org&quot;&gt;Direct Relief&lt;/a&gt; have mobilized to provide relief to those affected by the storm, and we’ve been working closely with them to support their efforts.&lt;/p&gt;
+
+</description>
+      <pubDate>Mon, 18 Nov 2013 17:52:15 -0800</pubDate>
+      <guid>https://palantir.com/2013/11/how-were-building-an-information-infrastructure-for-typhoon-haiyan-response-operations</guid>
+      <content:encoded>&lt;p&gt;Typhoon Haiyan has claimed the lives of thousands and displaced millions more. Along with other aid organizations from around the world, our disaster response partners &lt;a href=&quot;http://www.teamrubiconusa.org&quot;&gt;Team Rubicon&lt;/a&gt; and &lt;a href=&quot;http://www.directrelief.org&quot;&gt;Direct Relief&lt;/a&gt; have mobilized to provide relief to those affected by the storm, and we’ve been working closely with them to support their efforts.&lt;/p&gt;
+
+&lt;p&gt;On Veterans Day Team Rubicon launched &lt;a href=&quot;http://teamrubiconusa.org/launching-operation-seabird/&quot;&gt;Operation: Seabird&lt;/a&gt;, which sent a specialized team of veteran volunteers to Tacloban. Equipped with &lt;a href=&quot;http://instagram.com/p/gjJH5oOxTS/&quot;&gt;kits supplied by Direct Relief&lt;/a&gt;, they’ve been conducting search and rescue, patient extraction, and medical relief operations. Second and third teams have deployed more recently to expand operations and prepare for the arrival of even more Team Rubicon volunteers in the days ahead.&lt;/p&gt;
+
+&lt;p&gt;Direct Relief has sent several emergency airlifts of medical supplies and medications to affected areas, and have now made their entire &lt;a href=&quot;http://www.directrelief.org/2013/11/mobilizing-aid-typhoon-haiyan-survivors/&quot;&gt;$65 million medical inventory&lt;/a&gt; available for the relief effort. They will soon be deploying personnel of their own to assess local health needs directly.&lt;/p&gt;
+
+&lt;p&gt;We’ve been hacking away furiously all week to support these efforts. Here’s an update of what we’re already doing and what we have planned.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&quot;The Raven interface with data from Tacloban&quot; src=&quot;/wp-assets/wp-content/uploads/2013/11/Tacloban_Histo.png&quot; /&gt;&lt;br /&gt;
+Raven with live data from Tacloban&lt;/p&gt;
+
+&lt;h2 id=&quot;putting-data-and-our-engineers-to-work&quot;&gt;Putting data (and our engineers) to work&lt;/h2&gt;
+
+&lt;p&gt;We quickly stood up a Palantir instance and are actively integrating and structuring &lt;a href=&quot;http://unocha.org/&quot;&gt;OCHA reports&lt;/a&gt;, &lt;a href=&quot;http://www.mapaction.org/&quot;&gt;MapAction&lt;/a&gt; updates, various open source data sets relevant to the area of operations (&lt;a href=&quot;http://www.openstreetmap.org/&quot;&gt;OpenStreetMap&lt;/a&gt;, local government info, supply centers, shelters, markets, etc.), SITREPs from various relief organizations, assessment reports generated in the field, and more. By providing access to many different kinds of data, the most recent data, and helpful ways of interacting with that data, we hope to help Team Rubicon and Direct Relief better coordinate their actions with other NGOs and provide more relief to more people, faster.&lt;/p&gt;
+
+&lt;p&gt;On the UX front, we were especially excited to deploy Raven, our new high-performance, web-based geospatial analysis application. We’ve loaded it with a range of static and dynamic map layers, and we’ll be using it for all things geospatial—from GPS tracking of volunteers (see more below) to operational planning, visualizing the distribution of resources, and more. Thanks to &lt;a href=&quot;https://www.digitalglobe.com/&quot;&gt;DigitalGlobe&lt;/a&gt;, Raven has access to near real-time satellite imagery and crowd-sourced damage reports. The Raven dev team has been working day and night all week to build out new features specifically for this mission.&lt;/p&gt;
+
+&lt;p&gt;The instance is being manned by a team of Palantir engineers as well as Direct Relief and Team Rubicon users. Stateside, we will be providing various kinds of reachback support—integrating data, responding to RFIs, cleaning up and enriching new data as it comes in, and generally making sure the right people know what they need to know when they need to know it. Our users in the Philippines will depend on the instance to plan and execute their day-to-day operations.&lt;/p&gt;
+
+&lt;h2 id=&quot;building-a-tech-package-for-disconnected-environments&quot;&gt;Building a tech package for disconnected environments&lt;/h2&gt;
+
+&lt;p&gt;We recently confirmed that &lt;a href=&quot;https://twitter.com/TeamRubicon/status/401934694809206784&quot;&gt;Team Rubicon can connect to the main instance from Tacloban&lt;/a&gt;, but we expect there will be areas where we can’t get that kind of connectivity, so we’ve prepared a technical package that will allow the team to operate in a completely disconnected environment.&lt;/p&gt;
+
+&lt;h3 id=&quot;moving-palantir-forward-forward&quot;&gt;Moving Palantir Forward, forward&lt;/h3&gt;
+
+&lt;p&gt;Several years ago we developed a standalone version of Palantir that could run on a laptop in disconnected environments such as conflict zones. We called it Palantir Forward. It allows users to take a cut of data out to a remote location, perform analysis and add new data while disconnected, and then sync that data with other Palantir instances when connectivity is restored. We sent nine Palantir Forward laptops to the Philippines. Now the same technology that was built for active duty soldiers will be used to help veterans provide disaster relief.&lt;/p&gt;
+
+&lt;h3 id=&quot;deploying-palantir-mobile-and-introducing-mimosa&quot;&gt;Deploying Palantir Mobile, and introducing Mimosa&lt;/h3&gt;
+
+&lt;p&gt;Palantir Mobile was one of the most effective capabilities we deployed after Hurricane Sandy. It enabled Team Rubicon volunteers to submit damage assessment reports from the field back to the &lt;a href=&quot;https://en.wikipedia.org/wiki/Forward_operating_base&quot;&gt;FOB&lt;/a&gt; in an instant, and it allowed planners at the FOB to track the location and movement of their volunteers. This removed the latency associated with hand-delivering reports, removed the overhead and risk associated with managing paper-based reports, and streamlined comms across the strategic and tactical levels of the operation. (You can watch a short video about how Team Rubicon used Palantir Mobile after Sandy &lt;a href=&quot;http://youtu.be/8hWwUnwxZI0&quot;&gt;here&lt;/a&gt;). We think a similar capability could be beneficial to Haiyan relief efforts.&lt;/p&gt;
+
+&lt;p&gt;Team Rubicon brought Palantir Mobile handsets with them to Tacloban, but these devices depend on cellular connectivity. We may not be able to depend on cellular network infrastructure in some of the most damaged and remote areas. So we spent the last week coming up with a purely satellite-based version of Palantir Mobile. We’re provisionally calling the result the MIni MObile SAtellite, or Mimosa. (Admittedly, not a great name. I blame the sleep deprivation.)&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&quot;A successful test of Mimosa in Raven&quot; src=&quot;/wp-assets/wp-content/uploads/2013/11/raven_mimosa_test.png&quot; /&gt;&lt;br /&gt;
+A successful test of Mimosa&lt;/p&gt;
+
+&lt;p&gt;Thanks to a days-old partnership with &lt;a href=&quot;http://www.delorme.com&quot;&gt;Delorme&lt;/a&gt; (and their great APIs, engineers, and client service people), we have prototyped and successfully tested a capability that works with inReach two-way satellite communicator devices. Direct Relief purchased 130 inReach devices, which are equipped for GPS tracking anywhere in the world and can send and receive 160-character, Tweet-like messages over satellite comms. Our Raven dev team built a plugin that will allow us to use the GPS data for real-time &lt;a href=&quot;https://en.wikipedia.org/wiki/Blue_Force_Tracking&quot;&gt;Blue Force Tracking&lt;/a&gt; of volunteers in the field. Message data will also show up on the map, so users at base stations will be able to communicate directly with forward teams from within the Raven interface. We’ve written some data integration scripts against the inReach API to generate data objects based on situation or assessment reports sent from these devices. To accommodate the character limit, we hacked together a shorthand system so the data can be easily sorted and analyzed in Palantir. Here’s an example of how it works. If someone were to send the following message:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;SAR–60–0–20-Water-/-&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;it would be interpreted by Palantir as:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Zone Search-and-Rescue Report: 60 percent of homes habitable, utilities not intact, estimate 20 deaths, water needed, no other details.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Once volunteers start submitting reports from the field, whether via Palantir Mobile or Mimosa, we will quickly get a better picture of where resources need to be directed to deliver relief to those who are most at risk.&lt;/p&gt;
+
+&lt;h2 id=&quot;deploying-engineers-to-the-philippines&quot;&gt;Deploying engineers to the Philippines&lt;/h2&gt;
+
+&lt;p&gt;Over the weekend a small team of Palantir engineers from our California, Virginia, and Australia offices arrived in the Philippines to support relief efforts on the ground. The team includes engineers who have previously deployed to conflict zones, a Tagalog speaker, and a Palantir Mobile specialist. They’re geared up for harsh conditions, unpredictable technical challenges, and the chance to work with our amazing partners to make a real difference.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-you-can-learn-more&quot;&gt;How you can learn more&lt;/h2&gt;
+
+&lt;p&gt;We will continue to publish updates as we get more information. To stay up to date on developments, follow the whole team on Twitter &lt;a href=&quot;http://www.twitter.com/PalantirTech&quot;&gt;@PalantirTech&lt;/a&gt;, &lt;a href=&quot;http://www.twitter.com/TeamRubicon&quot;&gt;@TeamRubicon&lt;/a&gt;, and &lt;a href=&quot;http://www.twitter.com/DirectRelief&quot;&gt;@DirectRelief&lt;/a&gt;, and check out the latest news on the &lt;a href=&quot;http://teamrubiconusa.org/blog/&quot;&gt;Team Rubicon&lt;/a&gt; and &lt;a href=&quot;http://www.directrelief.org/blog/&quot;&gt;Direct Relief&lt;/a&gt; blogs.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-you-can-help&quot;&gt;How you can help&lt;/h2&gt;
+
+&lt;p&gt;Support the response efforts by making donations to &lt;a href=&quot;https://secure2.convio.net/dri/site/Donation2?df_id=2105&amp;amp;2105.donation=form1&quot;&gt;Direct Refief&lt;/a&gt; and &lt;a href=&quot;http://fundraise.teamrubiconusa.org/events/operation-seabird/e28642&quot;&gt;Team Rubicon&lt;/a&gt;. Arm volunteers on the ground with better data by participating in DigitalGlobe’s &lt;a href=&quot;http://www.tomnod.com/nod/challenge/haiyantyphoon2013&quot;&gt;crowdsourcing campaign&lt;/a&gt; to tag damage in satellite imagery.&lt;/p&gt;
+</content:encoded>
+      <dc:date>2013-11-18T17:52:15-08:00</dc:date>
+    </item>
+    <item>
+      <title>C4ADS and the Odessa Network: Understanding Illicit Networks Using Palantir Gotham</title>
+      <link>https://palantir.com/2013/11/c4ads-and-the-odessa-network-understanding-illicit-networks-using-palantir-gotham</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://www.c4ads.org&quot;&gt;C4ADS&lt;/a&gt; has been in the spotlight lately. A &lt;a href=&quot;http://www.washingtonpost.com/world/national-security/ukrainian-port-eyed-as-analysts-seek-syrias-arms-source/2013/09/07/f61b0082-1710-11e3-a2ec-b47e45e6f8ef_story.html&quot;&gt;front-page story&lt;/a&gt; in a recent Sunday edition of the &lt;em&gt;Washington Post&lt;/em&gt; highlighted the D.C.-based organization’s data-driven research into illicit networks trafficking weapons and other goods throughout various conflict zones. Over the past year, their research into enablers of conflict has led them on a path of analysis from illegal shipments of &lt;a href=&quot;http://vimeo.com/54798230&quot;&gt;‘conflict charcoal’ out of Somalia&lt;/a&gt; to commercial ships that may be carrying arms and other sensitive cargo into Syria. In September, C4ADS &lt;a href=&quot;http://www.c4ads.org/#!project-highlights/c21l1&quot;&gt;released a report&lt;/a&gt; on a group they called the “Odessa Network,” claiming that this network had been transporting arms to the Syrian government via Ukraine. And as Senior Analyst Tom Wallace put it, C4ADS “couldn’t have done it without Palantir.”&lt;/p&gt;
+
+</description>
+      <pubDate>Wed, 06 Nov 2013 21:29:09 -0800</pubDate>
+      <guid>https://palantir.com/2013/11/c4ads-and-the-odessa-network-understanding-illicit-networks-using-palantir-gotham</guid>
+      <content:encoded>&lt;p&gt;&lt;a href=&quot;http://www.c4ads.org&quot;&gt;C4ADS&lt;/a&gt; has been in the spotlight lately. A &lt;a href=&quot;http://www.washingtonpost.com/world/national-security/ukrainian-port-eyed-as-analysts-seek-syrias-arms-source/2013/09/07/f61b0082-1710-11e3-a2ec-b47e45e6f8ef_story.html&quot;&gt;front-page story&lt;/a&gt; in a recent Sunday edition of the &lt;em&gt;Washington Post&lt;/em&gt; highlighted the D.C.-based organization’s data-driven research into illicit networks trafficking weapons and other goods throughout various conflict zones. Over the past year, their research into enablers of conflict has led them on a path of analysis from illegal shipments of &lt;a href=&quot;http://vimeo.com/54798230&quot;&gt;‘conflict charcoal’ out of Somalia&lt;/a&gt; to commercial ships that may be carrying arms and other sensitive cargo into Syria. In September, C4ADS &lt;a href=&quot;http://www.c4ads.org/#!project-highlights/c21l1&quot;&gt;released a report&lt;/a&gt; on a group they called the “Odessa Network,” claiming that this network had been transporting arms to the Syrian government via Ukraine. And as Senior Analyst Tom Wallace put it, C4ADS “couldn’t have done it without Palantir.”&lt;/p&gt;
+
+&lt;p&gt;Using the Palantir Gotham platform, C4ADS has been able to bolster their mission of using data to better understand conflict, security and development around the world. This latest analysis relied on Palantir’s ability to combine multiple, disparate open source datasets to reveal a complicated network of ships, transport companies, and key individuals involved in the transactions.&lt;/p&gt;
+
+&lt;p&gt;C4ADS’ investigations combined information from news media, court cases, open source business directories, maritime shipping databases, and ship transponder records. These diverse datasets arrived in various formats, and without a unifying analysis layer, they would have provided only a small piece of the puzzle. C4ADS therefore found Palantir’s data fusion platform “transformational” in improving the efficiency of their analysts.&lt;/p&gt;
+
+&lt;p&gt;C4ADS recently &lt;a href=&quot;http://newamerica.net/events/2013/the_odessa_network&quot;&gt;discussed their findings&lt;/a&gt; on the Odessa Network with the New America Foundation, and their work was highlighted at “Conflict in a Connected World,” the October 2013 summit presented by Google Ideas.&lt;/p&gt;
+
+&lt;iframe src=&quot;//www.youtube.com/embed/UaqkY5PJQJ0&quot; frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;480&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Palantir’s software allowed C4ADS analysts to “tease out the important needles in these messy, multi-faceted haystacks” of data, said Wallace, making it possible to “keep track of how we know what we know.”&lt;/p&gt;
+</content:encoded>
+      <dc:date>2013-11-06T21:29:09-08:00</dc:date>
+    </item>
+    <dc:date>2014-08-07T16:01:48-07:00</dc:date>
+  </channel>
+</rss>
