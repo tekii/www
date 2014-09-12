@@ -20,8 +20,8 @@ export GOPATH="$TOOLCHAIN/hugo"
 function do_clean {
   rm -rf "$GOPATH/pkg"
   rm -rf "$GOPATH/bin"
+  rm -rf "$WD/www/public"
 }
-
 
 # leer parametros y ejecutar
 case $1 in
