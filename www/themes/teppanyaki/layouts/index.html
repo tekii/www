@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class=" js canvas no-touch hashchange history rgba multiplebgs backgroundsize borderradius boxshadow opacity cssanimations cssgradients csstransforms csstransforms3d csstransitions fontface generatedcontent video svg inlinesvg svgclippaths no-retina">
+<head>
+	{{ partial "meta.html" . }}
+	<title>{{ .Site.Title }}</title>
+	<link rel="shortcut icon" href="http://www.teky.co/favicon.ico" sizes="16x16 32x32" type="image/x-icon">
+	<link rel="stylesheet" href="css/style.css?v=20140908161653" media="screen">
+	<link rel="alternate" type="application/rss+xml" href="feed/index.xml" title="Palantir RSS">
+	<!-- Modernizr -->
+	<script async="" src="js/analytics.js"></script><script src="js/modernizr-custom-2.8.2.min.js"></script>
+	<!--[if lt IE 9]>
+	<script src="js/respond-1.4.2.min.js"></script>
+	<link rel="stylesheet" href="css/ie.css?v=20140908161653" media="screen, projection" type="text/css">
+	<![endif]-->
+	<!-- TODO: revisar si estos los necesitamos -->
+	<link rel="canonical" href="{{ .Permalink }}">
+	<link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+	<!-- END TODO -->
+</head>
+<body id="home" class="">
+	<div id="site-wrapper">
+	  {{ partial "header.html" . }}
+		<!-- Page Content -->
+		<div id="hero-wrapper" data-video-bg="[&quot;/videos/home.jpg&quot;,&quot;/videos/home.mp4&quot;,&quot;/videos/home.webm&quot;,&quot;/videos/home.ogv&quot;]" style="background: url(videos/home.jpg)  no-repeat;">
+			<div class="videoBG_wrapper" style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; z-index: 1;">
+				<div class="container">
+					<div class="row block block-hero block-centered">
+						<article class="col-md-8 col-md-offset-2">
+							<h1><span class="nowrap">Lorem ipsum</span> <span class="nowrap">dolor sit amet</span></h1>
+							<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+							<p>
+								<a class="button button-xlarge button-white" href="about">This is our story</a>
+							</p>
+						</article>
+					</div><!-- /.row -->
+				</div>
+			</div>
+			<div class="videoBG" style="position: relative; z-index: 0; top: 0px; left: 0px; height: 100%; width: 100%; opacity: 1; text-align: center; overflow: hidden;">
+				<video poster="/videos/home.jpg" autoplay="autoplay" src="/videos/home.webm" style="position: relative; z-index: 0; top: 0px; left: 100%; margin-left: -200%; min-width: 100%; min-height: 100%;"></video>
+			</div>
+		</div><!-- /#hero-wrapper -->
+		<div id="home-middle-section" class="container">
+			<div id="home-second-heading" class="row block block-secondary block-centered block-row">
+				<article class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+					<h2>Lorem ipsum</h2>
+					<p>Lorem ipsum dolor sit amet, <strong>consectetur adipisicing elit</strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</article>
+			</div><!-- /.row -->
+			<div id="home-feature-preview" class="row block block-row">
+				<article class="col-md-4">
+					<div class="solution-preview preview-1">
+						<h4>Lorem ipsum</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</div>
+				</article>
+
+				<article class="col-md-4">
+					<div class="solution-preview preview-2">
+						<h4>Lorem ipsum</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</div>
+				</article>
+
+				<article class="col-md-4">
+					<div class="solution-preview preview-3">
+						<h4>Lorem ipsum</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</div>
+				</article>
+			</div><!-- /.row -->
+			<div id="home-middle-action" class="row block block-centered">
+				<p><a class="button button-large" href="#">These Are Our Products</a></p>
+			</div>
+		</div><!-- /.container -->
+		<div id="home-blog-list">
+			<div class="container">
+				<div class="row block">
+					<div id="latest-news" class="col-sm-5 col-sm-offset-1">
+						<h3>Latest News</h3>
+						<ul class="media-list-listing">
+							<li>
+								<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+									<span class="media-list-item-meta">
+										<span class="media-list-item-date">June 18, 2014</span>
+									</span>
+							</li>
+							<li>
+								<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+									<span class="media-list-item-meta">
+										<span class="media-list-item-source">The New York Times</span> —
+										<span class="media-list-item-date">June 2, 2014</span>
+									</span>
+							</li>
+							<li>
+								<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+									<span class="media-list-item-meta">
+										<span class="media-list-item-source">MIT Technology Review</span> —
+										<span class="media-list-item-date">January 30, 2014</span>
+									</span>
+							</li>
+						</ul>
+						<p>
+							<a href="#" class="button button-small button-white button-hover-white">Read More News</a>
+						</p>
+					</div>
+
+					<div id="from-the-blog" class="col-sm-5">
+						<h3>From The Blog</h3>
+						<ul class="media-list-listing">
+							
+							<li>
+								<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+								<span class="post-date">August 7, 2014</span>
+							</li>
+							
+							<li>
+								<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+								<span class="post-date">June 19, 2014</span>
+							</li>
+							
+							<li>
+								<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+								<span class="post-date">June 5, 2014</span>
+							</li>
+						</ul>
+						<p>
+							<a href="#" class="button button-small button-white button-hover-white">Read Our Blog</a>
+						</p>
+					</div>
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /#home-blog-list -->
+		{{ partial "footer.html" }}
+	</div><!-- /#site-wrapper -->
+	<script src="js/compiled.min.js"></script>
+	<!-- Google Analytics -->
+	<!-- insert here -->
+</body>
+</html>
