@@ -5,4 +5,7 @@ title = "Home"
 home = true
 +++
 
-## Soy el Fucking home ... no perdon lorem ipsum
+## home (lorem ipsum)
+
+### [Español](pages/es/about/)
+### [English](pages/en/about/)

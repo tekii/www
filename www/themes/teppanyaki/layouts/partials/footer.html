@@ -5,65 +5,38 @@
       <div class="col-md-10 col-md-offset-1">
         <div class="row">
           <nav id="products" class="col-sm-2 footer-menu">
-            <h2><a href="#">Products</a></h2>
-            <ul id="menu-products">
-              <li><a href="#" title="Palantir Gotham">Palantir Gotham</a></li>
-              <li><a href="#" title="Palantir Metropolis">Palantir Metropolis</a></li>
+            <h2><a href="#">Lang</a></h2>
+            <ul id="menu-lang">
+              <li><a href="/pages/es/home/" title="esp">Español</a></li>
+              <li><a href="/pages/en/home/" title="eng">English</a></li>
             </ul>
           </nav>
           <nav id="uses" class="col-sm-4 footer-menu">
             <h2><a href="#">Solutions</a></h2>
             <ul id="menu-uses">
-              <li><a href="#" title="Anti Fraud">Anti Fraud</a></li>
-              <li><a href="#" title="Capital Markets">Capital Markets</a></li>
-              <li><a href="#" title="Case Management">Case Management</a></li>
-              <li><a href="#" title="Cyber Security">Cyber Security</a></li>
-              <li><a href="#" title="Defense">Defense</a></li>
-              <li><a href="#" title="Disease Response">Disease Response</a></li>
-              <li><a href="#" title="Healthcare Delivery">Healthcare Delivery</a></li>
-              <li><a href="#" title="Insider Threat">Insider Threat</a></li>
-              <li><a href="#" title="Insurance Analytics">Insurance Analytics</a></li>
-              <li><a href="#" title="Intelligence">Intelligence</a></li>
-              <li><a href="#" title="Law Enforcement">Law Enforcement</a></li>
-              <li><a href="#" title="Legal Intelligence">Legal Intelligence</a></li>
-              <li><a href="#" title="Palantir Verus">Palantir Verus</a></li>
-              <li><a href="#" title="Pharma R&amp;D">Pharma R&amp;D</a></li>
-              <li><a href="#" title="Trader Oversight">Trader Oversight</a></li>
-              <li><a href="#" title="Custom Solutions">Custom Solutions</a></li>
+              <li><a href="#" title="Solution1">Solution1</a></li>
+              <li><a href="#" title="Solution2">Solution2</a></li>
+              <li><a href="#" title="Solution3">Solution3</a></li>
+              <li><a href="#" title="Solution4">Solution4</a></li>
             </ul>
           </nav>
-
-          <nav id="people" class="col-sm-2 footer-menu">
-            <h2><a href="#">People</a></h2>
-            <ul id="menu-people" class="">
-              <li><a href="#" title="Life at Palantir">Life at Palantir</a></li>
-              <li><a href="#" title="Getting Hired">Getting Hired</a></li>
-              <li><a href="#" title="Students">Students</a></li>
-              <li><a href="#" title="Open Positions">Open Positions</a></li>
-            </ul>
-          </nav>
-
-          <nav id="about" class="col-sm-2 footer-menu">
-            <h2><a href="#">About</a></h2>
-            <ul id="menu-about">
-              <li><a href="#">What We Believe</a></li>
-              <li><a href="#">Philanthropy Engineering</a></li>
-              <li><a href="#">Library</a></li>
-              <li><a href="#">Media</a></li>
-            </ul>
-          </nav>
-          <nav id="ancillary-menu" class="col-sm-2 footer-menu">
-            <ul id="menu-ancillary">
-              <li><a href="#">Support Portal</a></li>
-              <li><a href="#">Integrations</a></li>
-              <li><a href="#">Site Map</a></li>
-            </ul>
-          </nav>
+          {{ if eq (index .Params "lang") "es" }}
+            {{ range .Site.Menus.es_menu }}
+              <nav id="about" class="col-sm-2 footer-menu">
+                <h2><a href="/pages/es/{{ .Url }}/">{{ .Name }}</a></h2>
+              </nav>
+            {{ end }}
+          {{ else }}
+            {{ range .Site.Menus.en_menu }}
+              <nav id="about" class="col-sm-2 footer-menu">
+                <h2><a href="/pages/en/{{ .Url }}/">{{ .Name }}</a></h2>
+              </nav>
+            {{ end }}
+          {{ end }}
         </div><!-- /.row -->
-
         <div id="footer-copyright" class="row">
           <div class="col-sm-12 sub-footer">
-            <span class="legalese">© 2014 Palantir Technologies</span>
+            <span class="legalese">© 2014 TEKy</span>
             <a class="legalese" href="#">Terms of Use</a>
             <a class="legalese" href="#">Privacy and Security Statement</a>
             <ul class="social">

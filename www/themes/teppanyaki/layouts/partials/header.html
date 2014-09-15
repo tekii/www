@@ -22,66 +22,7 @@
           <span class="icon-bar"></span>
         </button>
       </div>
-      <div class="collapse navbar-collapse" id="main-navbar">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="products/">Products</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Palantir Gotham</a></li>
-              <li><a href="#">Palantir Metropolis</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Solutions</a>
-            <ul class="dropdown-menu split-menu">
-              <li><a href="#" title="Anti Fraud">Anti Fraud</a></li>
-              <li><a href="#" title="Capital Markets">Capital Markets</a></li>
-              <li><a href="#" title="Case Management">Case Management</a></li>
-              <li><a href="#" title="Cyber Security">Cyber Security</a></li>
-              <li><a href="#" title="Defense">Defense</a></li>
-              <li><a href="#" title="Disease Response">Disease Response</a></li>
-              <li><a href="#" title="Healthcare Delivery">Healthcare Delivery</a></li>
-              <li><a href="#" title="Insider Threat">Insider Threat</a></li>
-              <li><a href="#" title="Insurance Analytics">Insurance Analytics</a></li>
-              <li><a href="#" title="Intelligence">Intelligence</a></li>
-              <li><a href="#" title="Law Enforcement">Law Enforcement</a></li>
-              <li><a href="#" title="Legal Intelligence">Legal Intelligence</a></li>
-              <li><a href="#" title="Palantir Verus">Palantir Verus</a></li>
-              <li><a href="#" title="Pharma R&amp;D">Pharma R&amp;D</a></li>
-              <li><a href="#" title="Trader Oversight">Trader Oversight</a></li>
-              <li><a href="#" title="Custom Solutions">Custom Solutions</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">People</a>
-            <ul class="dropdown-menu">
-              <li><a href="#" title="Life at Palantir">Life at Palantir</a></li>
-              <li><a href="#" title="Getting Hired">Getting Hired</a></li>
-              <li><a href="#" title="Students">Students</a></li>
-              <li><a href="#" title="Open Positions">Open Positions</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">About</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">What We Believe</a></li>
-              <li><a href="#">Philanthropy Engineering</a></li>
-              <li><a href="#">Library</a></li>
-              <li><a href="#">Media</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav secondary">
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Blog</a></li>
-          <li class="search-form">
-            <form role="search" method="get" class="search" action="#">
-              <input id="main-search-query" type="text" name="q" value="" class="search-input search_field_main" maxlength="50" placeholder="Search Palantir">
-              <input type="submit" class="search-trigger search_submit_main">
-            </form>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
+      {{ partial "menu.html" . }}
     </div><!-- /.container-fluid -->
   </nav>
 </header><!-- /header -->

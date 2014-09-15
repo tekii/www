@@ -1,3 +1,20 @@
 baseurl = "http://www.teky.co"
 languageCode = "en-us"
 title = "TEKy"
+
+[[menu.en_menu]]
+    name = "About Us"
+    url = "about"
+    weight = -200
+[[menu.en_menu]]
+    name = "Contact"
+    url = "contact"
+    weight = -100
+[[menu.es_menu]]
+    name = "Nuestra Historia"
+    url = "about"
+    weight = -200
+[[menu.es_menu]]
+    name = "Contacto"
+	url = "contact"
+    weight = -100
