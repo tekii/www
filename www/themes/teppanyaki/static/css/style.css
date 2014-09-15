@@ -6080,42 +6080,16 @@ body#page-site-map div.container div#footer-copyright a.legalese {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
 }
-body#page-404 {
-    background-color: #326D8C;
-}
-body#page-404 div#site-wrapper {
-    background: transparent;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-body#page-404 div.container {
-    background-repeat: no-repeat;
-    background-size: 100%;
-    min-height: 760px;
-    background-position: center center;
-}
-body#page-404 div.container h1 {
-    overflow: hidden;
-    text-indent: -9999px;
-}
-.no-retina body#page-404 div.container {
-    background-image: url(/build/images/global/background-404.png);
-}
-.retina body#page-404 div.container {
-    background-image: url(/build/images/global/background-404@2x.png);
-}
-@media (min-width: 768px) {
-    body#page-404 div.container {
-    background-size: 730px 511px;
-}
-}@media (max-width: 767px) {
+@media (max-width: 767px) {
     #grid[data-columns]: :before {
     content: '1 .column.size-1of1'}
-}@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
     #grid[data-columns]: :before {
-    content: '3 .column.size-1of3'}
-}.column {
+	    content: '3 .column.size-1of3'
+	}
+}
+.column {
     float: left;
 }
 .size-1of1 {
