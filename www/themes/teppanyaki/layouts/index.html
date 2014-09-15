@@ -4,48 +4,37 @@
 	{{ partial "meta.html" . }}
 	<title>{{ .Site.Title }}</title>
 	<link rel="shortcut icon" href="http://www.teky.co/favicon.ico" sizes="16x16 32x32" type="image/x-icon">
-	<link rel="stylesheet" href="css/style.css?v=20140908161653" media="screen">
-	<link rel="alternate" type="application/rss+xml" href="feed/index.xml" title="Palantir RSS">
+	<link rel="stylesheet" href="/css/style.css?v=20140908161653" media="screen">
+	<link rel="alternate" type="application/rss+xml" href="feed/index.xml" title="TEKy RSS">
 	<!-- Modernizr -->
-	<script async="" src="js/analytics.js"></script><script src="js/modernizr-custom-2.8.2.min.js"></script>
-	<!--[if lt IE 9]>
-	<script src="js/respond-1.4.2.min.js"></script>
-	<link rel="stylesheet" href="css/ie.css?v=20140908161653" media="screen, projection" type="text/css">
-	<![endif]-->
+	<script src="/js/analytics.js" async></script>
+	<script src="/js/modernizr-custom-2.8.2.min.js"></script>
+	{{ "<!--[if lt IE 9]>" | safeHtml }}
+	<script src="/js/respond-1.4.2.min.js"></script>
+	<link rel="stylesheet" href="/css/ie.css?v=20140908161653" media="screen, projection" type="text/css">
+	{{ "<![endif]-->" | safeHtml }}
 	<!-- TODO: revisar si estos los necesitamos -->
 	<link rel="canonical" href="{{ .Permalink }}">
-	<link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+	<link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Title }}" />
 	<!-- END TODO -->
 </head>
 <body id="home" class="">
 	<div id="site-wrapper">
 	  {{ partial "header.html" . }}
-		<!-- Page Content -->
-		<div id="hero-wrapper" data-video-bg="[&quot;/videos/home.jpg&quot;,&quot;/videos/home.mp4&quot;,&quot;/videos/home.webm&quot;,&quot;/videos/home.ogv&quot;]" style="background: url(videos/home.jpg)  no-repeat;">
-			<div class="videoBG_wrapper" style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; z-index: 1;">
-				<div class="container">
-					<div class="row block block-hero block-centered">
-						<article class="col-md-8 col-md-offset-2">
-							<h1><span class="nowrap">Lorem ipsum</span> <span class="nowrap">dolor sit amet</span></h1>
-							<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
-							<p>
-								<a class="button button-xlarge button-white" href="about">This is our story</a>
-							</p>
-						</article>
-					</div><!-- /.row -->
-				</div>
-			</div>
-			<div class="videoBG" style="position: relative; z-index: 0; top: 0px; left: 0px; height: 100%; width: 100%; opacity: 1; text-align: center; overflow: hidden;">
-				<video poster="/videos/home.jpg" autoplay="autoplay" src="/videos/home.webm" style="position: relative; z-index: 0; top: 0px; left: 100%; margin-left: -200%; min-width: 100%; min-height: 100%;"></video>
-			</div>
-		</div><!-- /#hero-wrapper -->
+		{{ partial "video.html" . }}
 		<div id="home-middle-section" class="container">
-    {{ .Title }}
-		</div><!-- /#home-blog-list -->
+
+    {{ range .Data.Pages }}
+      {{ if isset .Params "home" }}
+        {{ .Content }}
+      {{ end }}        
+    {{ end }}
+		</div>
+		<div id="home-blog-list"> <!-- hace falta para que pegue el css, por ahora lo dejo luego lo arreglo -->
+		</div>
 		{{ partial "footer.html" }}
-	</div><!-- /#site-wrapper -->
-	<script src="js/compiled.min.js"></script>
-	<!-- Google Analytics -->
-	<!-- insert here -->
+	</div>
+	<script src="/js/compiled.min.js"></script>
+	<!-- Google Analytics insert here -->
 </body>
 </html>
