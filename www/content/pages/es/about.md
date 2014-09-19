@@ -4,6 +4,7 @@ draft = false
 title = "Nuestra Historia"
 lang = "es"
 subtitle = "Soy el subtitulo de Nuestra Historia"
+slug="about"
 +++
 
 ## Nuestra Historia

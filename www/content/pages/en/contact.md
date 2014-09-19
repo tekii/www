@@ -4,6 +4,7 @@ draft = false
 title = "Contact"
 lang = "en"
 subtitle = "Soy el subtitulo de contact"
+slug = "contact"
 +++
 
 ### Contact

@@ -4,6 +4,7 @@ draft = false
 title = "Home"
 lang = "es"
 subtitle = "Soy el subtitulo Home en español"
+slug="home"
 +++
 
 ## home En español (lorem ipsum)

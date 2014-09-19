@@ -4,6 +4,7 @@ draft = false
 title = "About Us"
 lang = "en"
 subtitle = "Soy el subtitulo de about us"
+slug = "about"
 +++
 
 ## About Us in English
