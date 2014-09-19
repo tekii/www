@@ -7,8 +7,13 @@
           <nav id="products" class="col-sm-2 footer-menu">
             <h2><a href="#">Lang</a></h2>
             <ul id="menu-lang">
+              {{ if .IsPage }}
+              <li><a href="/pages/es/{{ .Slug }}/" title="esp">Español</a></li>
+              <li><a href="/pages/en/{{ .Slug }}/" title="ing">English</a></li>
+              {{ else }}
               <li><a href="/pages/es/home/" title="esp">Español</a></li>
-              <li><a href="/pages/en/home/" title="eng">English</a></li>
+              <li><a href="/pages/en/home/" title="ing">English</a></li>
+              {{ end }}
             </ul>
           </nav>
           <nav id="uses" class="col-sm-4 footer-menu">
