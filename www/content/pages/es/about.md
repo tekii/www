@@ -3,11 +3,9 @@ date = "2014-09-12T17:51:08-03:00"
 draft = false
 title = "Nuestra Historia"
 lang = "es"
-subtitle = "Soy el subtitulo de Nuestra Historia"
+subtitle = ""
 slug="about"
 +++
-
-## Nuestra Historia
 
 **TEKY SRL** inició actividades en el año 2006 con el objetivo de diseñar e implementar el sistema que registrase los medicamentos distribuidos por los convenios oncológicos, cuatro meses después entró en operación TrazAudit®, el sistema de trazabilidad de la industria.
 
@@ -17,8 +15,8 @@ Entre sus innovaciones, TrazAudit® incorporó tecnologías de encripción asim�
 
 En el año 2011 mediante la resolución Nº 435/2011, ANMAT anuncia puesta marcha de su Sistema Nacional de Trazabilidad de Medicamentos, nuevamente somos convocados para implementar una solución que cumplimente con los requisitos de las disposiciones  Nº 3683/2011 y XXXX.
 
-Nuestra respuesta es Auditor®, un servicio que asegura el cumplimiento de lo dispuesto por ANMAT, a partir de la información disponible y con un mínimo de dependencia del agente informante.
+Nuestra respuesta es **Auditor®**, un servicio que asegura el cumplimiento de lo dispuesto por ANMAT, a partir de la información disponible y con un mínimo de dependencia del agente informante.
 
-Auditor® Analiza la información disponible, extrae el flujo de transacciones, identifica aquellas relevantes, calcula y transmite la secuencia de eventos normalizados requeridos por el ANMAT. El resultado de la transmisión se audita automáticamente y cualquier desviación es derivada a un operador quien soluciona la no conformidad y retransmite el evento.
+**Auditor®** Analiza la información disponible, extrae el flujo de transacciones, identifica aquellas relevantes, calcula y transmite la secuencia de eventos normalizados requeridos por el ANMAT. El resultado de la transmisión se audita automáticamente y cualquier desviación es derivada a un operador quien soluciona la no conformidad y retransmite el evento.
 
-Auditor® comenzo a operar al momento entrar en vigencia la resolución, a la fecha procesó 20.366.773 de transacciones, recibe diariamente más de 70.000 movimientos y acumula 5.437.193 medicamentos identificados unívocamente.
+**Auditor®** comenzo a operar al momento entrar en vigencia la resolución, a la fecha procesó 20.366.773 de transacciones, recibe diariamente más de 70.000 movimientos y acumula 5.437.193 medicamentos identificados unívocamente.

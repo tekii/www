@@ -2,14 +2,12 @@
 date = "2014-09-12T17:51:24-03:00"
 draft = false
 title = "Contact"
+subtitle = ""
 lang = "en"
-subtitle = "Soy el subtitulo de contact"
 slug = "contact"
 +++
 
-### Contact
-
-**Email:** contacto @ tekii.com.ar 
+**Email:** [inbox@teky.com.ar](mailto:inbox@teky.com.ar) 
 
 **Address:** Elia 551 Ciudad Autónoma de Buenos Aires, Argentina
 
