@@ -7,7 +7,6 @@ subtitle = "Soy el subtitulo de about us"
 slug = "about"
 +++
 
-## About Us in English
-### smaller title
+# About Us
 
-This is the body
+Body

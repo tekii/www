@@ -6,7 +6,7 @@ home = true
 Subtitle = "Soy el subtitulo Home"
 +++
 
-## home (lorem ipsum)
+
 
 ### [Español](pages/es/about/)
 ### [English](pages/en/about/)
