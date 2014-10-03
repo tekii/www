@@ -67,6 +67,21 @@ server)
 
     cd "$WD"
     ;;
+
+compile)
+    $ECHO
+    $ECHO "compiling"
+
+    cd "$WD/www"
+    ensure_dir "$WD/www/archetypes"
+    ensure_dir "$WD/www/content"
+    ensure_dir "$WD/www/layout"
+
+    hugo --theme=teppanyaki 
+
+    cd "$WD"
+    ;;
+
 test)
     $ECHO
     ensure_dir "$TMP"
