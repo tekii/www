@@ -73,6 +73,15 @@ test)
     $ECHO "no implementado"
     exit 1
     ;;
+
+dry-run)
+    rsync --dry-run -az --force --delete --progress --exclude-from=publish_exclude.txt -e "ssh" www/public/ www-1-clone.us-central1-a.www-teky-co:/var/www/default
+    exit 1
+    ;;    
+publish)
+    rsync           -az --force --delete --progress --exclude-from=publish_exclude.txt -e "ssh" www/public/ www-1-clone.us-central1-a.www-teky-co:/var/www/default
+    exit 1
+    ;;    
 package)
     $ECHO
     $ECHO "no implementado"
