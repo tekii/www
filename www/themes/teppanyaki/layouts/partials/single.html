@@ -9,7 +9,7 @@
 
 	<script src="/js/modernizr-custom-2.8.2.min.js"></script>
 	{{ "<!--[if lt IE 9]>" | safeHtml }}
-	<script src="/js/respond.min.js"></script>
+	<script src="/js/respond.js"></script>
 	<link rel="stylesheet" href="/css/ie.css?v=20140908161653" media="screen, projection" type="text/css">
 	{{ "<![endif]-->" | safeHtml }}
 	<!-- TODO: revisar si estos los necesitamos -->
@@ -36,6 +36,17 @@
 		</div>
 		{{ partial "footer.html" . }}
 	</div>
-	<script src="/js/compiled.min.js"></script>
+	<script src="/js/jquery-1.5.1.js"></script>
+	<script src="/js/jquery.videoBG.js"></script>
+	<script type="text/javascript">
+	    $('#hero-wrapper').videoBG({
+	    	mp4:'/videos/home.mp4',
+	    	ogv:'/videos/home.ogv',
+	    	webm:'/videos/home.webm',
+	    	poster:'/videos/home.jpg',
+	    	scale:true,
+	    	zIndex:0
+	    });
+	</script>
 </body>
 </html>
