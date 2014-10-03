@@ -61,7 +61,7 @@ server)
     cd "$WD/www"
     ensure_dir "$WD/www/archetypes"
     ensure_dir "$WD/www/content"
-    ensure_dir "$WD/www/layout"
+    ensure_dir "$WD/www/layouts"
 
     hugo --theme=teppanyaki -w server
 
