@@ -90,11 +90,11 @@ test)
     ;;
 
 dry-run)
-    rsync --dry-run -az --force --delete --progress --exclude-from=publish_exclude.txt -e "ssh" www/public/ www-1-clone.us-central1-a.www-teky-co:/var/www/default
+    rsync --dry-run -az --force --delete --progress --exclude-from=publish_exclude.txt -e "ssh -o UserKnownHostsFile=/dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no" www/public/ tati.teky.com.ar:/var/www/default
     exit 1
     ;;    
 publish)
-    rsync           -az --force --delete --progress --exclude-from=publish_exclude.txt -e "ssh" www/public/ www-1-clone.us-central1-a.www-teky-co:/var/www/default
+    rsync           -az --force --delete --progress --exclude-from=publish_exclude.txt -e "ssh -o UserKnownHostsFile=/dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no" www/public/ tati.teky.com.ar:/var/www/default
     exit 1
     ;;    
 package)
