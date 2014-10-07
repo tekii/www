@@ -24,7 +24,7 @@ $('#hero-wrapper').videoBG({
 	poster:'/videos/home.jpg',
 	scale:true,
 	width: "100%",
-	height: "70%",        
+	height: "90%",        
 	zIndex:0
 });
 
