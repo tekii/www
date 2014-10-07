@@ -95,6 +95,8 @@ dry-run)
     ;;    
 publish)
     rsync           -az --force --delete --progress --exclude-from=publish_exclude.txt -e "ssh -o UserKnownHostsFile=/dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no" www/public/ tati.teky.com.ar:/var/www/default
+
+    curl 'http://www.teky.com.ar/pagespeed_admin/cache?purge=*'
     exit 1
     ;;    
 package)
