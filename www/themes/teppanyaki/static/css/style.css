@@ -6199,26 +6199,6 @@ div.show-more-break a {
     background-color: transparent;
     color: #3e79a0;
 }
-div#integrations-preview {
-    margin-top: 5em;
-}
-div#integrations-preview div#integrations-data-providers, div#integrations-preview div#integrations-how-to-partner, div#integrations-preview div#integrations-service-providers {
-    background-repeat: no-repeat;
-    background-size: 80px 80px;
-    padding-left: 100px;
-}
-div#integrations-preview div#integrations-data-providers h4, div#integrations-preview div#integrations-how-to-partner h4, div#integrations-preview div#integrations-service-providers h4 {
-    margin-top: 0;
-}
-div#integrations-preview div#integrations-data-providers {
-    background-image: url(/build/images/integrations/icon-data-providers.jpg);
-}
-div#integrations-preview div#integrations-how-to-partner {
-    background-image: url(/build/images/integrations/icon-how-to-partner.jpg);
-}
-div#integrations-preview div#integrations-service-providers {
-    background-image: url(/build/images/integrations/icon-service-providers.jpg);
-}
 a#service-provider-logo {
     display: block;
     overflow: hidden;
@@ -6232,81 +6212,6 @@ a#service-provider-logo {
 }
 .retina a#service-provider-logo {
     background-image: url(/build/images/integrations/logo-praescient@2x.png);
-}
-div.partner {
-    margin-bottom: 6em;
-    padding: 0 40px;
-}
-div.partner h4 {
-    text-indent: -9999px;
-    background-repeat: no-repeat;
-}
-div.partner#partner-morningstar h4 {
-    min-height: 34px;
-    background-image: url(/build/images/integrations/icon-morningstar.png);
-}
-div.partner#partner-thomson-reuters-clear h4 {
-    min-height: 38px;
-    background-image: url(/build/images/integrations/icon-thomson-reuters.png);
-}
-div.partner#partner-dun-bradstreet h4 {
-    min-height: 70px;
-    background-image: url(/build/images/integrations/icon-dun-bradstreet.png);
-}
-div.partner#partner-dow-jones h4 {
-    min-height: 30px;
-    background-image: url(/build/images/integrations/icon-dow-jones.png);
-}
-div.partner#partner-epidemico h4 {
-    min-height: 38px;
-    background-image: url(/build/images/integrations/icon-epidemico.png);
-}
-div.partner#partner-lexis-nexis h4 {
-    min-height: 36px;
-    background-image: url(/build/images/integrations/icon-lexis-nexis.png);
-}
-div.partner#partner-thomson-reuters h4 {
-    min-height: 38px;
-    background-image: url(/build/images/integrations/icon-thomson-reuters.png);
-}
-div.partner#partner-ihs h4 {
-    min-height: 72px;
-    background-image: url(/build/images/integrations/icon-ihs.png);
-}
-div.partner#partner-inrix h4 {
-    min-height: 47px;
-    background-image: url(/build/images/integrations/icon-inrix.png);
-}
-div.partner#partner-digital-globe h4 {
-    min-height: 48px;
-    background-image: url(/build/images/integrations/icon-digital-globe.png);
-}
-body#page-how-to-partner h2 {
-    margin-bottom: 1em;
-}
-body#page-how-to-partner div#integrations-partner-points {
-    margin-bottom: 2em;
-}
-body#page-how-to-partner div#integrations-partner-points div.partner-point {
-    background-repeat: no-repeat;
-    background-size: 9px 10px;
-    background-position: 20px 5px;
-    padding-left: 40px;
-    padding-right: 60px;
-    margin-bottom: 2em;
-}
-.no-svg body#page-how-to-partner div#integrations-partner-points div.partner-point {
-    background-image: url(/build/images/integrations/bullet.png);
-}
-.svg body#page-how-to-partner div#integrations-partner-points div.partner-point {
-    background-image: url(/build/images/integrations/bullet.svg);
-}
-body#page-how-to-partner div#integrations-partner-points div.partner-point p {
-    margin-top: 0;
-}
-body#page-how-to-partner div.question {
-    margin-bottom: 4em;
-    padding: 0 20px;
 }
 body#page-product-support div#product-support-intro h2 {
     text-align: center;
