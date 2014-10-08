@@ -5646,8 +5646,9 @@ div#hero-subnav nav ul li a.active:after {
     font-size: 1.5rem;
     padding: 10px 0 9px 0;
     width: 100%}
-}#home-middle-section {
-    margin-bottom: 107px;
+}
+#home-middle-section {
+    margin-bottom: 50px;
 }
 #home-middle-section div#home-second-heading {
     margin-bottom: 50px;
@@ -6348,7 +6349,7 @@ footer {
     position: relative;
     overflow: hidden;
     height: 649px;
-    margin-top: 40px;
+    margin-top: 0px;
     padding: 3em 0;
     background-color: #101113;
     color: #a9abad;
@@ -6356,21 +6357,19 @@ footer {
     font-size: 1.2rem;
     line-height: 1.35714;
 }
-@media (min-width: 1025px) {
-    footer {
-    margin-top: 120px;
-}
-}@media (max-width: 768px) {
+@media (max-width: 768px) {
     footer .footer-menu {
     margin-bottom: 20px;
     padding: 0 30px;
+    }
+    footer .footer-menu ul {
+        margin-bottom: 0;
+    }
+    footer .footer-menu ul#menu-uses li {
+        width: 45%
+    }
 }
-footer .footer-menu ul {
-    margin-bottom: 0;
-}
-footer .footer-menu ul#menu-uses li {
-    width: 45%}
-}footer h2 {
+footer h2 {
     font-size: 14px;
     font-size: 1.4rem;
     line-height: 1.35714;
