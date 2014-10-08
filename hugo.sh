@@ -90,13 +90,13 @@ test)
     ;;
 
 dry-run)
-    rsync --dry-run -az --force --delete --progress --exclude-from=publish_exclude.txt -e "ssh -o UserKnownHostsFile=/dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no" www/public/ tati.teky.com.ar:/var/www/default
+    rsync --dry-run -az --force --delete --progress --exclude-from=publish_exclude.txt -e "ssh -o UserKnownHostsFile=/dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no" www/public/ gummo.teky.io:/var/www/default
     exit 1
     ;;    
 publish)
-    rsync           -az --force --delete --progress --exclude-from=publish_exclude.txt -e "ssh -o UserKnownHostsFile=/dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no" www/public/ tati.teky.com.ar:/var/www/default
+    rsync           -az --force --delete --progress --exclude-from=publish_exclude.txt -e "ssh -o UserKnownHostsFile=/dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no" www/public/ gummo.teky.io:/var/www/default
 
-    curl 'http://www.teky.com.ar/pagespeed_admin/cache?purge=*'
+    curl 'http://www.teky.io/pagespeed_admin/cache?purge=*'
     exit 1
     ;;    
 package)
