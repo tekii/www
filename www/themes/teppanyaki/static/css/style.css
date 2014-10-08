@@ -6199,68 +6199,6 @@ div.show-more-break a {
     background-color: transparent;
     color: #3e79a0;
 }
-a#service-provider-logo {
-    display: block;
-    overflow: hidden;
-    text-indent: -9999px;
-    background-repeat: no-repeat;
-    background-size: 168px 40px;
-    min-height: 60px;
-}
-.no-retina a#service-provider-logo {
-    background-image: url(/build/images/integrations/logo-praescient.png);
-}
-.retina a#service-provider-logo {
-    background-image: url(/build/images/integrations/logo-praescient@2x.png);
-}
-body#page-product-support div#product-support-intro h2 {
-    text-align: center;
-    margin: 0 0 1em 0;
-}
-body#page-product-support div#product-support-images {
-    margin: 120px 40px;
-}
-@media (max-width: 767px) {
-    body#page-product-support div#product-support-images {
-    margin: 0;
-}
-body#page-product-support div#product-support-images div.row div.col-sm-4 {
-    margin-bottom: 10px;
-}
-}body#page-product-support div#product-support-images img {
-    width: 100%}
-body#page-product-support div#product-support-content div#product-support-info {
-    margin: 120px 0;
-}
-body#page-product-support div#product-support-content div#product-support-info>div.col-sm-4 {
-    text-align: center;
-    background-repeat: no-repeat;
-    background-position: center top;
-    padding-top: 54px;
-}
-.no-svg body#page-product-support div#product-support-content div#product-support-info>div.col-sm-4#product-support-how-to-apply {
-    background-image: url(/build/images/product-support/icon-how-to-apply.png);
-}
-.svg body#page-product-support div#product-support-content div#product-support-info>div.col-sm-4#product-support-how-to-apply {
-    background-image: url(/build/images/product-support/icon-how-to-apply.svg);
-}
-.no-svg body#page-product-support div#product-support-content div#product-support-info>div.col-sm-4#product-support-life-with-support {
-    background-image: url(/build/images/product-support/icon-life-with-support.png);
-}
-.svg body#page-product-support div#product-support-content div#product-support-info>div.col-sm-4#product-support-life-with-support {
-    background-image: url(/build/images/product-support/icon-life-with-support.svg);
-}
-.no-svg body#page-product-support div#product-support-content div#product-support-info>div.col-sm-4#product-support-a-global-team {
-    background-image: url(/build/images/product-support/icon-global-team.png);
-}
-.svg body#page-product-support div#product-support-content div#product-support-info>div.col-sm-4#product-support-a-global-team {
-    background-image: url(/build/images/product-support/icon-global-team.svg);
-}
-body#page-product-support div#product-support-content div#product-support-first-year div.col-sm-6 img {
-    width: 100%}
-body#page-product-support div#product-support-content div#product-support-first-year div.col-sm-6 h3 {
-    margin-top: 0;
-}
 div#search-results {
     margin-top: 100px;
 }
