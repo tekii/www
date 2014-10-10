@@ -94,9 +94,29 @@ dry-run)
     exit 1
     ;;    
 publish)
-    rsync           -az --force --delete --progress --exclude-from=publish_exclude.txt -e "ssh -o UserKnownHostsFile=/dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no" www/public/ gummo.teky.io:/var/www/default
 
+    $ECHO
+    $ECHO "compiling"
+
+    cd "$WD/www"
+    ensure_dir "$WD/www/archetypes"
+    ensure_dir "$WD/www/content"
+    ensure_dir "$WD/www/layout"
+
+    hugo --theme=teppanyaki 
+
+    cd "$WD"
+    
+    $ECHO
+    $ECHO "publishing"
+
+    rsync           -az --force --delete --progress --exclude-from=publish_exclude.txt -e "ssh -o UserKnownHostsFile=/dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no" www/public/ gummo.teky.io:/var/www/default
+    
+    $ECHO
+    $ECHO "trying to purge the cache."
+    $ECHO
     curl 'https://www.teky.io/pagespeed_admin/cache?purge=*'
+    $ECHO
     exit 1
     ;;    
 package)
