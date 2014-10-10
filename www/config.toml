@@ -1,6 +1,6 @@
-baseurl = "http://www.teky.co"
+baseurl = "https://www.teky.io"
 languageCode = "en-us"
-title = "TEKy"
+title = "TEKY SRL"
 
 [[menu.en_menu]]
     name = "About Us"
@@ -16,5 +16,5 @@ title = "TEKy"
     weight = -200
 [[menu.es_menu]]
     name = "Contacto"
-	url = "contact"
+    url = "contact"
     weight = -100
