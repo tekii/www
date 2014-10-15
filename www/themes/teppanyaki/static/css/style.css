@@ -5114,6 +5114,7 @@ header#site-header nav.navbar {
     font-weight: bold;
     text-transform: uppercase;
     border: none;
+    fill:white;
 }
 header#site-header nav.navbar ul.nav>li.search-form {
     padding: 9px 12px 0 12px;
@@ -5235,6 +5236,7 @@ header#site-header nav.navbar.sticky {
     -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    fill:black;
 }
 header#site-header nav.navbar.sticky button.navbar-toggle span.icon-bar {
     background-color: #101113;
