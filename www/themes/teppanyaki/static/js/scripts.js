@@ -34,11 +34,9 @@ i = function() {
 	return $("button.navbar-toggle").is(":visible") ? 40 : 80;
 };
 h = function() {
-	console.log("f.length:"+f,length)
 	if (f.length) {
   		var a = e.scrollTop(),
     	b = i();
-    	console.log("sticking")
   		a > b && !f.hasClass("sticky") ? f.addClass("sticky") : b > a && f.hasClass("sticky") && !f.data("is-showing") && f.removeClass("sticky")
 	}
 };
