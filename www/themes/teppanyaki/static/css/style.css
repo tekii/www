@@ -4467,12 +4467,6 @@ select {
     -o-border-radius: 0;
     border-radius: 0;
 }
-.no-svg select {
-    background: no-repeat 100% url(/build/images/global/dropdown-arrow.png);
-}
-.svg select {
-    background: no-repeat 100% url(/build/images/global/dropdown-arrow.svg);
-}
 @media (min-width: 768px) {
     select {
     border: none;
@@ -4840,24 +4834,6 @@ div.library-items div.library-preview-box {
     font-size: 1.3rem;
     line-height: 1.15385;
 }
-.no-svg div.library-items div.library-preview-box.video {
-    background-image: url(/build/images/global/button-video.png);
-}
-.svg div.library-items div.library-preview-box.video {
-    background-image: url(/build/images/global/button-video.svg);
-}
-.no-svg div.library-items div.library-preview-box.capabilities {
-    background-image: url(/build/images/global/button-capabilities.png);
-}
-.svg div.library-items div.library-preview-box.capabilities {
-    background-image: url(/build/images/global/button-capabilities.svg);
-}
-.no-svg div.library-items div.library-preview-box.studies {
-    background-image: url(/build/images/global/button-studies.png);
-}
-.svg div.library-items div.library-preview-box.studies {
-    background-image: url(/build/images/global/button-studies.svg);
-}
 div.library-items div.library-preview-box a {
     display: block;
     width: 100%;
@@ -5053,15 +5029,15 @@ header#site-header {
 }
 header#site-header h1#site-name.logo {
     float: left;
-    margin: 0 4px 0 4px;
-    padding: 12px 10px;
+    margin: 4px 4px 0 4px; 
+    padding: 0px 0px; 
 }
 header#site-header h1#site-name.logo a {
     text-indent: 9999px;
     display: block;
-    width: 100px;
+/*    width: 100px;
     height: 25px;
-    overflow: hidden;
+    overflow: hidden; */
     background-repeat: no-repeat;
     -webkit-transition-property: opacity;
     -moz-transition-property: opacity;
@@ -5073,10 +5049,16 @@ header#site-header h1#site-name.logo a {
     transition-duration: 300ms;
 }
 .no-svg header#site-header h1#site-name.logo a {
-    background-image: url(/build/images/global/teppanyaki-logo.png);
-    background-size: 200px 25px;
+    background-image: url(/images/logo-io-inkscape-path-plain-white.png);
     background-position: 0 0;
-    overflow: hidden;
+    width: 196px;
+    height: 40px;
+}
+.no-svg header#site-header .sticky h1#site-name.logo a {
+    background-image: url(/images/logo-io-inkscape-path-plain-black.png);
+    background-position: 0 0;
+    width: 196px;
+    height: 40px;
 }
 .no-svg header#site-header h1#site-name.logo a div#logo-svg {
     display: none;
@@ -5091,9 +5073,6 @@ header#site-header h1#site-name.logo a:hover {
 }
 header#site-header .sticky h1#site-name.logo a div#logo-svg svg {
     fill: #101113;
-}
-.no-svg header#site-header .sticky h1#site-name.logo a {
-    background-position: -100px 0;
 }
 header#site-header nav.navbar {
     -webkit-transition-property: color, border-color, background-color;
@@ -5700,24 +5679,6 @@ div#hero-subnav nav ul li a.active:after {
 #home-middle-section div.solution-preview a {
     clear: both;
     display: inline-block;
-}
-.no-svg #home-middle-section div.solution-preview.preview-1 {
-    background-image: url(/build/images/home/preview-1.png);
-}
-.svg #home-middle-section div.solution-preview.preview-1 {
-    background-image: url(/build/images/home/preview-1.svg);
-}
-.no-svg #home-middle-section div.solution-preview.preview-2 {
-    background-image: url(/build/images/home/preview-2.png);
-}
-.svg #home-middle-section div.solution-preview.preview-2 {
-    background-image: url(/build/images/home/preview-2.svg);
-}
-.no-svg #home-middle-section div.solution-preview.preview-3 {
-    background-image: url(/build/images/home/preview-3.png);
-}
-.svg #home-middle-section div.solution-preview.preview-3 {
-    background-image: url(/build/images/home/preview-3.svg);
 }
 @media (max-width: 1025px) {
     #home-middle-section div.solution-preview {
