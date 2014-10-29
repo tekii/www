@@ -3,6 +3,10 @@ languageCode = "en-us"
 title = "TEKY SRL"
 
 [[menu.en_menu]]
+    name = "Technology"
+    url = "twu"
+    weight = -300
+[[menu.en_menu]]
     name = "About Us"
     url = "about"
     weight = -200
