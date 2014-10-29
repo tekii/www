@@ -18,4 +18,6 @@ slug="twu"
 
 {{% figure src="/images/node.png" class="figure_fixed" link="http://nodejs.org/" %}}
 
-{{% figure src="/images/VMware_logo_gry_RGB_72dpi.jpg" class="figure_fixed" link="http://www.vmware.com/" %}}
+{{% figure src="/images/vmware.png" class="figure_fixed" link="http://www.vmware.com/" %}}
+
+{{% figure src="/images/gluster.png" class="figure_fixed" link="http://http://www.gluster.org/" %}}
