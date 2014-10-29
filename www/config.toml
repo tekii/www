@@ -15,6 +15,10 @@ title = "TEKY SRL"
     url = "contact"
     weight = -100
 [[menu.es_menu]]
+    name = "Tecnologias"
+    url = "twu"
+    weight = -300    
+[[menu.es_menu]]
     name = "Nuestra Historia"
     url = "about"
     weight = -200
