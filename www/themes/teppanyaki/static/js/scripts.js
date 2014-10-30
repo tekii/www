@@ -16,18 +16,15 @@ var debounce = function (func, threshold, execAsap) {
 	    timeout = setTimeout(delayed, threshold || 100); 
 	};
 }
-/* aca se cambia la proporcion del video pablito */
+/*
 $('#hero-wrapper').videoBG({
-	mp4:'/videos/home.mp4',
-	ogv:'/videos/home.ogv',
-	webm:'/videos/home.webm',
 	poster:'/videos/home.jpg',
 	scale:true,
 	width: "100%",
 	height: "90%",        
 	zIndex:0
 });
-
+*/
 f = $("header#site-header nav");
 e = $(window),
 i = function() {
