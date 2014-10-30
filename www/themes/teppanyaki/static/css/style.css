@@ -6926,10 +6926,3 @@ body#page-forms div.wFormContainer div.wForm div.actions {
 body#page-forms div.wFormContainer p.supportInfo {
     display: none;
 }
-
-
-.figure_fixed {
-    width:auto;
-    max-width:200px;
-    height:auto;
-}
