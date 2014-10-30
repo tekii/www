@@ -115,5 +115,16 @@ ul.rig.columns-4 li {
 
 }
 
+div#hero-wrapper {
+	
+	background-color: #2B4255;
+	background-image: 
+		/*url(/build/images/home/footer-background.png), */
+		linear-gradient(-179deg, #496a80 0%, #061728 100%);
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
 
 

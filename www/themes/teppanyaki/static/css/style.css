@@ -5629,6 +5629,7 @@ div#hero-subnav nav ul li a.active:after {
     width: 100%}
 }
 #home-middle-section {
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 #home-middle-section div#home-second-heading {
