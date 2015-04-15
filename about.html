@@ -1,16 +1,14 @@
 <!DOCTYPE html>
+<!--include(common.m4)-->
 <html>
-  <head>
-    include(`head.html')
+<head>  
+    <meta>    
+    include(head.html) 
     <title>TEKY SRL - ABOUT</title>
-  </head>
+</head>
   <body>
-   
     <div class="tl_page_wrap">
-
-
-      include(`navbar.html')
-      
+      include(navbar.html)dnl     
       <div class="container clearfix tl_page_container ">
         <div class="tl_page">
           <div id="dev_page_content_wrap" class=" dev_faq_page">
@@ -20,15 +18,13 @@
             <div id="dev_page_content">
     
               <blockquote>
-                ifelse(__LANG__,__EN__,`
-                <p>FAQ quote.</p>
-                ',)
-                ifelse(__LANG__,__ES__,`
-                <p>FAQ quote.</p>
-                ',)
+		<p>
+                ifelse(__LANG__,__EN__,«FAQ quote.»,)
+                ifelse(__LANG__,__ES__,«FAQ quote.»,)
+		</p>
               </blockquote>
 
-              ifelse(__LANG__,__EN__,`
+              ifelse(__LANG__,__EN__,«
               <p><b>TEKY SRL</b> began its operations on 2006. Our first goal was the design and implementation of a tracking software system for track oncological drugs. After four months of heavy development, we released <b>TrazAudit®</b>, Argentinian drug industry system operated by Track & Trace S. A.</p>
 
               <p>After eight years of continuous operations, the third generation of <b>TrazAudit®</b> registered 14.790.801 transactions and 20.147.998 uniquely identified drugs from 3.399 medical specialities, serving 515.784 patients.</p>
@@ -42,9 +38,9 @@
               <p><b>Auditor®</b> analyzes available information, extracts, identifies by relevancy, calculates, normalizes and transmits all the events required by ANMAT. The result is automatically audited. Operators receive any detected deviation  in order to fix it and retransmit the event.</p>
 
               <p><b>Auditor®</b> has processed 20.366.773 transactions, univocally identified 5.437.193 drug packages and currently analyzes 70000 transactions on a daily basis.</p>
-              ',)
+              »,)
 
-              ifelse(__LANG__,__ES__,`
+              ifelse(__LANG__,__ES__,«
 <p><b>TEKY SRL</b> inició actividades en el año 2006 con el objetivo de diseñar e implementar el sistema que registrase los medicamentos distribuidos por los convenios oncológicos, cuatro meses después entró en operación TrazAudit®, el sistema de trazabilidad de la industria.</p>
 
 <p>Tras ocho años de operación ininterrumpida, la tercera generación de <b>TrazAudit®</b> acumula 14.790.801 transacciones,  20.147.998 medicamentos identificados unívocamente de entre 3.399 especialidades medicinales y afectando 515.784 afiliados.</p>
@@ -58,7 +54,7 @@
 <p><b>Auditor®</b> Analiza la información disponible, extrae el flujo de transacciones, identifica aquellas relevantes, calcula y transmite la secuencia de eventos normalizados requeridos por el ANMAT. El resultado de la transmisión se audita automáticamente y cualquier desviación es derivada a un operador quien soluciona la no conformidad y retransmite el evento.</p>
 
 <p><b>Auditor®</b> comenzo a operar al momento entrar en vigencia la resolución, a la fecha procesó 20.366.773 de transacciones, recibe diariamente más de 70.000 movimientos y acumula 5.437.193 medicamentos identificados unívocamente.</p>
-              ',)
+              »,)
             </div>
   
           </div>
@@ -69,11 +65,10 @@
 
     </div>
 
-include(`footer.html')
+include(footer.html)
 
     <script src="../js/main.js"></script>
    
-
   </body>
 </html>
 

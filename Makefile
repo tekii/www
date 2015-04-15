@@ -69,7 +69,7 @@ $(JS_ROOT)/%.js : js/%.js | $(JS_ROOT)
 	cp $< $@
 
 ALL_FILES = $(EN_PAGES) $(ES_PAGES) $(CSS_ROOT)/$(BOOTSTRAP_FILE) \
- $(CSS_ROOT)/local.css $(JS_ROOT)/main.js $(BUCKET)/favicon.ico
+ $(CSS_ROOT)/local.css $(CSS_ROOT)/footer.css $(JS_ROOT)/main.js $(BUCKET)/favicon.ico
 
 all: $(ALL_FILES)
 
