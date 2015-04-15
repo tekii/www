@@ -51,13 +51,13 @@ CSS_DEPS = css
 $(BUCKET)/favicon.ico : $(SOURCE)/favicon.ico | $(BUCKET)
 	cp $< $@
 
-INCLUDE_FILES = $(SOURCE)/head.html $(SOURCE)/navbar.html $(SOURCE)/footer.html 
+INCLUDE_FILES = $(SOURCE)/layout.html
 
 $(EN_ROOT)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(EN_ROOT)
-	$(M4) $(M4_FLAGS) $(EN_FLAGS) -D __FNAME__=$(@F) $< >$@
+	$(M4) $(M4_FLAGS) $(EN_FLAGS) -D __FNAME__=$(@F) layout.html >$@
 
 $(ES_ROOT)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(ES_ROOT)
-	$(M4) $(M4_FLAGS) $(ES_FLAGS) -D __FNAME__=$(@F) $< >$@
+	$(M4) $(M4_FLAGS) $(ES_FLAGS) -D __FNAME__=$(@F) layout.html >$@
 
 $(CSS_ROOT)/%.css : css/%.css | $(CSS_ROOT)
 	cp $< $@
@@ -71,7 +71,7 @@ $(JS_ROOT)/%.js : js/%.js | $(JS_ROOT)
 ALL_FILES = $(EN_PAGES) $(ES_PAGES) $(CSS_ROOT)/$(BOOTSTRAP_FILE) \
  $(CSS_ROOT)/local.css $(CSS_ROOT)/footer.css $(JS_ROOT)/main.js $(BUCKET)/favicon.ico
 
-all: $(ALL_FILES)
+all: $(ALL_FILES) $(SOURCE)/Makefile
 
 clean:
 	rm -f $(ALL_FILES)
