@@ -3,7 +3,7 @@ M4 = $(shell which m4)
 EN_PARTICLE = en
 ES_PARTICLE = es
 
-BUCKET 	= bucket
+BUCKET 	= /tmp/bucket
 EN_ROOT = $(BUCKET)/$(EN_PARTICLE)
 ES_ROOT = $(BUCKET)/$(ES_PARTICLE)
 CSS_ROOT= $(BUCKET)/css
@@ -46,6 +46,7 @@ $(JS_ROOT):
 
 EN_PAGES = $(EN_ROOT)/index.html $(EN_ROOT)/about.html $(EN_ROOT)/contact.html $(EN_ROOT)/faq.html
 ES_PAGES = $(ES_ROOT)/index.html $(ES_ROOT)/about.html $(ES_ROOT)/contact.html $(ES_ROOT)/faq.html
+
 CSS_DEPS = css
 
 $(BUCKET)/favicon.ico : $(SOURCE)/favicon.ico | $(BUCKET)
@@ -75,7 +76,7 @@ all: $(ALL_FILES) $(SOURCE)/Makefile
 
 clean:
 	rm -f $(ALL_FILES)
-	rmdir $(EN_ROOT) $(ES_ROOT) $(CSS_ROOT) $(IMG_ROOT) $(JS_ROOT)
+	rmdir $(EN_ROOT) $(ES_ROOT) $(CSS_ROOT) $(JS_ROOT)
 	rmdir $(BUCKET)
 
 
