@@ -75,5 +75,9 @@
     text-transform: uppercase;
     margin: 0;
   }
+/* por ahora lo meto en footer pero tecnicamente no es lo correcto */
+  .navbar .container .collapse {
+    display: block;
+  }
 }
 
