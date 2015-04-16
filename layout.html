@@ -1,0 +1,132 @@
+m4_divert(`-1')
+m4_changequote(`«', `»')
+m4_divert
+m4_include(__FNAME__)m4_dnl
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link href="../css/__BOOTSTRAP_FILE__" rel="stylesheet">  	
+    <link href="../css/footer.css" rel="stylesheet" media="screen">   
+    m4_dnl<link href="../css/local.css" rel="stylesheet" media="screen">   
+    m4_dnl<link href="css/teky.css" rel="stylesheet" media="screen">
+    m4_undivert(2)
+  </head>
+  <body>  
+    <div class="tl_page_wrap">
+      <!-- begin navbar -->
+      <div class="tl_page_head navbar navbar-static-top navbar navbar-tg">
+        <div class="navbar-inner">
+          <div class="container clearfix">
+            <ul class="nav navbar-nav navbar-right">
+              <!--
+                  <li class="navbar-twitter">
+                    <a href="https://twitter.com/teky-io" target="_blank" data-track="Follow/Twitter" onclick="trackDlClick(this, event)">
+                      <i class="icon icon-twitter"></i><span class="hidden-xs"> Twitter</span></a>
+                  </li>
+                  -->
+              <li class="navbar-twitter">
+                m4_ifelse(__LANG__,__EN__,,
+                <a href="../__EN__/__FNAME__" >English</a>
+                )
+                m4_ifelse(__LANG__,__ES__,,
+                <a href="../__ES__/__FNAME__" >Español</a>
+                )
+              </li>
+            </ul>
+            <ul class="nav navbar-nav">
+              m4_define(NAV_ITEM,«<li class="m4_ifelse($1,__FNAME__,active) $3"><a href="$1">$2</a></li>»)m4_dnl
+              
+              NAV_ITEM(about.html,About)m4_dnl
+              NAV_ITEM(contact.html,Contact)m4_dnl
+              m4_divert(-1)
+              NAV_ITEM(faq.html,FAQ)m4_dnl
+              NAV_ITEM(hidden.html,Hidden,hidden-xs)m4_dnl
+              m4_divert
+            </ul>
+          </div>
+        </div>        
+      </div>
+      <!-- end navbar -->
+      <!-- begin content -->   
+      <div class="container clearfix tl_page_container ">
+        <div class="tl_page">
+          m4_undivert(3)
+        </div>
+      </div>
+      <!-- end content -->     
+      <!-- begin footer -->     
+      <div class="footer_wrap">
+        <div class="footer_columns_wrap clearfix footer_desktop">
+          <div class="footer_column">
+            <h5>TEKY SRL</h5>
+            <div class="footer_company"></div>
+            m4_ifelse(__LANG__,__EN__,`Company footer description.',)
+            m4_ifelse(__LANG__,__ES__,`Descripcion de la compania.',)
+          </div>
+          
+          <div class="footer_column">
+            <h5>
+              <a href="faq.html">About</a></h5>
+            <ul>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer_column">
+            <h5>
+              <a href="">Mobile Apps</a></h5>
+            <ul>
+              <li><a href="">iPhone/iPad</a></li>
+              <li><a href="">Android</a></li>
+            </ul>
+          </div>
+          <div class="footer_column">
+            <h5>
+              <a href="">Desktop Apps</a></h5>
+            <ul>
+              <li><a href="">PC/Mac/Linux</a></li>
+              <li><a href="">Mac OS</a></li>
+            </ul>
+          </div>
+          <div class="footer_column">
+            <h5>
+              <a href="https://">Platform</a>
+            </h5>
+            <ul>
+              <li><a href="http://">API</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- mobile -->
+        <div class="footer_columns_wrap clearfix footer_mobile">
+          <div class="footer_column">
+            <h5>
+              <a href="about.html">
+                m4_ifelse(__LANG__,__EN__,About,)
+                m4_ifelse(__LANG__,__ES__,Acerca de,)
+              </a>
+            </h5>
+          </div>
+          <div class="footer_column">
+            <h5>
+              <a href="contact.html">
+                m4_ifelse(__LANG__,__EN__,Contact,)
+                m4_ifelse(__LANG__,__ES__,Contacto,)
+              </a>
+            </h5>
+          </div>
+          m4_divert(-1)
+          <div class="footer_column">
+            <h5><a href="https://twitter.com/talonariomovil" target="_blank" data-track="Follow/Twitter" onclick="trackDlClick(this, event)">Twitter</a></h5>
+          </div>
+          m4_divert
+        </div>
+      </div>
+      <!-- end footer -->     
+      <script src="../js/main.js"></script>
+  </body>
+</html>
