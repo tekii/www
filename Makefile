@@ -44,8 +44,8 @@ $(JS_ROOT):
 	mkdir -p $(JS_ROOT)
 
 
-EN_PAGES = $(EN_ROOT)/about.html $(EN_ROOT)/contact.html $(EN_ROOT)/faq.html
-ES_PAGES = $(ES_ROOT)/about.html $(ES_ROOT)/contact.html $(ES_ROOT)/faq.html
+EN_PAGES = $(EN_ROOT)/about.html $(EN_ROOT)/contact.html $(EN_ROOT)/404.html
+ES_PAGES = $(ES_ROOT)/about.html $(ES_ROOT)/contact.html $(ES_ROOT)/404.html
 
 CSS_DEPS = css
 
@@ -70,7 +70,7 @@ $(JS_ROOT)/%.js : js/%.js | $(JS_ROOT)
 	cp $< $@
 
 ALL_FILES = $(EN_PAGES) $(ES_PAGES) $(CSS_ROOT)/$(BOOTSTRAP_FILE) \
- $(CSS_ROOT)/local.css $(CSS_ROOT)/footer.css $(JS_ROOT)/main.js $(BUCKET)/favicon.ico
+ $(CSS_ROOT)/footer.css $(JS_ROOT)/main.js $(BUCKET)/favicon.ico
 
 all: $(ALL_FILES) $(SOURCE)/Makefile
 
@@ -81,3 +81,5 @@ clean:
 
 
 #gsutil -m rsync -ndr ../bucket/ gs://www.teky.io 
+#gsutil web set -m en/index.html -e en/404.html gs://www.teky.io
+#gsutil acl ch -r -u AllUsers:R gs://www.teky.io/
