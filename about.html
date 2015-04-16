@@ -1,16 +1,19 @@
+m4_divert(2)m4_dnl
+<title>m4_ifelse(__LANG__,__EN__,«TEKY SRL - About Us»)m4_ifelse(__LANG__,__ES__,«TEKY SRL - Nuestra Historia»)</title>
+m4_divert(3)m4_dnl
 <div id="dev_page_content_wrap" class=" ">
   <h1 id="dev_page_title">
-    ifelse(__LANG__,__EN__,«About Us»,)
-    ifelse(__LANG__,__ES__,«Nuestra Historia»,)
+    m4_ifelse(__LANG__,__EN__,«About Us»,)
+    m4_ifelse(__LANG__,__ES__,«Nuestra Historia»,)
   </h1>
   <div id="dev_page_content">
-    dnl    <blockquote>
-    dnl      <p>
-    dnl        ifelse(__LANG__,__EN__,«About Us»,)
-    dnl        ifelse(__LANG__,__ES__,«Nuestra Historia»,)
-    dnl      </p>
-    dnl    </blockquote>    
-    ifelse(__LANG__,__EN__,«
+    m4_dnl    <blockquote>
+    m4_dnl      <p>
+    m4_dnl        m4_ifelse(__LANG__,__EN__,«About Us»,)
+    m4_dnl        m4_ifelse(__LANG__,__ES__,«Nuestra Historia»,)
+    m4_dnl      </p>
+    m4_dnl    </blockquote>    
+    m4_ifelse(__LANG__,__EN__,«
     <p><strong>TEKY SRL</strong> began its operations on 2006.  Our
     first goal was the design and implementation of a tracking
     software system for track oncological drugs. After four months of
@@ -49,8 +52,8 @@
     <p><strong>Auditor®</strong> has processed 20.366.773
     transactions, univocally identified 5.437.193 drug packages and
     currently analyzes 70000 transactions on a daily basis.</p>
-    »,)dnl 
-    ifelse(__LANG__,__ES__,«
+    »,)m4_dnl 
+    m4_ifelse(__LANG__,__ES__,«
     <p><strong>TEKY SRL</strong> inició actividades en el año 2006 con
     el objetivo de diseñar e implementar el sistema que registrase los
     medicamentos distribuidos por los convenios oncológicos, cuatro
@@ -92,6 +95,7 @@
     vigencia la resolución, a la fecha procesó 20.366.773 de
     transacciones, recibe diariamente más de 70.000 movimientos y
     acumula 5.437.193 medicamentos identificados unívocamente.</p>
-    »,)dnl
+    »,)m4_dnl
   </div>
 </div>
+m4_divert

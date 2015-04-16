@@ -14,7 +14,7 @@ SOURCE	= .
 
 BOOTSTRAP_FILE=bootstrap.css
 
-M4_FLAGS=-D IMAGES=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
+M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
  -D __EN__=$(EN_PARTICLE) -D __ES__=$(ES_PARTICLE) -I $(SOURCE)
 
 EN_FLAGS=-D __LANG__=$(EN_PARTICLE)
@@ -44,8 +44,8 @@ $(JS_ROOT):
 	mkdir -p $(JS_ROOT)
 
 
-EN_PAGES = $(EN_ROOT)/index.html $(EN_ROOT)/about.html $(EN_ROOT)/contact.html $(EN_ROOT)/faq.html
-ES_PAGES = $(ES_ROOT)/index.html $(ES_ROOT)/about.html $(ES_ROOT)/contact.html $(ES_ROOT)/faq.html
+EN_PAGES = $(EN_ROOT)/about.html $(EN_ROOT)/contact.html $(EN_ROOT)/faq.html
+ES_PAGES = $(ES_ROOT)/about.html $(ES_ROOT)/contact.html $(ES_ROOT)/faq.html
 
 CSS_DEPS = css
 
