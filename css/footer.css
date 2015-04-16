@@ -1,0 +1,83 @@
+.footer_wrap {
+  border-top: 1px solid #e8e8e8;
+  max-width: 925px;
+  margin: 10px auto 0;
+  padding: 28px 0 34px;
+}
+
+.footer_columns_wrap {
+  padding-left: 0;
+  padding: 0 0 0 63px;
+  margin: 0;
+}
+
+.footer_column {
+  float: left;
+  padding-right: 78px;
+}
+
+.footer_column h5 {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 9px;
+}
+.footer_column h5 a {
+  color: inherit;
+}
+.footer_column_company {
+  width: 290px;
+  padding-right: 50px;
+}
+.footer_column:last-child {
+  padding-right: 0;
+}
+.footer_column:first-child {
+  padding-left: 0;
+}
+.footer_column ul,
+.footer_column ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer_column ul li {
+  font-size: 14px;
+  line-height: 23px;
+}
+.footer_mobile {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .footer_wrap {
+    padding: 16px 0 16px;
+  }
+  .footer_desktop {
+    display: none;
+  }
+  .footer_mobile {
+    display: block;
+  }
+  .footer_columns_wrap {
+    text-align: center;
+    padding: 0;
+  }
+  .footer_column {
+    display: inline-block;
+    float: none;
+    width: auto;
+    padding: 0 8px;
+  }
+  .footer_column h5 {
+    color: #08c;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 0;
+  }
+/* por ahora lo meto en footer pero tecnicamente no es lo correcto */
+  .navbar .container .collapse {
+    display: block;
+  }
+}
+
