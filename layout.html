@@ -15,11 +15,21 @@ m4_include(__FNAME__)m4_dnl
     m4_undivert(2)
   </head>
   <body>  
-    <div class="tl_page_wrap">
+    <div>
       <!-- begin navbar -->
-      <div class="tl_page_head navbar navbar-static-top navbar navbar-tg">
-        <div class="navbar-inner">
-          <div class="container clearfix">
+      <div class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- la hamburguesa (hamburger menu) -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#teky-upper-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button> 
+            <a class="navbar-brand" href="#">TEKy</a>         
+          </div>
+          <div class="collapse navbar-collapse" id="teky-upper-navbar">
             <ul class="nav navbar-nav navbar-right">
               <!--
                   <li class="navbar-twitter">
@@ -52,9 +62,7 @@ m4_include(__FNAME__)m4_dnl
       <!-- end navbar -->
       <!-- begin content -->   
       <div class="container clearfix tl_page_container ">
-        <div class="tl_page">
-          m4_undivert(3)
-        </div>
+        m4_undivert(3)
       </div>
       <!-- end content -->     
       <!-- begin footer -->     
@@ -128,5 +136,7 @@ m4_include(__FNAME__)m4_dnl
       </div>
       <!-- end footer -->     
       <script src="../js/main.js"></script>
+      <script src="../js/jquery-2.1.3.js"></script>
+      <script src="../js/bootstrap.js"></script>
   </body>
 </html>
