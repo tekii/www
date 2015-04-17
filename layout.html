@@ -64,7 +64,7 @@ m4_include(__FNAME__)m4_dnl
       <div class="footer_wrap">
         <div class="footer_columns_wrap clearfix footer_desktop">
           <div class="footer_column">
-            <h5>TEKY SRL</h5>
+            <h5><span style="color:black;font-weight: bold;">TEK</span><span style="color:red;font-weight: bold;">Y</span><span style="color:black;font-weight: bold;"> SRL</span></h5>
             <div class="footer_company"></div>
             m4_ifelse(__LANG__,__EN__,`Company footer description.',)
             m4_ifelse(__LANG__,__ES__,`Descripcion de la compania.',)
@@ -74,7 +74,9 @@ m4_include(__FNAME__)m4_dnl
             <h5>
               <a href="about.html">About</a></h5>
             <ul>
+              m4_divert(-1)
               <li><a href="blog.html">Blog</a></li>
+              m4_divert
             </ul>
           </div>
           <div class="footer_column">

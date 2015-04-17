@@ -44,13 +44,13 @@ $(JS_ROOT):
 	mkdir -p $(JS_ROOT)
 
 
-EN_PAGES = $(EN_ROOT)/about.html $(EN_ROOT)/contact.html $(EN_ROOT)/404.html
-ES_PAGES = $(ES_ROOT)/about.html $(ES_ROOT)/contact.html $(ES_ROOT)/404.html
-
 CSS_DEPS = css
 
 $(BUCKET)/favicon.ico : $(SOURCE)/favicon.ico | $(BUCKET)
 	cp $< $@
+
+$(BUCKET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html | $(BUCKET)
+	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
 
 INCLUDE_FILES = $(SOURCE)/layout.html
 
@@ -69,15 +69,18 @@ $(IMG_ROOT)/% : img/% | $(IMG_ROOT)
 $(JS_ROOT)/%.js : js/%.js | $(JS_ROOT)
 	cp $< $@
 
-ALL_FILES = $(EN_PAGES) $(ES_PAGES) $(CSS_ROOT)/$(BOOTSTRAP_FILE) \
- $(CSS_ROOT)/footer.css $(JS_ROOT)/main.js $(BUCKET)/favicon.ico
+EN_PAGES = $(EN_ROOT)/about.html $(EN_ROOT)/contact.html 
+ES_PAGES = $(ES_ROOT)/about.html $(ES_ROOT)/contact.html 
+ALL_PAGES = $(BUCKET)/404.html $(BUCKET)/index.html \
+ $(EN_PAGES) $(ES_PAGES) $(CSS_ROOT)/$(BOOTSTRAP_FILE) \
+ $(CSS_ROOT)/footer.css $(JS_ROOT)/main.js $(BUCKET)/favicon.ico \
+ $(IMG_ROOT)/us.png $(IMG_ROOT)/es.png
 
-
-all: $(ALL_FILES) $(SOURCE)/Makefile
+all: $(ALL_PAGES) $(SOURCE)/Makefile
 
 clean:
-	rm -f $(ALL_FILES)
-	rmdir $(EN_ROOT) $(ES_ROOT) $(CSS_ROOT) $(JS_ROOT)
+	rm -f $(ALL_PAGES)
+	rmdir $(EN_ROOT) $(ES_ROOT) $(CSS_ROOT) $(JS_ROOT) $(IMG_ROOT)
 	rmdir $(BUCKET)
 
 

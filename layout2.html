@@ -1,0 +1,45 @@
+m4_divert(`-1')
+m4_changequote(`«', `»')
+m4_divert
+m4_include(__FNAME__)m4_dnl
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://www.teky.io/favicon.ico" type="image/x-icon" />
+    <link href="http://www.teky.io/css/__BOOTSTRAP_FILE__" rel="stylesheet">  	
+    <link href="http://www.teky.io/css/footer.css" rel="stylesheet" media="screen">   
+    m4_undivert(2)
+  </head>
+  <body>  
+    <div>
+      <!-- begin navbar -->
+      <div class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.teky.io/">
+              <span style="color:black;font-weight: bold;">TEK</span><span style="color:red;font-weight: bold;">Y</span>
+            </a>         
+          </div>
+          <div class="collapse navbar-collapse" id="teky-upper-navbar">
+          </div>
+        </div>        
+      </div>
+      <!-- end navbar -->
+      <!-- begin content -->   
+      <div class="container clearfix">
+        m4_undivert(3)
+      </div>
+      <!-- end content -->     
+      m4_divert(-1)
+      <!-- begin footer -->     
+      <div class="footer_wrap">
+        <div class="footer_columns_wrap clearfix footer_desktop">
+        </div>
+      </div>
+      <!-- end footer -->     
+      m4_divert
+      <script src="../js/main.js"></script>
+  </body>
+</html>
