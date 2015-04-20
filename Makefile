@@ -20,7 +20,6 @@ M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
 EN_FLAGS=-D __LANG__=$(EN_PARTICLE)
 ES_FLAGS=-D __LANG__=$(ES_PARTICLE)
 
-
 SOURCE_M4 = index.m4.html faq.m4.html
 PAGES = $(subst .m4.,.en.,$(SOURCE_M4)) $(subst .m4.,.sp.,$(SOURCE_M4))
 
@@ -49,10 +48,10 @@ CSS_DEPS = css
 $(BUCKET)/favicon.ico : $(SOURCE)/favicon.ico | $(BUCKET)
 	cp $< $@
 
-$(BUCKET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html | $(BUCKET)
+$(BUCKET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/tpy.m4 | $(BUCKET)
 	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
 
-INCLUDE_FILES = $(SOURCE)/layout.html
+INCLUDE_FILES = $(SOURCE)/layout.html $(SOURCE)/tpy.m4
 
 $(EN_ROOT)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(EN_ROOT)
 	$(M4) $(M4_FLAGS) $(EN_FLAGS) -D __FNAME__=$(@F) layout.html >$@
