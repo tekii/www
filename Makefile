@@ -73,7 +73,7 @@ EN_PAGES = $(EN_ROOT)/about.html $(EN_ROOT)/contact.html
 ES_PAGES = $(ES_ROOT)/about.html $(ES_ROOT)/contact.html 
 ALL_PAGES = $(BUCKET)/404.html $(BUCKET)/index.html \
  $(EN_PAGES) $(ES_PAGES) $(CSS_ROOT)/$(BOOTSTRAP_FILE) \
- $(CSS_ROOT)/footer.css $(JS_ROOT)/main.js $(BUCKET)/favicon.ico \
+ $(CSS_ROOT)/custom.css $(JS_ROOT)/main.js $(BUCKET)/favicon.ico \
  $(IMG_ROOT)/us.png $(IMG_ROOT)/es.png
 
 all: $(ALL_PAGES) $(SOURCE)/Makefile
