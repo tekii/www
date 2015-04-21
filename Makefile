@@ -1,88 +1,96 @@
 M4 = $(shell which m4)
 
-EN_PARTICLE = en
-ES_PARTICLE = es
+__EN__ := en
+__ES__ := es
 
-BUCKET 	= /tmp/bucket
-EN_ROOT = $(BUCKET)/$(EN_PARTICLE)
-ES_ROOT = $(BUCKET)/$(ES_PARTICLE)
-CSS_ROOT= $(BUCKET)/css
-IMG_ROOT= $(BUCKET)/img
-JS_ROOT	= $(BUCKET)/js
+ROOT_TARGET:=/tmp/bucket
+CSS:=css
+IMG:=img
+JS :=js
+EN_TARGET :=$(ROOT_TARGET)/$(__EN__)
+ES_TARGET :=$(ROOT_TARGET)/$(__ES__)
+CSS_TARGET:=$(ROOT_TARGET)/$(CSS)
+IMG_TARGET:=$(ROOT_TARGET)/$(IMG)
+JS_TARGET :=$(ROOT_TARGET)/$(JS)
 
 SOURCE	= .
+
+vpath %.css $(CSS)
+vpath %.png $(IMG)
+vpath %.js  $(JS)
 
 BOOTSTRAP_FILE=bootstrap.css
 
 M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
- -D __EN__=$(EN_PARTICLE) -D __ES__=$(ES_PARTICLE) -I $(SOURCE)
+ -D __EN__=$(__EN__) -D __ES__=$(__ES__) -D__LANG__=$(__LANG__) -I $(SOURCE) 
 
-EN_FLAGS=-D __LANG__=$(EN_PARTICLE)
-ES_FLAGS=-D __LANG__=$(ES_PARTICLE)
+$(ROOT_TARGET) $(EN_TARGET) $(ES_TARGET) $(CSS_TARGET) $(IMG_TARGET) $(JS_TARGET): 
+	mkdir -p $@
 
-SOURCE_M4 = index.m4.html faq.m4.html
-PAGES = $(subst .m4.,.en.,$(SOURCE_M4)) $(subst .m4.,.sp.,$(SOURCE_M4))
-
-
-$(BUCKET):
-	mkdir -p $(BUCKET)
-
-$(EN_ROOT):
-	mkdir -p $(EN_ROOT)
-
-$(ES_ROOT):
-	mkdir -p $(ES_ROOT)
-
-$(CSS_ROOT):
-	mkdir -p $(CSS_ROOT)
-
-$(IMG_ROOT):
-	mkdir -p $(IMG_ROOT)
-
-$(JS_ROOT):
-	mkdir -p $(JS_ROOT)
+$(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html | $(ROOT_TARGET)
+	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
 
 
-CSS_DEPS = css
+$(EN_TARGET)/% : | $(EN_TARGET)
+$(ES_TARGET)/% : | $(ES_TARGET) 
 
-$(BUCKET)/favicon.ico : $(SOURCE)/favicon.ico | $(BUCKET)
+$(EN_TARGET)/% : __LANG__=$(__EN__) 
+$(ES_TARGET)/% : __LANG__=$(__ES__) 
+
+$(ROOT_TARGET)/favicon.ico : $(SOURCE)/favicon.ico | $(ROOT_TARGET)
 	cp $< $@
 
-$(BUCKET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/tpy.m4 | $(BUCKET)
+$(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/tpy.m4 | $(ROOT_TARGET)
 	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
 
 INCLUDE_FILES = $(SOURCE)/layout.html $(SOURCE)/tpy.m4
 
-$(EN_ROOT)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(EN_ROOT)
+$(EN_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(EN_TARGET)
 	$(M4) $(M4_FLAGS) $(EN_FLAGS) -D __FNAME__=$(@F) layout.html >$@
 
-$(ES_ROOT)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(ES_ROOT)
+$(ES_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(ES_TARGET)
 	$(M4) $(M4_FLAGS) $(ES_FLAGS) -D __FNAME__=$(@F) layout.html >$@
 
-$(CSS_ROOT)/%.css : css/%.css | $(CSS_ROOT)
+$(CSS_TARGET)/%.css : $(CSS)/%.css | $(CSS_TARGET)
 	cp $< $@
 
-$(IMG_ROOT)/% : img/% | $(IMG_ROOT)
+$(IMG_TARGET)/% : $(IMG)/% | $(IMG_TARGET)
 	cp $< $@
 
-$(JS_ROOT)/%.js : js/%.js | $(JS_ROOT)
+$(JS_TARGET)/%.js : $(JS)/%.js | $(JS_TARGET)
 	cp $< $@
 
-EN_PAGES = $(EN_ROOT)/about.html $(EN_ROOT)/contact.html 
-ES_PAGES = $(ES_ROOT)/about.html $(ES_ROOT)/contact.html 
-ALL_PAGES = $(BUCKET)/404.html $(BUCKET)/index.html \
- $(EN_PAGES) $(ES_PAGES) $(CSS_ROOT)/$(BOOTSTRAP_FILE) \
- $(CSS_ROOT)/custom.css $(JS_ROOT)/main.js $(BUCKET)/favicon.ico \
- $(IMG_ROOT)/us.png $(IMG_ROOT)/es.png
+PAGES := about.html contact.html
+HTML_FILES := 404.html index.html $(addprefix $(__EN__)/,$(PAGES)) $(addprefix $(__ES__)/, $(PAGES))
 
-all: $(ALL_PAGES) $(SOURCE)/Makefile
+ALL_FILES:= $(HTML_FILES)  \
+ $(CSS)/$(BOOTSTRAP_FILE) $(CSS)/custom.css \
+ $(JS)/main.js favicon.ico \
+ $(IMG)/us.png $(IMG)/es.png
 
+
+ALL_PAGES = $(addprefix $(ROOT_TARGET)/, $(ALL_FILES))
+
+#EN_FILES := $(addprefix $(EN_TARGET)/, $(PAGES))
+#ES_FILES := $(addprefix $(ES_TARGET)/, $(PAGES)) 
+#$(EN_PAGES): | $(EN_TARGET)
+#$(ES_PAGES): | $(ES_TARGET)
+
+#include $(HTML_FILES:.html=.d)
+
+PHONY += all
+all: $(ALL_PAGES) $(SOURCE)/Makefile 
+	
+
+PHONY += clean
 clean:
 	rm -f $(ALL_PAGES)
-	rmdir $(EN_ROOT) $(ES_ROOT) $(CSS_ROOT) $(JS_ROOT) $(IMG_ROOT)
-	rmdir $(BUCKET)
-
+	rmdir $(EN_TARGET) $(ES_TARGET) $(CSS_TARGET) $(JS_TARGET) $(IMG_TARGET)
+	rmdir $(ROOT_TARGET)
 
 #gsutil -m rsync -ndr ../bucket/ gs://www.teky.io 
 #gsutil web set -m en/index.html -e en/404.html gs://www.teky.io
 #gsutil acl ch -r -u AllUsers:R gs://www.teky.io/
+
+.PHONY: $(PHONY)
+.DEFAULT_GOAL := all
