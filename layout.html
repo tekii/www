@@ -30,12 +30,9 @@ m4_divert(0)m4_dnl
                   </li>
                   -->
               <li class="navbar-twitter">
-                m4_ifelse(__LANG__,__EN__,,
-                <a href="../__EN__/__FNAME__" >English</a>
-                )
-                m4_ifelse(__LANG__,__ES__,,
-                <a href="../__ES__/__FNAME__" >Español</a>
-                )
+                TPY_LANG(
+                __ES__,«<a href="../__EN__/__FNAME__" >English</a>»,
+                __EN__,«<a href="../__ES__/__FNAME__" >Español</a>»)m4_dnl
               </li>
             </ul>
             <ul class="nav navbar-nav">

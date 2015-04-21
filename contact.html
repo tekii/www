@@ -1,28 +1,18 @@
 m4_divert(2)m4_dnl
 <title>
-  m4_ifelse(__LANG__,__EN__,«TEKY SRL - Contact»)
-  m4_ifelse(__LANG__,__ES__,«TEKY SRL - Contacto»)
+  TPY_LANG(__EN__,«TEKY SRL - Contact»,__ES__,«TEKY SRL - Contacto»)m4_dnl
 </title>
 m4_divert(3)m4_dnl
 <div id="dev_page_content_wrap" class=" dev_faq_page">
-  <h1 id="dev_page_title">
-    m4_ifelse(__LANG__,__EN__,Contact)
-    m4_ifelse(__LANG__,__ES__,Contacto)
-  </h1>
+  <h1 id="dev_page_title">TPY_LANG(__EN__,Contact,__ES__,Contacto)</h1>
   <div id="dev_page_content">
     <p>
-      m4_ifelse(__LANG__,__EN__,«
-      <b>Email:</b> inbox@teky.com.ar<br>
-      <b>Address:</b> Elia 551 Ciudad Autónoma de Buenos Aires, Argentina<br>
-      <b>ZIP:</b> C1437ECL<br>
-      <b>Phone:</b> +54 11 4911 2704
-      »,)m4_dnl
-      m4_ifelse(__LANG__,__ES__,«
-      <b>Email:</b> inbox@teky.com.ar<br>
-      <b>Dirección:</b> Elia 551 Ciudad Autónoma de Buenos Aires, Argentina<br>
-      <b>Código Postal:</b> C1437ECL<br>
-      <b>Telefono:</b> +54 11 4911 2704
-      »,)m4_dnl
+      <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+      <b>TPY_LANG(__EN__,«Email»,__ES__,«Email»):</b> inbox@teky.com.ar<br>
+      <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+      <b>TPY_LANG(__EN__,«Address»,__ES__,«Dirección»):</b> Elia 551 Ciudad Autónoma de Buenos Aires, Argentina<br>
+      <b>TPY_LANG(__EN__,«ZIP»,__ES__,«Código Postal»):</b> C1437ECL<br>
+      <b>TPY_LANG(__EN__,«Phone»,__ES__,«Telefono»):</b> +54 11 4911 2704
     </p>
   </div>
   <div >
