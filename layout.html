@@ -30,12 +30,8 @@ m4_divert(0)m4_dnl
                   </li>
                   -->
               <li class="navbar-twitter">
-                m4_ifelse(__LANG__,__EN__,,
-                <a href="../__EN__/__FNAME__" >English</a>
-                )
-                m4_ifelse(__LANG__,__ES__,,
-                <a href="../__ES__/__FNAME__" >Español</a>
-                )
+                TPY_LANG(__ES__,«<a href="../__EN__/__FNAME__" >English</a>»,
+                __EN__,«<a href="../__ES__/__FNAME__" >Español</a>»)m4_dnl
               </li>
             </ul>
             <ul class="nav navbar-nav">
@@ -61,11 +57,14 @@ m4_divert(0)m4_dnl
       <div class="footer_wrap">
         <div class="footer_columns_wrap clearfix footer_desktop">
           <div class="footer_column">
-            <h5><span style="font-weight: bold;">TPY_TEKY_SRL</span></h5>
-            <div class="footer_company"></div>TPY_LANG(__EN__,`Company footer description.',__ES__,`Descripcion de la compania.')</div>
+            <h5><span style="font-weight: bold;">TPY_TEKII_SRL</span></h5>
+            <div class="footer_company">
+              TPY_LANG(__EN__,«Company footer description.»,__ES__,«Descripcion de la compania.»)
+            </div>
+          </div>
           <div class="footer_column">
             <h5>
-	      <a href="about.html">TPY_LANG(__EN__,About,__ES__,Acerca de)</a></h5>
+	      <a href="about.html">TPY_LANG(__EN__,About,__ES__,«Acerca de»)</a></h5>
             <ul>
               m4_divert(-1)
               <li><a href="blog.html">Blog</a></li>
@@ -88,7 +87,7 @@ m4_divert(0)m4_dnl
         <div class="footer_columns_wrap clearfix footer_mobile">
           <div class="footer_column">
             <h5>
-              <a href="about.html">TPY_LANG(__EN__,About,__ES__,Acerca de)</a>
+              <a href="about.html">TPY_LANG(__EN__,About,__ES__,«Acerca de»)</a>
             </h5>
           </div>
           <div class="footer_column">

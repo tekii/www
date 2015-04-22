@@ -7,11 +7,13 @@ ROOT_TARGET:=/tmp/bucket
 CSS:=css
 IMG:=img
 JS :=js
+FONTS:=fonts
 EN_TARGET :=$(ROOT_TARGET)/$(__EN__)
 ES_TARGET :=$(ROOT_TARGET)/$(__ES__)
 CSS_TARGET:=$(ROOT_TARGET)/$(CSS)
 IMG_TARGET:=$(ROOT_TARGET)/$(IMG)
 JS_TARGET :=$(ROOT_TARGET)/$(JS)
+FONTS_TARGET:=$(ROOT_TARGET)/$(FONTS)
 
 SOURCE	= .
 
@@ -20,11 +22,12 @@ vpath %.png $(IMG)
 vpath %.js  $(JS)
 
 BOOTSTRAP_FILE=bootstrap.css
+GLYPH:=glyphicons-halflings-regular
 
 M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
  -D __EN__=$(__EN__) -D __ES__=$(__ES__) -D__LANG__=$(__LANG__) -I $(SOURCE) 
 
-$(ROOT_TARGET) $(EN_TARGET) $(ES_TARGET) $(CSS_TARGET) $(IMG_TARGET) $(JS_TARGET): 
+$(ROOT_TARGET) $(EN_TARGET) $(ES_TARGET) $(CSS_TARGET) $(IMG_TARGET) $(JS_TARGET) $(FONTS_TARGET): 
 	mkdir -p $@
 
 $(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html | $(ROOT_TARGET)
@@ -60,16 +63,21 @@ $(IMG_TARGET)/% : $(IMG)/% | $(IMG_TARGET)
 $(JS_TARGET)/%.js : $(JS)/%.js | $(JS_TARGET)
 	cp $< $@
 
+$(FONTS_TARGET)/$(GLYPH).% : $(FONTS)/$(GLYPH).% | $(FONTS_TARGET)
+	cp $< $@
+
 PAGES := about.html contact.html
-HTML_FILES := 404.html index.html $(addprefix $(__EN__)/,$(PAGES)) $(addprefix $(__ES__)/, $(PAGES))
+HTML_FILES:= 404.html index.html $(addprefix $(__EN__)/,$(PAGES)) $(addprefix $(__ES__)/, $(PAGES))
+GLYPH_FILES:= $(GLYPH).eot $(GLYPH).svg $(GLYPH).ttf $(GLYPH).woff $(GLYPH).woff2
 
 ALL_FILES:= $(HTML_FILES)  \
  $(CSS)/$(BOOTSTRAP_FILE) $(CSS)/custom.css \
  $(JS)/main.js favicon.ico \
- $(IMG)/us.png $(IMG)/es.png
+ $(IMG)/us.png $(IMG)/es.png \
+ $(addprefix $(FONTS)/, $(GLYPH_FILES))
 
 
-ALL_PAGES = $(addprefix $(ROOT_TARGET)/, $(ALL_FILES))
+ALL_TARGETS = $(addprefix $(ROOT_TARGET)/, $(ALL_FILES))
 
 #EN_FILES := $(addprefix $(EN_TARGET)/, $(PAGES))
 #ES_FILES := $(addprefix $(ES_TARGET)/, $(PAGES)) 
@@ -79,13 +87,12 @@ ALL_PAGES = $(addprefix $(ROOT_TARGET)/, $(ALL_FILES))
 #include $(HTML_FILES:.html=.d)
 
 PHONY += all
-all: $(ALL_PAGES) $(SOURCE)/Makefile 
-	
+all: $(ALL_TARGETS) $(SOURCE)/Makefile
 
 PHONY += clean
 clean:
-	rm -f $(ALL_PAGES)
-	rmdir $(EN_TARGET) $(ES_TARGET) $(CSS_TARGET) $(JS_TARGET) $(IMG_TARGET)
+	rm -f $(ALL_TARGETS)
+	rmdir $(EN_TARGET) $(ES_TARGET) $(CSS_TARGET) $(JS_TARGET) $(IMG_TARGET) $(FONTS_TARGET)
 	rmdir $(ROOT_TARGET)
 
 #gsutil -m rsync -ndr ../bucket/ gs://www.teky.io 
