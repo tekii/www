@@ -2,7 +2,7 @@ m4_include(`tpy.m4')m4_dnl
 m4_include(__FNAME__)m4_dnl
 m4_divert(0)m4_dnl
 <!DOCTYPE html>
-<html>
+<html lang="__LANG__">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,12 +23,14 @@ m4_divert(0)m4_dnl
           </div>
           <div class="collapse navbar-collapse" id="teky-upper-navbar">
             <ul class="nav navbar-nav navbar-right">
+              m4_divert(-1)
               <!--
                   <li class="navbar-twitter">
                     <a href="https://twitter.com/teky-io" target="_blank" data-track="Follow/Twitter" onclick="trackDlClick(this, event)">
                       <i class="icon icon-twitter"></i><span class="hidden-xs"> Twitter</span></a>
                   </li>
                   -->
+              m4_divert
               <li class="navbar-twitter">
                 TPY_LANG(__ES__,«<a href="../__EN__/__FNAME__" >English</a>»,
                 __EN__,«<a href="../__ES__/__FNAME__" >Español</a>»)m4_dnl
@@ -56,12 +58,16 @@ m4_divert(0)m4_dnl
       <!-- begin footer -->     
       <div class="footer_wrap">
         <div class="footer_columns_wrap clearfix footer_desktop">
+
           <div class="footer_column">
             <h5><span style="font-weight: bold;">TPY_TEKII_SRL</span></h5>
             <div class="footer_company">
-              TPY_LANG(__EN__,«Company footer description.»,__ES__,«Descripcion de la compania.»)
+              TPY_LANG(__EN__,«Since 2006 TEKY delivers solutions and large scale web applications
+that are bulky, secure and ready for high traffic.»,
+              __ES__,«<strong>CONTINUIDAD + INNOVACIÓN</strong><br>Desde 2006 TEKY provee soluciones con altos niveles de seguridad y un excelente historial de continuidad.»)
             </div>
           </div>
+
           <div class="footer_column">
             <h5>
 	      <a href="about.html">TPY_LANG(__EN__,About,__ES__,«Acerca de»)</a></h5>
@@ -71,6 +77,7 @@ m4_divert(0)m4_dnl
               m4_divert
             </ul>
           </div>
+
           <div class="footer_column">
             <h5>
 	     <a href="contact.html">TPY_LANG(__EN__,Contact,__ES__,Contacto)</a
