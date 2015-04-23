@@ -54,56 +54,56 @@ m4_divert(0)m4_dnl
       <div class="container clearfix">
         m4_undivert(3)
       </div>
-      <!-- end content -->     
+      <!-- end content -->   
+  
       <!-- begin footer -->     
-      <div class="footer_wrap">
-        <div class="footer_columns_wrap clearfix footer_desktop">
-
-          <div class="footer_column">
+      <div class="container tpy_footer">
+        <!-- begin desktop footer footer_columns_wrap clearfix -->
+        <div class="row footer_desktop">
+          <div class="col-xs-12 col-md-8 footer_col">
             <h5><span style="font-weight: bold;">TPY_TEKII_SRL</span></h5>
-            <div class="footer_company">
+            <p>
               TPY_LANG(__EN__,«Since 2006 TEKY delivers solutions and large scale web applications
 that are bulky, secure and ready for high traffic.»,
               __ES__,«<strong>CONTINUIDAD + INNOVACIÓN</strong><br>Desde 2006 TEKY provee soluciones con altos niveles de seguridad y un excelente historial de continuidad.»)
-            </div>
+            </p>
           </div>
-
-          <div class="footer_column">
+          <div class="col-xs-12 col-md-2 footer_col">
             <h5>
-	      <a href="about.html">TPY_LANG(__EN__,About,__ES__,«Acerca de»)</a></h5>
+	      <a href="about.html">TPY_LANG(__EN__,About,__ES__,«Acerca de»)</a>
+            </h5>
+            m4_divert(-1)
             <ul>
-              m4_divert(-1)
               <li><a href="blog.html">Blog</a></li>
-              m4_divert
             </ul>
+            m4_divert
           </div>
-
-          <div class="footer_column">
+          <div class="col-xs-12 col-md-2 footer_col">
             <h5>
-	     <a href="contact.html">TPY_LANG(__EN__,Contact,__ES__,Contacto)</a
-		</h5>
+	      <a href="contact.html">TPY_LANG(__EN__,Contact,__ES__,Contacto)</a>
+	    </h5>
+            m4_divert(-1)
             <ul>
               <li><a href=""></a></li>
             </ul>
+            m4_divert
           </div>
-
-          
         </div>
-        
-        <!-- mobile -->
-        <div class="footer_columns_wrap clearfix footer_mobile">
-          <div class="footer_column">
+        <!-- end desktop footer --> 
+        <!-- begin mobile footer --> 
+        <div class="row clearfix footer_mobile">
+          <div class="col-xs-6">
             <h5>
               <a href="about.html">TPY_LANG(__EN__,About,__ES__,«Acerca de»)</a>
             </h5>
           </div>
-          <div class="footer_column">
+          <div class="col-xs-6">
             <h5>
               <a href="contact.html">TPY_LANG(__EN__,Contact,__ES__,Contacto)</a>
             </h5>
           </div>
           m4_divert(-1)
-          <div class="footer_column">
+          <div class="footer_col">
             <h5><a href="https://twitter.com/talonariomovil" target="_blank" data-track="Follow/Twitter" onclick="trackDlClick(this, event)">Twitter</a></h5>
           </div>
           m4_divert
