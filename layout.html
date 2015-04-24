@@ -123,49 +123,6 @@ that are bulky, secure and ready for high traffic.»,
       m4_divert(-1)
         "logo" : "http://www.example.com/logo.png",
       m4_divert
-      <script type="application/ld+json">
-        { "@context" : "http://schema.org",
-        "@type" : "Organization",
-        "name": "TEKii SRL",
-        "alternateName": "TEKY SRL",
-        "duns": "971382260",
-        "globalLocationNumber": "7798149140000",
-        "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ciudad Autonoma de Buenos Aires, Argentina",
-        "postalCode": "C1437ELC",
-        "streetAddress": "Elia 551"
-        },      
-        "foundingDate":"2006-11-1",
-        "email": "inbox(at)tekii.com.ar",
-        "url" : "http://www.teky.io",
-        "sameAs" : [ 
-        "http://www.teky.co",
-        "http://www.teky.com.ar",
-        "http://www.tekii.com.ar"
-        ], 
-        "contactPoint" : [
-        { "@type" : "ContactPoint",
-        "telephone" : "+54-11-4911-2704",
-        "contactType" : "customer service"
-        } ]
-        }
-      </script>    
-      <script type="application/ld+json">
-        {  
-        "@context" : "http://schema.org",
-        "@type" : "WebSite",
-        "name" : "TEKii SRL",
-        "alternateName" : "TEKY SRL",
-        "url" : "http://www.teky.io",
-        "sameAs" : 
-        [ 
-        "http://www.teky.co",
-        "http://www.teky.com.ar",
-        "http://www.tekii.com.ar"
-        ]
-        }
-      </script>
-
+      m4_include(«meta.json»)m4_dnl
   </body>
 </html>

@@ -30,7 +30,7 @@ M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
 $(ROOT_TARGET) $(EN_TARGET) $(ES_TARGET) $(CSS_TARGET) $(IMG_TARGET) $(JS_TARGET) $(FONTS_TARGET): 
 	mkdir -p $@
 
-$(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html | $(ROOT_TARGET)
+$(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/meta.json | $(ROOT_TARGET)
 	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
 
 
@@ -46,7 +46,7 @@ $(ROOT_TARGET)/favicon.ico : $(SOURCE)/favicon.ico | $(ROOT_TARGET)
 $(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/tpy.m4 | $(ROOT_TARGET)
 	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
 
-INCLUDE_FILES = $(SOURCE)/layout.html $(SOURCE)/tpy.m4
+INCLUDE_FILES = $(SOURCE)/layout.html $(SOURCE)/tpy.m4 $(SOURCE)/meta.json
 
 $(EN_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(EN_TARGET)
 	$(M4) $(M4_FLAGS) $(EN_FLAGS) -D __FNAME__=$(@F) layout.html >$@
