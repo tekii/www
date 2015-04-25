@@ -14,15 +14,20 @@ CSS_TARGET:=$(ROOT_TARGET)/$(CSS)
 IMG_TARGET:=$(ROOT_TARGET)/$(IMG)
 JS_TARGET :=$(ROOT_TARGET)/$(JS)
 FONTS_TARGET:=$(ROOT_TARGET)/$(FONTS)
-
 SOURCE	= .
-
 vpath %.css $(CSS)
 vpath %.png $(IMG)
 vpath %.js  $(JS)
-
 BOOTSTRAP_FILE=bootstrap.css
 GLYPH:=glyphicons-halflings-regular
+
+PAGES := about.html contact.html
+HTML_FILES:= 404.html index.html
+HTML_FILES+= $(addprefix $(__EN__)/,$(PAGES)) 
+HTML_FILES+= $(addprefix $(__ES__)/,$(PAGES))
+GLYPH_FILES:= $(GLYPH).eot $(GLYPH).svg $(GLYPH).ttf $(GLYPH).woff $(GLYPH).woff2
+
+
 
 M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
  -D __EN__=$(__EN__) -D __ES__=$(__ES__) -D__LANG__=$(__LANG__) -I $(SOURCE) 
@@ -46,7 +51,7 @@ $(ROOT_TARGET)/favicon.ico : $(SOURCE)/favicon.ico | $(ROOT_TARGET)
 $(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/tpy.m4 | $(ROOT_TARGET)
 	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
 
-INCLUDE_FILES = $(SOURCE)/layout.html $(SOURCE)/tpy.m4
+INCLUDE_FILES = $(SOURCE)/layout.html $(SOURCE)/tpy.m4 $(SOURCE)/meta.json
 
 $(EN_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(EN_TARGET)
 	$(M4) $(M4_FLAGS) $(EN_FLAGS) -D __FNAME__=$(@F) layout.html >$@
@@ -66,16 +71,15 @@ $(JS_TARGET)/%.js : $(JS)/%.js | $(JS_TARGET)
 $(FONTS_TARGET)/$(GLYPH).% : $(FONTS)/$(GLYPH).% | $(FONTS_TARGET)
 	cp $< $@
 
-PAGES := about.html contact.html
-HTML_FILES:= 404.html index.html $(addprefix $(__EN__)/,$(PAGES)) $(addprefix $(__ES__)/, $(PAGES))
-GLYPH_FILES:= $(GLYPH).eot $(GLYPH).svg $(GLYPH).ttf $(GLYPH).woff $(GLYPH).woff2
+$(ROOT_TARGET)/sitemap.xml : $(SOURCE)/sitemap.xml
+	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) $(SOURCE)/sitemap.xml >$@
 
-ALL_FILES:= $(HTML_FILES)  \
- $(CSS)/$(BOOTSTRAP_FILE) $(CSS)/custom.css \
- $(JS)/main.js favicon.ico \
- $(IMG)/us.png $(IMG)/es.png \
- $(addprefix $(FONTS)/, $(GLYPH_FILES))
-
+ALL_FILES:= $(HTML_FILES)  
+ALL_FILES+= $(CSS)/$(BOOTSTRAP_FILE) $(CSS)/custom.css 
+ALL_FILES+= $(JS)/main.js favicon.ico 
+ALL_FILES+= $(IMG)/us.png $(IMG)/es.png 
+ALL_FILES+= $(addprefix $(FONTS)/, $(GLYPH_FILES))
+ALL_FILES+= sitemap.xml
 
 ALL_TARGETS = $(addprefix $(ROOT_TARGET)/, $(ALL_FILES))
 
