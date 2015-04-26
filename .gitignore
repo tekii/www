@@ -8,3 +8,5 @@ tmp
 toolchain
 www/public
 bucket
+*~
+

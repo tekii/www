@@ -1,0 +1,3 @@
+m4_include(`tpy.m4')«»m4_dnl
+tpy_foreach(__E__,(__LIST__),< >__E__< >
+)m4_dnl

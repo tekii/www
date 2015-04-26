@@ -45,9 +45,6 @@ $(ES_TARGET)/% : | $(ES_TARGET)
 $(EN_TARGET)/% : __LANG__=$(__EN__) 
 $(ES_TARGET)/% : __LANG__=$(__ES__) 
 
-$(ROOT_TARGET)/favicon.ico : $(SOURCE)/favicon.ico | $(ROOT_TARGET)
-	cp $< $@
-
 $(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/tpy.m4 | $(ROOT_TARGET)
 	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
 
@@ -58,6 +55,9 @@ $(EN_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(EN_TARGET)
 
 $(ES_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(ES_TARGET)
 	$(M4) $(M4_FLAGS) $(ES_FLAGS) -D __FNAME__=$(@F) layout.html >$@
+	
+$(ROOT_TARGET)/favicon.ico : $(SOURCE)/favicon.ico | $(ROOT_TARGET)
+	cp $< $@	
 
 $(CSS_TARGET)/%.css : $(CSS)/%.css | $(CSS_TARGET)
 	cp $< $@
@@ -71,8 +71,15 @@ $(JS_TARGET)/%.js : $(JS)/%.js | $(JS_TARGET)
 $(FONTS_TARGET)/$(GLYPH).% : $(FONTS)/$(GLYPH).% | $(FONTS_TARGET)
 	cp $< $@
 
-$(ROOT_TARGET)/sitemap.xml : $(SOURCE)/sitemap.xml
-	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) $(SOURCE)/sitemap.xml >$@
+comma:= ,
+empty:=
+space:= $(empty) $(empty)
+spac2:= $(empty) $(empty)
+foo:= a b c
+bar:= $(subst $(space),$(comma),$(foo))
+
+$(ROOT_TARGET)/sitemap.xml : $(SOURCE)/sitemap.xml Makefile
+	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) -D __LIST__="$(subst $(comma)$(comma),$(comma),$(subst $(space),$(comma),$(HTML_FILES)))" $(SOURCE)/sitemap.xml >$@
 
 ALL_FILES:= $(HTML_FILES)  
 ALL_FILES+= $(CSS)/$(BOOTSTRAP_FILE) $(CSS)/custom.css 
