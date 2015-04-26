@@ -35,7 +35,7 @@ M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
 $(ROOT_TARGET) $(EN_TARGET) $(ES_TARGET) $(CSS_TARGET) $(IMG_TARGET) $(JS_TARGET) $(FONTS_TARGET): 
 	mkdir -p $@
 
-$(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html | $(ROOT_TARGET)
+$(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/meta.json | $(ROOT_TARGET)
 	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
 
 
