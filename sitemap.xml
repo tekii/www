@@ -1,3 +1,5 @@
 m4_include(`tpy.m4')«»m4_dnl
-tpy_foreach(__E__,(__LIST__),< >__E__< >
+<top>
+tpy_foreach(__E__,(m4_patsubst(__LIST__,«\ +»,«,»)),<n>__E__</n>
 )m4_dnl
+</top>

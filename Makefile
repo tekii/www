@@ -25,8 +25,17 @@ PAGES := about.html contact.html
 HTML_FILES:= 404.html index.html
 HTML_FILES+= $(addprefix $(__EN__)/,$(PAGES)) 
 HTML_FILES+= $(addprefix $(__ES__)/,$(PAGES))
+
 GLYPH_FILES:= $(GLYPH).eot $(GLYPH).svg $(GLYPH).ttf $(GLYPH).woff $(GLYPH).woff2
 
+ALL_FILES:= $(HTML_FILES)  
+ALL_FILES+= $(CSS)/$(BOOTSTRAP_FILE) $(CSS)/custom.css 
+ALL_FILES+= $(JS)/main.js favicon.ico 
+ALL_FILES+= $(IMG)/us.png $(IMG)/es.png 
+ALL_FILES+= $(addprefix $(FONTS)/, $(GLYPH_FILES))
+ALL_FILES+= sitemap.xml
+
+ALL_TARGETS = $(addprefix $(ROOT_TARGET)/, $(ALL_FILES))
 
 
 M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
@@ -55,6 +64,16 @@ $(EN_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(EN_TARGET)
 
 $(ES_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(ES_TARGET)
 	$(M4) $(M4_FLAGS) $(ES_FLAGS) -D __FNAME__=$(@F) layout.html >$@
+
+#comma:= ,
+#empty:=
+#space:= $(empty) $(empty)
+#"$(subst $(comma)$(comma),$(comma),$(subst $(space),$(comma),$(HTML_FILES)))"
+
+$(ROOT_TARGET)/sitemap.xml : $(SOURCE)/sitemap.xml Makefile
+	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) \
+	-D __LIST__="$(HTML_FILES)" $(SOURCE)/sitemap.xml >$@
+
 	
 $(ROOT_TARGET)/favicon.ico : $(SOURCE)/favicon.ico | $(ROOT_TARGET)
 	cp $< $@	
@@ -71,31 +90,11 @@ $(JS_TARGET)/%.js : $(JS)/%.js | $(JS_TARGET)
 $(FONTS_TARGET)/$(GLYPH).% : $(FONTS)/$(GLYPH).% | $(FONTS_TARGET)
 	cp $< $@
 
-comma:= ,
-empty:=
-space:= $(empty) $(empty)
-spac2:= $(empty) $(empty)
-foo:= a b c
-bar:= $(subst $(space),$(comma),$(foo))
 
-$(ROOT_TARGET)/sitemap.xml : $(SOURCE)/sitemap.xml Makefile
-	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) -D __LIST__="$(subst $(comma)$(comma),$(comma),$(subst $(space),$(comma),$(HTML_FILES)))" $(SOURCE)/sitemap.xml >$@
+PHONY += testm4
+testm4:
+	$(M4) $(M4_FLAGS) -D __FNAME__="test_tpy.m4" test_tpy.m4	
 
-ALL_FILES:= $(HTML_FILES)  
-ALL_FILES+= $(CSS)/$(BOOTSTRAP_FILE) $(CSS)/custom.css 
-ALL_FILES+= $(JS)/main.js favicon.ico 
-ALL_FILES+= $(IMG)/us.png $(IMG)/es.png 
-ALL_FILES+= $(addprefix $(FONTS)/, $(GLYPH_FILES))
-ALL_FILES+= sitemap.xml
-
-ALL_TARGETS = $(addprefix $(ROOT_TARGET)/, $(ALL_FILES))
-
-#EN_FILES := $(addprefix $(EN_TARGET)/, $(PAGES))
-#ES_FILES := $(addprefix $(ES_TARGET)/, $(PAGES)) 
-#$(EN_PAGES): | $(EN_TARGET)
-#$(ES_PAGES): | $(ES_TARGET)
-
-#include $(HTML_FILES:.html=.d)
 
 PHONY += all
 all: $(ALL_TARGETS) $(SOURCE)/Makefile
