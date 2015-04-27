@@ -1,5 +1,5 @@
 m4_include(`tpy.m4')m4_dnl
-m4_include(__FNAME__)m4_dnl
+m4_include(__FNAME__)«»m4_dnl
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,6 +9,7 @@ m4_include(__FNAME__)m4_dnl
     <link href="http://www.teky.io/css/__BOOTSTRAP_FILE__" rel="stylesheet">  	
     <link href="http://www.teky.io/css/custom.css" rel="stylesheet" media="screen">   
     m4_undivert(2)
+    m4_include(«meta.json»)«»m4_dnl
   </head>
   <body>  
     <div>
@@ -48,6 +49,5 @@ m4_include(__FNAME__)m4_dnl
         ga('create', 'UA-7509381-3', 'auto');
         ga('send', 'pageview');
       </script>
-      m4_include(«meta.json»)m4_dnl
   </body>
 </html>tpy_cleardivert«»m4_dnl
