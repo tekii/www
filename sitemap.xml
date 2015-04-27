@@ -1,5 +1,15 @@
 m4_include(`tpy.m4')«»m4_dnl
-<top>
-tpy_foreach(__E__,(m4_patsubst(__LIST__,«\ +»,«,»)),<n>__E__</n>
-)m4_dnl
-</top>
+m4_divert(«-1»)
+m4_define(«tpy_fname»,«m4_regexp($1, «\([^/]+\..+\)$», «\1»)»)
+m4_define(«tpy_rdate»,«m4_syscmd(«date --reference=$1 +%Y-%m-%d»)»)
+m4_divert«»m4_dnl
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+tpy_foreach(«__E__»,(m4_patsubst(__LIST__,«\ +»,«,»)),«<url>
+<loc>http://www.teky.io/__E__</loc>
+<lastmod>tpy_rdate(tpy_fname(__E__))</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+»)m4_dnl
+</urlset>

@@ -47,7 +47,6 @@ $(ROOT_TARGET) $(EN_TARGET) $(ES_TARGET) $(CSS_TARGET) $(IMG_TARGET) $(JS_TARGET
 $(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/meta.json | $(ROOT_TARGET)
 	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
 
-
 $(EN_TARGET)/% : | $(EN_TARGET)
 $(ES_TARGET)/% : | $(ES_TARGET) 
 
@@ -72,11 +71,11 @@ $(ES_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(ES_TARGET)
 
 $(ROOT_TARGET)/sitemap.xml : $(SOURCE)/sitemap.xml Makefile
 	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) \
-	-D __LIST__="$(HTML_FILES)" $(SOURCE)/sitemap.xml >$@
+	-D __LIST__="$(filter-out 404.html,$(HTML_FILES))" $(SOURCE)/sitemap.xml >$@
 
-	
+
 $(ROOT_TARGET)/favicon.ico : $(SOURCE)/favicon.ico | $(ROOT_TARGET)
-	cp $< $@	
+	cp $< $@
 
 $(CSS_TARGET)/%.css : $(CSS)/%.css | $(CSS_TARGET)
 	cp $< $@
