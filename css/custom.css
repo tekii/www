@@ -64,6 +64,13 @@ body {
   display: none;
 }
 
+.navbar-brand > img {
+    /*display: inline-block;*/
+    margin-top: -10px;
+    max-width: 40px;
+    height: auto;
+} 
+
 @media (max-width: 992px) {
   .footer_wrap {
     padding: 16px 0 16px;
@@ -91,9 +98,14 @@ body {
     text-transform: uppercase;
     margin: 0;
   }
-/* por ahora lo meto en footer pero tecnicamente no es lo correcto */
+
   .navbar .container .collapse {
     display: block;
   }
+  /*
+  .navbar-brand > img {
+    display: none;
+  }
+  */
 }
 

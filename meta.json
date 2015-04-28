@@ -5,6 +5,7 @@
             "@type" : "Organization",
             "name": "TEKii SRL",
             "alternateName": "TEKY SRL",
+            "logo" : "http://www.tekii.com.ar/img/logo.png",
             "duns": "971382260",
             "globalLocationNumber": "7798149140000",
             "address": {
