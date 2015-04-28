@@ -14,12 +14,12 @@
                 "streetAddress": "Elia 551"
             },      
             "foundingDate":"2006-11-1",
-            "email": "inbox(at)tekii.com.ar",
-            "url" : "http://www.teky.io",
+            "email": "contacto(at)tekii.com.ar",
+            "url" : "http://www.tekii.com.ar",
             "sameAs" : [ 
+                "http://www.teky.io",
                 "http://www.teky.co",
-                "http://www.teky.com.ar",
-                "http://www.tekii.com.ar"
+                "http://www.teky.com.ar"
             ], 
             "contactPoint" : [
                 { 
@@ -34,11 +34,11 @@
             "@type" : "WebSite",
             "name" : "TEKii SRL",
             "alternateName" : "TEKY SRL",
-            "url" : "http://www.teky.io",
+            "url" : "http://www.tekii.com.ar",
             "sameAs" : [ 
+                "http://www.teky.io",
                 "http://www.teky.co",
-                "http://www.teky.com.ar",
-                "http://www.tekii.com.ar"
+                "http://www.teky.com.ar"
             ]
         }
     ]

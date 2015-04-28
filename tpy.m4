@@ -21,9 +21,9 @@ m4_define(«tpy_cleardivert»,
   «m4_pushdef(«_num», m4_divnum)m4_divert(«-1»)m4_ifelse(«$#», «0», «m4_undivert«»», 
   «m4_undivert($@)»)m4_divert(_num)m4_popdef(«_num»)»)
 
-m4_define(TPY_TEKY,«<span style="color:black;">TEK</span><span style="color:red;">Y</span><span style="color:black;">$1</span>»)
+m4_define(TPY_TEKY,«<span style="color:black;">TEK</span><span style="color:red;">ii</span><span style="color:black;">$1</span>»)
 m4_define(TPY_TEKY_SRL,TPY_TEKY(« SRL»))
-m4_define(TPY_TEKII,«<span style="color:black;">TEK</span><span style="color:red;">II</span><span style="color:black;">$1</span>»)
+m4_define(TPY_TEKII,«<span style="color:black;">TEK</span><span style="color:red;">ii</span><span style="color:black;">$1</span>»)
 m4_define(TPY_TEKII_SRL,TPY_TEKII(« SRL»))
 
 

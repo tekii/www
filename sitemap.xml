@@ -6,7 +6,7 @@ m4_divert«»m4_dnl
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 tpy_foreach(«__E__»,(m4_patsubst(__LIST__,«\ +»,«,»)),«<url>
-<loc>http://www.teky.io/__E__</loc>
+<loc>__DOMAIN__/__E__</loc>
 <lastmod>tpy_rdate(tpy_fname(__E__))</lastmod>
 <changefreq>weekly</changefreq>
 m4_dnl<priority>0.8</priority>
