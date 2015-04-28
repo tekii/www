@@ -39,7 +39,8 @@ ALL_TARGETS = $(addprefix $(ROOT_TARGET)/, $(ALL_FILES))
 
 
 M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
- -D __EN__=$(__EN__) -D __ES__=$(__ES__) -D__LANG__=$(__LANG__) -I $(SOURCE) 
+ -D __EN__=$(__EN__) -D __ES__=$(__ES__) \
+ -D __LANG__=$(__LANG__) -D __DOMAIN__="$(__DOMAIN__)" -I $(SOURCE) 
 
 $(ROOT_TARGET) $(EN_TARGET) $(ES_TARGET) $(CSS_TARGET) $(IMG_TARGET) $(JS_TARGET) $(FONTS_TARGET): 
 	mkdir -p $@
@@ -89,14 +90,18 @@ $(JS_TARGET)/%.js : $(JS)/%.js | $(JS_TARGET)
 $(FONTS_TARGET)/$(GLYPH).% : $(FONTS)/$(GLYPH).% | $(FONTS_TARGET)
 	cp $< $@
 
-
 PHONY += testm4
 testm4:
 	$(M4) $(M4_FLAGS) -D __FNAME__="test_tpy.m4" test_tpy.m4	
 
+PHONY += tekii
+tekii: $(ALL_TARGETS) $(SOURCE)/Makefile
+tekii: __DOMAIN__:=http://www.tekii.com.ar
 
 PHONY += all
 all: $(ALL_TARGETS) $(SOURCE)/Makefile
+
+
 
 PHONY += clean
 clean:
@@ -109,4 +114,4 @@ clean:
 #gsutil acl ch -r -u AllUsers:R gs://www.teky.io/
 
 .PHONY: $(PHONY)
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := tekii
