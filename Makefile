@@ -31,7 +31,7 @@ GLYPH_FILES:= $(GLYPH).eot $(GLYPH).svg $(GLYPH).ttf $(GLYPH).woff $(GLYPH).woff
 ALL_FILES:= $(HTML_FILES)  
 ALL_FILES+= $(CSS)/$(BOOTSTRAP_FILE) 
 #$(CSS)/custom.css 
-ALL_FILES+= $(JS)/main.js favicon.ico 
+ALL_FILES+= favicon.ico 
 ALL_FILES+= $(IMG)/us.png $(IMG)/es.png $(IMG)/logo.png
 ALL_FILES+= $(addprefix $(FONTS)/, $(GLYPH_FILES))
 ALL_FILES+= sitemap.xml
