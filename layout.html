@@ -7,9 +7,9 @@ m4_divert(0)m4_dnl
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="TPY_DEPS(../favicon.ico)" type="image/x-icon" />
-    <link rel="alternate" hreflang="TPY_LANG(__ES__,__EN__,__EN__,__ES__)" href="TPY_LANG(__ES__,«../__EN__/__FNAME__»,__EN__,«../__ES__/__FNAME__»)" />
+    <link rel="alternate" hreflang="TPY_ESEN(__EN__,__ES__)" href="TPY_LNK1(__ROOT__/TPY_ESEN(__EN__,__ES__)/__FNAME__)" />
     <link href="TPY_DEPS(../css/__BOOTSTRAP_FILE__)" rel="stylesheet" media="screen">
-m4_dnl        <link href="TPY_DEPS(../css/custom.css)" rel="stylesheet" media="screen">
+m4_dnl        <link href="TPY_DEPS(TPY_LNK1(__ROOT__/css/custom.css))" rel="stylesheet" media="screen">
     m4_undivert(2)«»m4_dnl
     m4_include(«meta.json»)«»m4_dnl
     <style type="text/css"><!--
@@ -23,7 +23,7 @@ m4_include(«css/custom.css»)«»m4_dnl
         <div class="container">
           <div class="navbar-header">
             <a class="navbar-brand" href="__DOMAIN__">
-              <img src="../img/logo.png" alt="TEKii SRL">
+              <img src="TPY_LNK1(__ROOT__/img/logo.png)" alt="TEKii SRL">
 m4_dnl        <span style="font-weight: bold;">TPY_TEKY</span>
             </a>         
           </div>
@@ -36,21 +36,20 @@ m4_dnl        <span style="font-weight: bold;">TPY_TEKY</span>
                       <i class="icon icon-twitter"></i><span class="hidden-xs"> Twitter</span></a>
                   </li>
                   -->
-              m4_divert
+              m4_divert«»m4_dnl
               <li>
-                TPY_LANG(__ES__,«<a href="../__EN__/__FNAME__" >English</a>»,
-                __EN__,«<a href="../__ES__/__FNAME__" >Español</a>»)m4_dnl
+                <a href="TPY_LNK1(__ROOT__/TPY_ESEN(__EN__,__ES__)/__FNAME__)">TPY_ESEN(English,Español)</a>
               </li>
             </ul>
+            <!-- -->
             <ul class="nav navbar-nav">
-              m4_define(NAV_ITEM,«<li class="m4_ifelse($1,__FNAME__,active) $3"><a href="$1">$2</a></li>»)m4_dnl
-              
-              NAV_ITEM(about.html,About)m4_dnl
-              NAV_ITEM(contact.html,Contact)m4_dnl
-              m4_divert(-1)
-              NAV_ITEM(faq.html,FAQ)m4_dnl
-              NAV_ITEM(hidden.html,Hidden,hidden-xs)m4_dnl
-              m4_divert
+              m4_define(«NAV_ITEM»,
+              «<li class="m4_ifelse($1,__FNAME__,active) $3">
+                <a href="TPY_LNK1(__ROOT__/__LANG__/$1)">$2</a>
+              </li>»)
+              NAV_ITEM(«about.html»,TPY_ESEN(«Acerca de»,«About»))
+              NAV_ITEM(«contact.html»,TPY_ESEN(«Contacto»,«Contact»))
+              m4_dnl NAV_ITEM(hidden.html,Hidden,hidden-xs)m4_dnl
             </ul>
           </div>
         </div>        
@@ -78,7 +77,7 @@ that are bulky, secure and ready for high traffic.»,
           </div>
           <div class="col-xs-12 col-md-2 footer_col">
             <h5>
-	      <a href="about.html">TPY_LANG(__EN__,About,__ES__,«Acerca de»)</a>
+	      <a href="TPY_LNK1(__ROOT__/__LANG__/about.html)">TPY_ENES(About,«Acerca de»)</a>
             </h5>
             m4_divert(-1)
             <ul>
@@ -88,7 +87,7 @@ that are bulky, secure and ready for high traffic.»,
           </div>
           <div class="col-xs-12 col-md-2 footer_col">
             <h5>
-	      <a href="contact.html">TPY_LANG(__EN__,Contact,__ES__,Contacto)</a>
+	      <a href="TPY_LNK1(__ROOT__/__LANG__/contact.html)">TPY_ENES(Contact,Contacto)</a>
 	    </h5>
             m4_divert(-1)
             <ul>
@@ -102,12 +101,12 @@ that are bulky, secure and ready for high traffic.»,
         <div class="row clearfix footer_mobile">
           <div class="col-xs-6">
             <h5>
-              <a href="about.html">TPY_LANG(__EN__,About,__ES__,«Acerca de»)</a>
+              <a href="TPY_LNK1(__ROOT__/__LANG__/about.html)">TPY_ENES(About,«Acerca de»)</a>              
             </h5>
           </div>
           <div class="col-xs-6">
             <h5>
-              <a href="contact.html">TPY_LANG(__EN__,Contact,__ES__,Contacto)</a>
+              <a href="TPY_LNK1(__ROOT__/__LANG__/contact.html)">TPY_ENES(Contact,Contacto)</a>
             </h5>
           </div>
           m4_divert(-1)
@@ -130,3 +129,13 @@ m4_dnl<script src="../js/main.js"></script>
       </script>
   </body>
 </html>tpy_cleardivert«»m4_dnl
+ <!-- 
+__ROOT__ 
+__BASE__ 
+__ROOT__/__EN__/__FNAME__ 
+0TPY_RLNK1(__ROOT__/__ES__/__FNAME__)
+1m4_esyscmd(«echo __BASE__»)
+2m4_esyscmd(echo     __ROOT__/__ES__/__FNAME__ __BASE__)
+3m4_esyscmd(relpath  __ROOT__/__ES__/__FNAME__ __BASE__)
+4m4_esyscmd(relpath  __ROOT__/__EN__/__FNAME__ __BASE__)
+-->

@@ -46,8 +46,8 @@ M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
 $(ROOT_TARGET) $(EN_TARGET) $(ES_TARGET) $(CSS_TARGET) $(IMG_TARGET) $(JS_TARGET) $(FONTS_TARGET): 
 	mkdir -p $@
 
-$(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/meta.json | $(ROOT_TARGET)
-	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
+#$(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/meta.json | $(ROOT_TARGET)
+#	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
 
 $(EN_TARGET)/% : | $(EN_TARGET)
 $(ES_TARGET)/% : | $(ES_TARGET) 
@@ -55,16 +55,16 @@ $(ES_TARGET)/% : | $(ES_TARGET)
 $(EN_TARGET)/% : __LANG__=$(__EN__) 
 $(ES_TARGET)/% : __LANG__=$(__ES__) 
 
-$(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/tpy.m4 | $(ROOT_TARGET)
-	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
+$(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/tpy.m4 $(SOURCE)/meta.json | $(ROOT_TARGET)
+	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(ROOT_TARGET) layout2.html >$@
 
 INCLUDE_FILES = $(SOURCE)/layout.html $(SOURCE)/tpy.m4 $(SOURCE)/meta.json $(SOURCE)/$(CSS)/custom.css
 
 $(EN_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(EN_TARGET)
-	$(M4) $(M4_FLAGS) $(EN_FLAGS) -D __FNAME__=$(@F) layout.html >$@
+	$(M4) $(M4_FLAGS) $(EN_FLAGS) -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(ROOT_TARGET) layout.html >$@
 
 $(ES_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(ES_TARGET)
-	$(M4) $(M4_FLAGS) $(ES_FLAGS) -D __FNAME__=$(@F) layout.html >$@
+	$(M4) $(M4_FLAGS) $(ES_FLAGS) -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(ROOT_TARGET) layout.html >$@
 
 #comma:= ,
 #empty:=
@@ -93,7 +93,7 @@ $(FONTS_TARGET)/$(GLYPH).% : $(FONTS)/$(GLYPH).% | $(FONTS_TARGET)
 
 PHONY += testm4
 testm4:
-	$(M4) $(M4_FLAGS) -D __FNAME__="test_tpy.m4" test_tpy.m4	
+	$(M4) $(M4_FLAGS) --debug=aeqt -D __FNAME__="test_tpy.m4" -D __BASE__=$(@D) -D __ROOT__=$(ROOT_TARGET) test_tpy.m4	
 
 PHONY += tekii
 tekii: $(ALL_TARGETS) $(SOURCE)/Makefile

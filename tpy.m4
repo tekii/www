@@ -30,6 +30,18 @@ m4_define(TPY_TEKII_SRL,TPY_TEKII(« SRL»))
 m4_define(«TPY_LANG»,«m4_ifelse(__LANG__,«$1»,«$2»,__LANG__,«$3»,«$4»)»)
 m4_define(«TPY_LAN4»,«m4_ifelse(«$#»,«0»,,«$#»,«1»,,__LANG__,«$1»,«$2»,«$0(m4_shift(m4_shift($@)))»)»)
 
+m4_define(«TPY_ESEN»,TPY_LANG(__ES__,$1,__EN__,$2))
+m4_define(«TPY_ENES»,TPY_LANG(__EN__,$1,__ES__,$2))
+
 m4_define(«TPY_DEPS»,«$1»)
+
+# calculate relative jump e
+# $1 base $2 target
+define(__NL__,«
+»)
+
+m4_define(«TPY_RLNK2»,«m4_esyscmd(relpath $1 $2)»)
+m4_define(«TPY_RLNK3»,«TPY_RLNK2($1,__BASE__)»)
+m4_define(«TPY_LNK1»,«m4_syscmd(relpath $1 __BASE__ | tr -d '\n')»)
 
 m4_divert(«0»)m4_dnl
