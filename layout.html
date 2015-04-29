@@ -6,10 +6,9 @@ m4_divert(0)m4_dnl
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="TPY_DEPS(../favicon.ico)" type="image/x-icon" />
-    <link rel="alternate" hreflang="TPY_ESEN(__EN__,__ES__)" href="TPY_LNK1(__ROOT__/TPY_ESEN(__EN__,__ES__)/__FNAME__)" />
-    <link href="TPY_DEPS(../css/__BOOTSTRAP_FILE__)" rel="stylesheet" media="screen">
-m4_dnl        <link href="TPY_DEPS(TPY_LNK1(__ROOT__/css/custom.css))" rel="stylesheet" media="screen">
+    <link rel="shortcut icon" href="TPY_LNK1(__ROOT__/favicon.ico)" type="image/x-icon" /> 
+    m4_ifdef(«__ALTERNATE__»,«<link rel="alternate" hreflang="TPY_ESEN(__EN__,__ES__)" href="TPY_LNK1(__ROOT__/TPY_ESEN(__EN__,__ES__)/__FNAME__)"/>»)«»m4_dnl
+    <link href="TPY_LNK1(__ROOT__/css/__BOOTSTRAP_FILE__)" rel="stylesheet" media="screen">
     m4_undivert(2)«»m4_dnl
     m4_include(«meta.json»)«»m4_dnl
     <style type="text/css"><!--
@@ -28,18 +27,11 @@ m4_dnl        <span style="font-weight: bold;">TPY_TEKY</span>
             </a>         
           </div>
           <div class="collapse navbar-collapse" id="teky-upper-navbar">
+
             <ul class="nav navbar-nav navbar-right">
-              m4_divert(-1)
-              <!--
-                  <li class="navbar-twitter">
-                    <a href="https://twitter.com/teky-io" target="_blank" data-track="Follow/Twitter" onclick="trackDlClick(this, event)">
-                      <i class="icon icon-twitter"></i><span class="hidden-xs"> Twitter</span></a>
-                  </li>
-                  -->
-              m4_divert«»m4_dnl
-              <li>
+              m4_ifdef(«__ALTERNATE__»,«<li>
                 <a href="TPY_LNK1(__ROOT__/TPY_ESEN(__EN__,__ES__)/__FNAME__)">TPY_ESEN(English,Español)</a>
-              </li>
+              </li>»)«»m4_dnl
             </ul>
             <!-- -->
             <ul class="nav navbar-nav">
