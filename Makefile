@@ -18,7 +18,7 @@ SOURCE	= .
 vpath %.css $(CSS)
 vpath %.png $(IMG)
 vpath %.js  $(JS)
-BOOTSTRAP_FILE=bootstrap.css
+BOOTSTRAP_FILE=bootstrap.min.css
 GLYPH:=glyphicons-halflings-regular
 
 PAGES := about.html contact.html
