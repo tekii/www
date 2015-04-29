@@ -29,7 +29,8 @@ HTML_FILES+= $(addprefix $(__ES__)/,$(PAGES))
 GLYPH_FILES:= $(GLYPH).eot $(GLYPH).svg $(GLYPH).ttf $(GLYPH).woff $(GLYPH).woff2
 
 ALL_FILES:= $(HTML_FILES)  
-ALL_FILES+= $(CSS)/$(BOOTSTRAP_FILE) $(CSS)/custom.css 
+ALL_FILES+= $(CSS)/$(BOOTSTRAP_FILE) 
+#$(CSS)/custom.css 
 ALL_FILES+= $(JS)/main.js favicon.ico 
 ALL_FILES+= $(IMG)/us.png $(IMG)/es.png $(IMG)/logo.png
 ALL_FILES+= $(addprefix $(FONTS)/, $(GLYPH_FILES))
@@ -57,7 +58,7 @@ $(ES_TARGET)/% : __LANG__=$(__ES__)
 $(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout2.html $(SOURCE)/tpy.m4 | $(ROOT_TARGET)
 	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) layout2.html >$@
 
-INCLUDE_FILES = $(SOURCE)/layout.html $(SOURCE)/tpy.m4 $(SOURCE)/meta.json
+INCLUDE_FILES = $(SOURCE)/layout.html $(SOURCE)/tpy.m4 $(SOURCE)/meta.json $(SOURCE)/$(CSS)/custom.css
 
 $(EN_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(EN_TARGET)
 	$(M4) $(M4_FLAGS) $(EN_FLAGS) -D __FNAME__=$(@F) layout.html >$@
