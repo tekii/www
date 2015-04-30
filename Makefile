@@ -46,30 +46,37 @@ M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
 $(ROOT_TARGET) $(EN_TARGET) $(ES_TARGET) $(CSS_TARGET) $(IMG_TARGET) $(JS_TARGET) $(FONTS_TARGET): 
 	mkdir -p $@
 
-$(EN_TARGET)/% : | $(EN_TARGET)
-$(ES_TARGET)/% : | $(ES_TARGET) 
+#$(ROOT_TARGET)/% : $(ROOT_TARGET)
+#$(EN_TARGET)/% : | $(EN_TARGET)
+#$(ES_TARGET)/% : | $(ES_TARGET) 
 
 $(ROOT_TARGET)/% : __LANG__=$(__EN__) 
-$(EN_TARGET)/% : __LANG__=$(__EN__) 
-$(ES_TARGET)/% : __LANG__=$(__ES__) 
+$(EN_TARGET)/% : __LANG__=$(__EN__) -D __ALTERNATE__=1
+$(ES_TARGET)/% : __LANG__=$(__ES__) -D __ALTERNATE__=1
 
-$(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(SOURCE)/layout.html $(SOURCE)/tpy.m4 $(SOURCE)/meta.json | $(ROOT_TARGET)
-	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(ROOT_TARGET) layout.html >$@
+#$(EN_TARGET)/%.html : $(SOURCE)/%.html
+#$(ES_TARGET)/%.html : $(SOURCE)/%.html
 
 INCLUDE_FILES = $(SOURCE)/layout.html $(SOURCE)/tpy.m4 $(SOURCE)/meta.json $(SOURCE)/$(CSS)/custom.css
 
-$(EN_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(EN_TARGET)
-	$(M4) $(M4_FLAGS) -D __ALTERNATE__=1 -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(ROOT_TARGET) layout.html >$@
+#$(ROOT_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(ROOT_TARGET)
+#	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(ROOT_TARGET) layout.html >$@
 
-$(ES_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(ES_TARGET)
-	$(M4) $(M4_FLAGS) -D __ALTERNATE__=1 -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(ROOT_TARGET) layout.html >$@
+#$(ROOT_TARGET)/%.html $(EN_TARGET)/%.html  : $(SOURCE)/%.html $(INCLUDE_FILES) | $(ROOT_TARGET) $(EN_TARGET) $(ES_TARGET)
+#	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(ROOT_TARGET) layout.html >$@
+
+#$(ES_TARGET)/%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(ES_TARGET)
+#	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(ROOT_TARGET) layout.html >$@
+
+%.html : $(SOURCE)/%.html $(INCLUDE_FILES) | $(ROOT_TARGET) $(ES_TARGET) $(EN_TARGET)
+	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(ROOT_TARGET) layout.html >$@
 
 #comma:= ,
 #empty:=
 #space:= $(empty) $(empty)
 #"$(subst $(comma)$(comma),$(comma),$(subst $(space),$(comma),$(HTML_FILES)))"
 
-$(ROOT_TARGET)/sitemap.xml : $(SOURCE)/sitemap.xml Makefile
+$(ROOT_TARGET)/sitemap.xml : $(SOURCE)/sitemap.xml 
 	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) \
 	-D __LIST__="$(filter-out 404.html,$(HTML_FILES))" $(SOURCE)/sitemap.xml >$@
 
