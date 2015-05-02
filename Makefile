@@ -1,6 +1,11 @@
 ##
 ## NICE HEADER
 ##
+# SRC/index
+# SRC/XX/about
+# SRC/EN/twu
+# SRC/ES/some es page
+##
 __EN__ 	:=en
 __ES__ 	:=es
 
@@ -12,13 +17,12 @@ __IMG__	:=img
 __JS__ 	:=js
 __FON__	:=fonts
 
-EN_TGT :=$(__ROOT__)/$(__EN__)
-ES_TGT :=$(__ROOT__)/$(__ES__)
-CSS_TGT:=$(__ROOT__)/$(__CSS__)
-IMG_TGT:=$(__ROOT__)/$(__IMG__)
-JS_TGT :=$(__ROOT__)/$(__JS__)
-FON_TGT:=$(__ROOT__)/$(__FON__)
-
+#EN_TGT :=$(__ROOT__)/$(__EN__)
+#ES_TGT :=$(__ROOT__)/$(__ES__)
+#CSS_TGT:=$(__ROOT__)/$(__CSS__)
+#IMG_TGT:=$(__ROOT__)/$(__IMG__)
+#JS_TGT :=$(__ROOT__)/$(__JS__)
+#FON_TGT:=$(__ROOT__)/$(__FON__)
 
 BOOTSTRAP_FILE:=bootstrap.min.css
 GLYPH:=glyphicons-halflings-regular
@@ -44,14 +48,14 @@ ALL_FILES+= sitemap.xml
 ALL_ROOT:= $(addprefix $(__ROOT__)/, $(ALL_FILES))
 ALL_GZIP:= $(addprefix $(__GZIP__)/, $(ALL_FILES))
 
+TREE:= $(__EN__)/ $(__ES__)/ $(__CSS__)/ $(__IMG__)/ $(__FON__)/
 ##
 ## VPATH
 ##
 #vpath %.html ./src
-vpath %.css $(__CSS__)
-vpath %.png $(__IMG__)
-vpath %.js  $(__JS__)
-
+#vpath %.css $(__CSS__)
+#vpath %.png $(__IMG__)
+#vpath %.js  $(__JS__)
 ##
 ## M4
 ##
@@ -63,63 +67,61 @@ M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
 ##
 ## TREE
 ##
-$(__ROOT__) $(EN_TGT) $(ES_TGT) $(CSS_TGT) $(IMG_TGT) $(JS_TGT) $(FON_TGT): 
-	mkdir -p $@
-
+$(__ROOT__)/ $(__GZIP__)/:
+	mkdir -p $@	
+$(__ROOT__)/%/:
+	mkdir -p $@	
+$(__GZIP__)/%/:
+	mkdir -p $@	
 ##
 ## HTML PAGES
 ##
-$(__ROOT__)/% 		: __LANG__=$(__EN__) 
 # consider using private to define __LANG__ es
+$(__ROOT__)/% 		: __LANG__=$(__EN__) 
 $(__ROOT__)/$(__EN__)/% : __LANG__=$(__EN__) -D __ALTERNATE__=1
 $(__ROOT__)/$(__ES__)/% : __LANG__=$(__ES__) -D __ALTERNATE__=1
 
-$(addprefix $(__ROOT__)/, $(HTML_FILES)): $(__SRC__)/layout.html $(__SRC__)/tpy.m4 $(__SRC__)/meta.json $(__SRC__)/$(__CSS__)/custom.css
+$(addprefix $(__ROOT__)/, $(HTML_FILES)): $(__SRC__)/layout.htm4 $(__SRC__)/tpy.m4 $(__SRC__)/meta.json $(__SRC__)/$(__CSS__)/custom.css
 
 .SECONDEXPANSION:
-%.html : %.html  | $$(@D)
-	@echo needs === $|
-	mkdir -p $(@D)
-	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(__ROOT__) layout.html >$@
-
+%.html : %.html  | $$(@D)/
+	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(__ROOT__) layout.htm4 >$@
 ##
 ## SITEMAP.XML
 ##
 # contemplar el uso de $^
-$(__ROOT__)/sitemap.xml : $(__SRC__)/sitemap.xml 
+$(__ROOT__)/sitemap.xml : $(__SRC__)/sitemap.xml | $(__ROOT__)/
 	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) \
 	-D __LIST__="$(filter-out 404.html,$(HTML_FILES))" $(__SRC__)/sitemap.xml >$@
-
-#
-# COPY TARGETS
-#
+##
+## COPY TARGETS
+##
 .SECONDEXPANSION:
-$(addprefix $(__ROOT__)/, $(COPY_FILES)): $$(patsubst $$(__ROOT__)%,$$(__SRC__)%,$$@) | $$(@D)
-	@echo needs === $|
-	cp $< $@
-		
-#
-# GZIPED TARGETS
-#	
-$(__GZIP__)/%: $(__ROOT__)/% 
-	mkdir -p $(dir $@)
+$(addprefix $(__ROOT__)/,$(COPY_FILES)): $$(patsubst $$(__ROOT__)%,$$(__SRC__)%,$$@) | $$(@D)/
+	cp $< $@		
+##
+## GZIPED TARGETS
+##	
+.SECONDEXPANSION:
+$(__GZIP__)/%: $(__ROOT__)/% | $$(@D)/
 	gzip -c --no-name --rsyncable $< >$@
 	@echo "###gsutil --mime  $(shell mimetype --brief $< | tr -d '\n') cp $@ gs://www.tekii.com.ar$(subst $(__GZIP__),,$(dir $@))"
-
-#
-# COMMANDS
-#
+##
+## COMMANDS
+##
 PHONY += testm4
 testm4:
 	$(M4) $(M4_FLAGS) --debug=aeqt -D __FNAME__="test_tpy.m4" -D __BASE__=$(@D) -D __ROOT__=$(__ROOT__) test_tpy.m4	
 
 PHONY += tekii
-tekii: $(ALL_ROOT) 
 tekii: __DOMAIN__:=http://www.tekii.com.ar
+tekii: $(ALL_ROOT)
+	@echo [[[ DONE $@ ]]]
 
 PHONY += publish
-publish: $(ALL_GZIP) 
 publish: __DOMAIN__:=http://www.tekii.com.ar
+publish: $(ALL_GZIP)
+	@echo [[[ DONE $@ ]]] 
 
 PHONY += all
 all: tekii 
@@ -134,7 +136,8 @@ cleangzip:
 
 PHONY += realclean
 realclean: clean cleangzip
-	rmdir $(EN_TGT) $(ES_TGT) $(CSS_TGT) $(IMG_TGT) $(FON_TGT)
+	rmdir $(addprefix $(__ROOT__)/, $(TREE))
+	rmdir $(addprefix $(__GZIP__)/, $(TREE))
 	rmdir $(__ROOT__)
 	rmdir $(__GZIP__)
 	
