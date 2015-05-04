@@ -68,11 +68,11 @@ M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
 ## TREE
 ##
 $(__ROOT__)/ $(__GZIP__)/:
-	mkdir -p $@	
+	mkdir -p $@
 $(__ROOT__)/%/:
-	mkdir -p $@	
+	mkdir -p $@
 $(__GZIP__)/%/:
-	mkdir -p $@	
+	mkdir -p $@
 ##
 ## HTML PAGES
 ##
@@ -102,10 +102,13 @@ $(addprefix $(__ROOT__)/,$(COPY_FILES)): $$(patsubst $$(__ROOT__)%,$$(__SRC__)%,
 ##
 ## GZIPED TARGETS
 ##	
+GSUTIL_EXTRA_FLAGS=
+#-h "Cache-Control:public,max-age=60"
 .SECONDEXPANSION:
 $(__GZIP__)/%: $(__ROOT__)/% | $$(@D)/
 	gzip -c --no-name --rsyncable $< >$@
-	@echo "###gsutil --mime  $(shell mimetype --brief $< | tr -d '\n') cp $@ gs://www.tekii.com.ar$(subst $(__GZIP__),,$(dir $@))"
+	gsutil $(GSUTIL_EXTRA_FLAGS) -h "Content-Encoding:gzip" -h "Content-Type:$(shell mimetype --brief $< | tr -d '\n')" cp -a public-read -r $@  gs://www.tekii.com.ar$(subst $(__GZIP__),,$(dir $@))
+
 ##
 ## COMMANDS
 ##
@@ -140,7 +143,7 @@ realclean: clean cleangzip
 	rmdir $(addprefix $(__GZIP__)/, $(TREE))
 	rmdir $(__ROOT__)
 	rmdir $(__GZIP__)
-	
+
 #gsutil -m rsync -ndr ../bucket/ gs://www.teky.io 
 #gsutil web set -m en/index.html -e en/404.html gs://www.teky.io
 #gsutil acl ch -r -u AllUsers:R gs://www.teky.io/
