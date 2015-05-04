@@ -99,9 +99,11 @@ $(addprefix $(__ROOT__)/,$(COPY_FILES)): $$(patsubst $$(__ROOT__)%,$$(__SRC__)%,
 ##
 ## GZIPED TARGETS
 ##	
-$(__GZIP__)/$(__CSS__)/$(BOOTSTRAP_FILE): GSUTIL_EXTRA_FLAGS=-h "Cache-Control:public,max-age=86400"
 GSUTIL_EXTRA_FLAGS=
-#-h "Cache-Control:public,max-age=60"
+$(__GZIP__)/$(__CSS__)/$(BOOTSTRAP_FILE): GSUTIL_EXTRA_FLAGS=-h "Cache-Control:public,max-age=86400"
+$(__GZIP__)/$(__IMG__)/logo.png: GSUTIL_EXTRA_FLAGS=-h "Cache-Control:public,max-age=86400"
+$(__GZIP__)/$(__IMG__)/es.png: GSUTIL_EXTRA_FLAGS=-h "Cache-Control:public,max-age=86400"
+$(__GZIP__)/$(__IMG__)/us.png: GSUTIL_EXTRA_FLAGS=-h "Cache-Control:public,max-age=86400"
 .SECONDEXPANSION:
 $(__GZIP__)/%: $(__ROOT__)/% | $$(@D)/
 	gzip -c --no-name --rsyncable $< >$@
@@ -122,7 +124,9 @@ tekii: $(ALL_ROOT)
 PHONY += publish
 publish: __DOMAIN__:=http://www.tekii.com.ar
 publish: $(ALL_GZIP)
+#	gsutil web set -m en/index.html -e en/404.html gs://www.teky.io
 	@echo [[[ DONE $@ ]]] 
+
 
 PHONY += all
 all: tekii 
@@ -131,7 +135,7 @@ PHONY += clean
 clean:
 	rm -f $(ALL_ROOT)
 
-PHONY += cleangz
+PHONY += cleangzip
 cleangzip:
 	rm -f $(ALL_GZIP)
 
