@@ -17,13 +17,6 @@ __IMG__	:=img
 __JS__ 	:=js
 __FON__	:=fonts
 
-#EN_TGT :=$(__ROOT__)/$(__EN__)
-#ES_TGT :=$(__ROOT__)/$(__ES__)
-#CSS_TGT:=$(__ROOT__)/$(__CSS__)
-#IMG_TGT:=$(__ROOT__)/$(__IMG__)
-#JS_TGT :=$(__ROOT__)/$(__JS__)
-#FON_TGT:=$(__ROOT__)/$(__FON__)
-
 BOOTSTRAP_FILE:=bootstrap.min.css
 GLYPH:=glyphicons-halflings-regular
 
@@ -53,17 +46,10 @@ TREE:= $(__EN__)/ $(__ES__)/ $(__CSS__)/ $(__IMG__)/ $(__FON__)/
 ## VPATH
 ##
 #vpath %.html ./src
+#vpath  %.html.in .
 #vpath %.css $(__CSS__)
 #vpath %.png $(__IMG__)
 #vpath %.js  $(__JS__)
-##
-## M4
-##
-M4= $(shell which m4)
-M4_FLAGS= -P -D __IMAGES__=\/img -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
- -D __EN__=$(__EN__) -D __ES__=$(__ES__) \
- -D __LANG__=$(__LANG__) -D __DOMAIN__="$(__DOMAIN__)" -I $(__SRC__) 
-
 ##
 ## TREE
 ##
@@ -74,22 +60,33 @@ $(__ROOT__)/%/:
 $(__GZIP__)/%/:
 	mkdir -p $@
 ##
+## M4
+##
+M4= $(shell which m4)
+M4_FLAGS= -P -D __IMAGES__=$(__IMG__) -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
+ -D __EN__=$(__EN__) -D __ES__=$(__ES__) \
+ -D __LANG__=$(__LANG__) -D __DOMAIN__="$(__DOMAIN__)" -I $(__SRC__) 
+##
 ## HTML PAGES
 ##
+#$(__ROOT__)/%.html	: $(__SRC__)/%.htm4
 # consider using private to define __LANG__ es
 $(__ROOT__)/% 		: __LANG__=$(__EN__) 
 $(__ROOT__)/$(__EN__)/% : __LANG__=$(__EN__) -D __ALTERNATE__=1
 $(__ROOT__)/$(__ES__)/% : __LANG__=$(__ES__) -D __ALTERNATE__=1
 
-$(addprefix $(__ROOT__)/, $(HTML_FILES)): $(__SRC__)/layout.htm4 $(__SRC__)/tpy.m4 $(__SRC__)/meta.json $(__SRC__)/$(__CSS__)/custom.css
+$(addprefix $(__ROOT__)/, $(HTML_FILES)): $(__SRC__)/layout.html $(__SRC__)/tpy.m4 $(__SRC__)/meta.json $(__SRC__)/$(__CSS__)/custom.css
 
 .SECONDEXPANSION:
-%.html : %.html  | $$(@D)/
-	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(__ROOT__) layout.htm4 >$@
+#%.html : %.html  | $$(@D)/
+$(addprefix $(__ROOT__)/, $(HTML_FILES)): $$(__SRC__)/$$(@F) | $$(@D)/
+	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(__ROOT__) layout.html >$@
 ##
 ## SITEMAP.XML
 ##
-# contemplar el uso de $^
+# contemplar el uso de $^, falta la dependencia con los 
+# sources de los htmls (puede que esto no sea necesario y no haya problema
+# en regenerarlo siempre que tomemos la fecha del source
 $(__ROOT__)/sitemap.xml : $(__SRC__)/sitemap.xml | $(__ROOT__)/
 	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) \
 	-D __LIST__="$(filter-out 404.html,$(HTML_FILES))" $(__SRC__)/sitemap.xml >$@
@@ -102,6 +99,7 @@ $(addprefix $(__ROOT__)/,$(COPY_FILES)): $$(patsubst $$(__ROOT__)%,$$(__SRC__)%,
 ##
 ## GZIPED TARGETS
 ##	
+$(__GZIP__)/$(__CSS__)/$(BOOTSTRAP_FILE): GSUTIL_EXTRA_FLAGS=-h "Cache-Control:public,max-age=86400"
 GSUTIL_EXTRA_FLAGS=
 #-h "Cache-Control:public,max-age=60"
 .SECONDEXPANSION:
