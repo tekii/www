@@ -24,7 +24,8 @@ m4_include(«css/custom.css»)«»m4_dnl
                id="bca"
                itemscope 
                itemtype="http://data-vocabulary.org/Breadcrumb" 
-               itemref="bcb">
+               m4_ifelse(«index.html»,__FNAME__,,
+               «404.html»,__FNAME__,,«itemref="bcb"»)>
             <a class="navbar-brand" 
                href="__DOMAIN__"
                itemprop="url">
