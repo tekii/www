@@ -20,10 +20,18 @@ m4_include(«css/custom.css»)«»m4_dnl
       <!-- begin navbar -->
       <div class="navbar navbar-default">
         <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="__DOMAIN__">
-              <img src="TPY_LNK1(__ROOT__/img/logo.png)" alt="TEKii SRL">
-m4_dnl        <span style="font-weight: bold;">TPY_TEKY</span>
+          <div class="navbar-header"
+               id="bca"
+               itemscope 
+               itemtype="http://data-vocabulary.org/Breadcrumb" 
+               itemref="bcb">
+            <a class="navbar-brand" 
+               href="__DOMAIN__"
+               itemprop="url">
+              <img src="TPY_LNK1(__ROOT__/img/logo.png)" 
+                   alt="TEKii SRL">
+              <span style="display: none;"
+                    itemprop="title">TEKii SRL</span>
             </a>
           </div>
           <div class="collapse navbar-collapse" id="teky-upper-navbar">
@@ -36,8 +44,10 @@ m4_dnl        <span style="font-weight: bold;">TPY_TEKY</span>
             <!-- -->
             <ul class="nav navbar-nav">
               m4_define(«NAV_ITEM»,
-              «<li class="m4_ifelse($1,__FNAME__,active) $3">
-                <a href="TPY_LNK1(__ROOT__/__LANG__/$1)">$2</a>
+              «<li class="m4_ifelse($1,__FNAME__,active) $3"
+                   m4_ifelse($1,__FNAME__,«id="bcb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"»)>
+                <a href="TPY_LNK1(__ROOT__/__LANG__/$1)"
+                   m4_ifelse($1,__FNAME__,«itemprop="url"»)><span m4_ifelse($1,__FNAME__,«itemprop="title"»)>$2</span></a>
               </li>»)
               NAV_ITEM(«about.html»,TPY_ESEN(«Acerca de»,«About»))
               NAV_ITEM(«contact.html»,TPY_ESEN(«Contacto»,«Contact»))
@@ -49,31 +59,6 @@ m4_dnl        <span style="font-weight: bold;">TPY_TEKY</span>
       <!-- end navbar -->
       <!-- begin content -->
       <div class="container clearfix">
-        <!-- begin breadcrumb -->
-        <ul class="breadcrumb">
-
-          <li id="a" 
-              itemscope 
-              itemtype="http://data-vocabulary.org/Breadcrumb" 
-              itemref="b"
-              class="m4_ifelse(«index.html»,__FNAME__,active)">
-            <a itemprop="url"
-               href="__DOMAIN__/index.html">
-              <span itemprop="title">Home</span>
-            </a>
-          </li>
-          m4_ifelse(index.html,__FNAME__,,
-          «<li id="b" 
-              itemscope 
-              itemtype="http://data-vocabulary.org/Breadcrumb" 
-              class="active">
-            <a itemprop="url"
-               href="__DOMAIN__/__LANG__/__FNAME__">
-               <span itemprop="title">m4_ifelse(__FNAME__,«about.html»,TPY_ESEN(«Acerca de»,«About»),__FNAME__,«contact.html»,TPY_ESEN(«Contacto»,«Contact»))</span>
-            </a>
-          </li>»)
-        </ul>
-        <!-- end breadcrum -->
         m4_undivert(3)
       </div>
       <!-- end content -->
