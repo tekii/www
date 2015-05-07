@@ -6,7 +6,7 @@ m4_divert(0)m4_dnl
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="TPY_LNK1(__ROOT__/favicon.ico)" type="image/x-icon" /> 
+    <link rel="shortcut icon" href="TPY_LNK1(__ROOT__/favicon.ico)" type="image/x-icon" />
     m4_ifdef(«__ALTERNATE__»,«<link rel="alternate" hreflang="TPY_ESEN(__EN__,__ES__)" href="TPY_LNK1(__ROOT__/TPY_ESEN(__EN__,__ES__)/__FNAME__)"/>»)«»m4_dnl
     <link href="TPY_LNK1(__ROOT__/css/__BOOTSTRAP_FILE__)" rel="stylesheet" media="screen">
     m4_undivert(2)«»m4_dnl
@@ -15,7 +15,7 @@ m4_divert(0)m4_dnl
 m4_include(«css/custom.css»)«»m4_dnl
     --></style>
   </head>
-  <body>  
+  <body>
     <div>
       <!-- begin navbar -->
       <div class="navbar navbar-default">
@@ -24,7 +24,7 @@ m4_include(«css/custom.css»)«»m4_dnl
             <a class="navbar-brand" href="__DOMAIN__">
               <img src="TPY_LNK1(__ROOT__/img/logo.png)" alt="TEKii SRL">
 m4_dnl        <span style="font-weight: bold;">TPY_TEKY</span>
-            </a>         
+            </a>
           </div>
           <div class="collapse navbar-collapse" id="teky-upper-navbar">
 
@@ -44,16 +44,40 @@ m4_dnl        <span style="font-weight: bold;">TPY_TEKY</span>
               m4_dnl NAV_ITEM(hidden.html,Hidden,hidden-xs)m4_dnl
             </ul>
           </div>
-        </div>        
+        </div>
       </div>
       <!-- end navbar -->
       <!-- begin content -->
       <div class="container clearfix">
+        <!-- begin breadcrumb -->
+        <ul class="breadcrumb">
+
+          <li id="a" 
+              itemscope 
+              itemtype="http://data-vocabulary.org/Breadcrumb" 
+              itemref="b"
+              class="m4_ifelse(«index.html»,__FNAME__,active)">
+            <a itemprop="url"
+               href="__DOMAIN__/index.html">
+              <span itemprop="title">Home</span>
+            </a>
+          </li>
+          m4_ifelse(index.html,__FNAME__,,
+          «<li id="b" 
+              itemscope 
+              itemtype="http://data-vocabulary.org/Breadcrumb" 
+              class="active">
+            <a itemprop="url"
+               href="__DOMAIN__/__LANG__/__FNAME__">
+               <span itemprop="title">m4_ifelse(__FNAME__,«about.html»,TPY_ESEN(«Acerca de»,«About»),__FNAME__,«contact.html»,TPY_ESEN(«Contacto»,«Contact»))</span>
+            </a>
+          </li>»)
+        </ul>
+        <!-- end breadcrum -->
         m4_undivert(3)
       </div>
-      <!-- end content -->   
-  
-      <!-- begin footer -->     
+      <!-- end content -->
+      <!-- begin footer -->
       <div class="container tpy_footer">
         <!-- begin desktop footer footer_columns_wrap clearfix -->
         <div class="row footer_desktop">
@@ -88,12 +112,12 @@ that are secure and ready for high traffic.»,
             m4_divert
           </div>
         </div>
-        <!-- end desktop footer --> 
-        <!-- begin mobile footer --> 
+        <!-- end desktop footer -->
+        <!-- begin mobile footer -->
         <div class="row clearfix footer_mobile">
           <div class="col-xs-6">
             <h5>
-              <a href="TPY_LNK1(__ROOT__/__LANG__/about.html)">TPY_ENES(About,«Acerca de»)</a>              
+              <a href="TPY_LNK1(__ROOT__/__LANG__/about.html)">TPY_ENES(About,«Acerca de»)</a>
             </h5>
           </div>
           <div class="col-xs-6">
@@ -108,7 +132,7 @@ that are secure and ready for high traffic.»,
           m4_divert
         </div>
       </div>
-      <!-- end footer -->     
+      <!-- end footer -->
 m4_dnl<script src="../js/main.js"></script>
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -68,7 +68,11 @@ m4_divert«»m4_dnl
     max-width: 40px;
     height: auto;
 } 
-
+@media (max-width: 768px) {
+  .breadcrumb {
+    display: none;
+  }
+}
 @media (max-width: 992px) {
   .footer_desktop {
     display: none;
