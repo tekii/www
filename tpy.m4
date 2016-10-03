@@ -4,7 +4,7 @@ m4_divert(`-1')m4_dnl
 # 1 sitemap
 # 2 header
 # 3 body
-# 
+#
 
 
 m4_changequote(`«', `»')
@@ -18,12 +18,13 @@ m4_define(«_foreach», «m4_ifelse(«$2», «()», «»,
  «m4_define(«$1», _arg1$2)$3«»$0(«$1», (m4_shift$2), «$3»)»)»)
 
 m4_define(«tpy_cleardivert»,
-  «m4_pushdef(«_num», m4_divnum)m4_divert(«-1»)m4_ifelse(«$#», «0», «m4_undivert«»», 
+  «m4_pushdef(«_num», m4_divnum)m4_divert(«-1»)m4_ifelse(«$#», «0», «m4_undivert«»»,
   «m4_undivert($@)»)m4_divert(_num)m4_popdef(«_num»)»)
 
 m4_define(TPY_TEKY,«<span style="color:black;">TEK</span><span style="color:red;">ii</span><span style="color:black;">$1</span>»)
 m4_define(TPY_TEKY_SRL,TPY_TEKY(« SRL»))
-m4_define(TPY_TEKII,«<span style="color:black;">TEK</span><span style="color:red;">ii</span><span style="color:black;">$1</span>»)
+
+m4_define(TPY_TEKII,«<strong><span style="color:black;">TEK</span><span style="color:black;">ii</span><span style="color:black;">$1</span></strong>»)
 m4_define(TPY_TEKII_SRL,TPY_TEKII(« SRL»))
 
 
