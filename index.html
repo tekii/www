@@ -1,11 +1,75 @@
-m4_divert(2)«»m4_dnl
+
+m4_divert_push([HEADER])dnl
 <meta name="keywords" content="tekii,teky,trazabilidad,traceability,anmat">
 <title>TEKii SRL</title>
-m4_divert(3)«»m4_dnl
+m4_divert_pop([HEADER])dnl
+
+m4_divert_text([AMP_CUSTOM_STYLES],[m4_changequote(«,»)«»dnl
+/* any __FNAME__ custom style goes here */
+.blue-box, .red-box, .green-box {
+width: 100%;
+height: 250px;
+}
+.blue-box {
+background: blue;
+}
+.green-box {
+background: green;
+}
+.red-box {
+background: red;
+}
+m4_changequote([,])dnl
+])
+
+m4_divert_text([AMP_CUSTOM_ELEMENTS],[
+<script async custom-element="amp-carousel"
+        src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+])
+
+m4_divert_push([BODY])dnl
+
+<amp-carousel
+   height="250"
+dnl   layout="responsive"
+   type="slides"
+   layout="fixed-height"
+dnl   type="carousel"
+   autoplay
+   delay="2000"
+   >
+  <div>
+    <div class="blue-box">This is a blue box.</div>
+  </div>
+  <div>
+    <div class="red-box"></div>
+    This is a red box.
+  </div>
+  <div>
+    <div class="green-box"></div>
+    This is a green box.
+  </div>
+</amp-carousel>
+
 <div id="dev_page_content_wrap" class=" dev_faq_page">
   <div id="dev_page_content">
-    <p><a href="en/about.html"><img src="img/us.png" alt="English"><br>English</a></p>
-    <p><a href="es/about.html"><img src="img/es.png" alt="Español"><br>Español</a></p>
+    <p><a href="en/about.html">
+        <amp-img src="img/us.png"
+                 alt="English"
+                 height=43
+                 width=43
+                 layout="fixed"
+                 >
+          <br>English</a>
+    </p>
+    <p><a href="es/about.html">
+        <amp-img src="img/es.png"
+                 alt="Español"
+                 layout="fixed"
+                 height=43 width=43
+                 >
+          <br>Español</a>
+    </p>
   </div>
 </div>
-m4_divert«»m4_dnl
+m4_divert_pop([BODY])[]dnl

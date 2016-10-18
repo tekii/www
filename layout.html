@@ -1,134 +1,249 @@
-m4_include(`tpy.m4')m4_dnl
-m4_include(__FNAME__)m4_dnl
-m4_divert(0)m4_dnl
+m4_include([tpy.m4])[]dnl
+m4_include(__FNAME__)[]dnl
+m4_divert_push([DEFAULT])[]dnl
 <!DOCTYPE html>
-<html lang="__LANG__">
+<html ⚡ lang="__LANG__">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="__HREF([__BASE__/__FNAME__],[__ROOT__])">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
     <meta name="msvalidate.01" content="62098880540BA63FB5E4BCEED0264D10" />
-    <link rel="shortcut icon" href="TPY_LNK1(__ROOT__/favicon.ico)" type="image/x-icon" />
-    m4_ifdef(«__ALTERNATE__»,«<link rel="alternate" hreflang="TPY_ESEN(__EN__,__ES__)" href="TPY_LNK1(__ROOT__/TPY_ESEN(__EN__,__ES__)/__FNAME__)"/>»)«»m4_dnl
-    <link href="TPY_LNK1(__ROOT__/css/__BOOTSTRAP_FILE__)" rel="stylesheet" media="screen">
-    m4_undivert(2)«»m4_dnl
-    m4_include(«meta.json»)«»m4_dnl
-    <style type="text/css"><!--
-m4_include(«css/custom.css»)«»m4_dnl
-    --></style>
+    <link rel="shortcut icon" href="__HREF(__ROOT__/favicon.ico)" type="image/x-icon" />
+    m4_ifdef([__ALTERNATE__],[<link
+                                 rel="alternate"
+                                 hreflang="TPY_ESEN(__EN__,__ES__)"
+                                 href="__HREF(__ROOT__/TPY_ESEN(__EN__,__ES__)/__FNAME__)"/>])
+    <!-- XXX -->
+dnl    <link href="__HREF(__ROOT__/css/__BOOTSTRAP_FILE__)" rel="stylesheet" media="screen">
+    <!-- -->
+    m4_undivert(HEADER)[]dnl <!-- header content -->
+    m4_include([meta.json])[]dnl <!-- -->
+    __AMP_BOILERPLATE__
+    <!-- -->
+    <style amp-custom>
+      /*----------------------*/
+
+      m4_include([css/amp--.css])
+
+      /*----------------------*/
+      m4_changequote(«,»)
+      section[expanded] .show-more {
+      display: none;
+      }
+      section:not([expanded]) .show-less {
+      display: none;
+      }
+      m4_changequote([,])
+      /* amp custom styles */
+      m4_undivert(AMP_CUSTOM_STYLES)[]dnl
+    </style>
+    <!-- begin amp custom elements -->
+    <script async custom-element="amp-analytics"
+            src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-sidebar"
+            src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-accordion"
+            src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    m4_undivert([AMP_CUSTOM_ELEMENTS])[]dnl
+    <!-- end amp custom elements -->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
+  <!-- -->
+  <!-- BODY BODY BODY BODY BODY BODY -->
+  <!-- -->
   <body>
-    <div>
-      <!-- begin navbar -->
-      <div class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header"
-               id="bca"
-               itemscope
-               itemtype="http://data-vocabulary.org/Breadcrumb"
-               m4_ifelse(«index.html»,__FNAME__,,
-               «404.html»,__FNAME__,,«itemref="bcb"»)>
-            <a class="navbar-brand"
-               href="__DOMAIN__"
-               itemprop="url">
-              <img src="TPY_LNK1(__ROOT__/img/logo.png)"
-                   alt="TEKii SRL">
-              <span style="display: none;"
-                    itemprop="title">TEKii SRL</span>
-            </a>
-          </div>
-          <div class="collapse navbar-collapse" id="teky-upper-navbar">
-
-            <ul class="nav navbar-nav navbar-right">
-              m4_ifdef(«__ALTERNATE__»,«<li>
-                <a href="TPY_LNK1(__ROOT__/TPY_ESEN(__EN__,__ES__)/__FNAME__)">TPY_ESEN(English,Español)</a>
-              </li>»)«»m4_dnl
+    <!-- -->
+    <!-- amp-sidebar -->
+    <!-- -->
+    <amp-sidebar id='sidebar' side="right" layout='nodisplay'>
+      <!-- close button -->
+      <button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'></button>
+      <nav>
+        <div class="language desktop">
+          <amp-accordion>
+            <section>
+              <h6 class="current">
+                <a class="flag-__LANG__"><span>__LANG_NAME__</span></a>
+              </h6>
+              <div class="others">
+                m4_ifdef([__ALTERNATE__],[
+                __FOREACH_LANG_EXCEPT([__LANG__],[__L__],[__N__],[
+                <div>
+                  <a href="__HREF(__ROOT__/__L__/__FNAME__)"
+                     class="flag-__L__">
+                    <span>__N__</span>
+                  </a>
+                </div>
+                ])])dnl
+              </div>
+            </section>
+          </amp-accordion>
+        </div>
+        <amp-accordion>
+          m4_define([__SECTION],[
+          <section class="tab"  m4_if($1,__FNAME__,[expanded])>
+            <h3>$2</h3>
+            <ul>
+              <li>
+                <a href="__HREF(__ROOT__/__LANG__/$1)" m4_if($1,__FNAME__,[itemprop="url"])>
+                  <span m4_if($1,__FNAME__,[itemprop="title"])>$2</span>
+                </a>
+              </li>
             </ul>
+          </section>])[]dnl
+          __SECTION([about.html],TPY_ESEN([Acerca de],[About]))
+          __SECTION([contact.html],TPY_ESEN([Contacto],[Contact]))
+          m4_undefine([__SECTION])
+        </amp-accordion>
+      </nav>
+    </amp-sidebar>
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- https://github.com/ampproject/docs/blob/master/views/partials/header.html -->
+    <header class="header fixed">
+      <div class="container">
+        <div class="nav-container">
+          <div class="left-nav">
+            <a href="/"
+               class="tab header-title"><span></span></a>
+          </div>
+          <div class="right alt">
+            <!-- {% for entry in menu %} -->
+            m4_define([N_I],
+            [<div class="tab m4_if($1,__FNAME__,[active]) $3"
+                  m4_if($1,__FNAME__,
+                  [id="bcb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"])>
+              <a href="__HREF(__ROOT__/__LANG__/$1)" m4_if($1,__FNAME__,[itemprop="url"])>
+                <span m4_if($1,__FNAME__,[itemprop="title"])>$2</span>
+              </a>
+            </div>])
+
+            N_I([about.html],TPY_ESEN([Acerca de],[About]))
+            N_I([contact.html],TPY_ESEN([Contacto],[Contact]))
             <!-- -->
-            <ul class="nav navbar-nav">
-              m4_define(«NAV_ITEM»,
-              «<li class="m4_ifelse($1,__FNAME__,active) $3"
-                   m4_ifelse($1,__FNAME__,«id="bcb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"»)>
-                <a href="TPY_LNK1(__ROOT__/__LANG__/$1)"
-                   m4_ifelse($1,__FNAME__,«itemprop="url"»)><span m4_ifelse($1,__FNAME__,«itemprop="title"»)>$2</span></a>
-              </li>»)
-              NAV_ITEM(«about.html»,TPY_ESEN(«Acerca de»,«About»))
-              NAV_ITEM(«contact.html»,TPY_ESEN(«Contacto»,«Contact»))
-              m4_dnl NAV_ITEM(hidden.html,Hidden,hidden-xs)m4_dnl
-            </ul>
+            <!-- -->
+            <!-- -->
+            <div class="language desktop">
+              <amp-accordion>
+                <section>
+                  <h6 class="current">
+                    <a class="flag-__LANG__"><span>__LANG_NAME__</span></a>
+                  </h6>
+                  <div class="others">
+                    m4_ifdef([__ALTERNATE__],[
+                    __FOREACH_LANG_EXCEPT([__LANG__],[__L__],[__N__],[
+                    <div>
+                      <a href="__HREF(__ROOT__/__L__/__FNAME__)"
+                         class="flag-__L__">
+                        <span>__N__</span>
+                      </a>
+                    </div>
+                    ])])dnl
+                  </div>
+                </section>
+              </amp-accordion>
+            </div>
+            <button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'></button>
           </div>
         </div>
       </div>
-      <!-- end navbar -->
-      <!-- begin content -->
-      <div class="container clearfix">
-        m4_undivert(3)
-      </div>
-      <!-- end content -->
-      <!-- begin footer -->
-      <div class="container tpy_footer">
-        <!-- begin desktop footer footer_columns_wrap clearfix -->
-        <div class="row footer_desktop">
-          <div class="col-xs-12 col-md-8 footer_col">
-            <h5><span style="font-weight: bold;">TPY_TEKII_SRL</span></h5>
-            <p>
-              TPY_LANG(
-              __EN__,«Since 2006 TPY_TEKII delivers solutions and large scale web applications
-that are secure and ready for high traffic.»,
-              __ES__,«<strong>CONTINUIDAD + INNOVACIÓN</strong><br>Desde 2006 TEKii provee soluciones con altos niveles de seguridad y un excelente historial de continuidad.»
-              )
-            </p>
-          </div>
-          <div class="col-xs-12 col-md-2 footer_col">
-            <h5>
-	      <a href="TPY_LNK1(__ROOT__/__LANG__/about.html)">TPY_ENES(About,«Acerca de»)</a>
-            </h5>
-            m4_divert(-1)
-            <ul>
-              <li><a href="blog.html">Blog</a></li>
-            </ul>
-            m4_divert
-          </div>
-          <div class="col-xs-12 col-md-2 footer_col">
-            <h5>
-	      <a href="TPY_LNK1(__ROOT__/__LANG__/contact.html)">TPY_ENES(Contact,Contacto)</a>
-	    </h5>
-            m4_divert(-1)
-            <ul>
-              <li><a href=""></a></li>
-            </ul>
-            m4_divert
-          </div>
+    </header>
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <div class="container clearfix">
+      m4_undivert([BODY])[]dnl
+    </div>
+    <!-- -->
+    <!-- -->
+    m4_divert_push(KILL)
+    <!-- begin footer -->
+    <div class="container tpy_footer">
+      <!-- begin desktop footer footer_columns_wrap clearfix -->
+      <div class="row footer_desktop">
+        <div class="twelve columns col-xs-12 col-md-8 footer_col">
+          <h5>__TEKII_SRL__</h5>
+          <p>
+            TPY_LANG(
+y            __EN__,[Since 2006 __TEKII__ delivers solutions and large scale web applications
+            that are secure and ready for high traffic.],
+            __ES__,[<strong>CONTINUIDAD + INNOVACIÓN</strong><br>Desde 2006 __TEKII__ provee soluciones con altos niveles de seguridad y un excelente historial de continuidad.]
+            )
+          </p>
         </div>
-        <!-- end desktop footer -->
-        <!-- begin mobile footer -->
-        <div class="row clearfix footer_mobile">
-          <div class="col-xs-6">
-            <h5>
-              <a href="TPY_LNK1(__ROOT__/__LANG__/about.html)">TPY_ENES(About,«Acerca de»)</a>
-            </h5>
-          </div>
-          <div class="col-xs-6">
-            <h5>
-              <a href="TPY_LNK1(__ROOT__/__LANG__/contact.html)">TPY_ENES(Contact,Contacto)</a>
-            </h5>
-          </div>
-          m4_divert(-1)
-          <div class="footer_col">
-            <h5><a href="https://twitter.com/talonariomovil" target="_blank" data-track="Follow/Twitter" onclick="trackDlClick(this, event)">Twitter</a></h5>
-          </div>
-          m4_divert
+        <div class="twelve columns col-xs-12 col-md-2 footer_col">
+          <h5>
+	    <a href="__HREF(__ROOT__/__LANG__/about.html)">TPY_ENES(About,[Acerca de])</a>
+          </h5>
+          m4_divert_push(KILL)
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+          m4_divert_pop
+        </div>
+        <div class="twelve columns col-xs-12 col-md-2 footer_col">
+          <h5>
+	    <a href="__HREF(__ROOT__/__LANG__/contact.html)">TPY_ENES(Contact,Contacto)</a>
+	  </h5>
+          m4_divert_push(KILL)
+          <ul>
+            <li><a href=""></a></li>
+          </ul>
+          m4_divert_pop
         </div>
       </div>
+      <!-- end desktop footer -->
+      <!-- begin mobile footer -->
+      <div class="row clearfix footer_mobile">
+        <div class="col-xs-6">
+          <h5>
+            <a href="__HREF(__ROOT__/__LANG__/about.html)">TPY_ENES(About,[Acerca de])</a>
+          </h5>
+        </div>
+        <div class="col-xs-6">
+          <h5>
+            <a href="__HREF(__ROOT__/__LANG__/contact.html)">TPY_ENES(Contact,Contacto)</a>
+          </h5>
+        </div>
+        m4_divert_push(KILL)
+        <div class="footer_col">
+          <h5><a href="https://twitter.com/talonariomovil" target="_blank" data-track="Follow/Twitter" onclick="trackDlClick(this, event)">Twitter</a></h5>
+        </div>
+        m4_divert_pop(KILL)
+      </div>
+      m4_divert_pop(KILL)
+      <!--      </div>-->
       <!-- end footer -->
-m4_dnl<script src="../js/main.js"></script>
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      dnl<script src="../js/main.js"></script>
 
-        ga('create', 'UA-7509381-3', 'auto');
-        ga('send', 'pageview');
-      </script>
+      <amp-analytics type="googleanalytics"
+                     id="analytics1">
+        <script type="application/json">
+          {
+          "vars": {
+          "account": "UA-7509381-3"
+          },
+          "triggers": {
+          "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+          }
+          }
+          }
+        </script>
+      </amp-analytics>
+      <!--
+          <script>m4_changequote(«,»)«»dnl
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-7509381-3', 'auto');
+            ga('send', 'pageview');
+            m4_changequote([,])[]</script>-->
   </body>
-</html>tpy_cleardivert«»m4_dnl
+</html>
+m4_divert_pop([DEFAULT])[]dnl
+m4_cleardivert([SITEMAP])[]dnl

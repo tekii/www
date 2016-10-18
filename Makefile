@@ -17,7 +17,10 @@ __IMG__	:=img
 __JS__ 	:=js
 __FON__	:=fonts
 
-BOOTSTRAP_FILE:=bootstrap.min.css
+HTML_EXT:=.html
+AMP__EXT:=.amp.html
+
+BOOTSTRAP_FILE:=bootstrap.css
 GLYPH:=glyphicons-halflings-regular
 
 PAGES := about.html contact.html
@@ -27,7 +30,8 @@ HTML_FILES+= $(addprefix $(__ES__)/,$(PAGES))
 
 FON_FILES:= $(GLYPH).eot $(GLYPH).svg $(GLYPH).ttf $(GLYPH).woff $(GLYPH).woff2
 CSS_FILES:= $(BOOTSTRAP_FILE)
-IMG_FILES+= us.png es.png logo.png
+IMG_FILES+= us.png es.png logo.png close.svg hamburger.svg hamburger_white.svg \
+	logo-blue.svg lang-icon.svg lang-icon-inverted.svg
 
 COPY_FILES:= favicon.ico
 COPY_FILES+= $(addprefix $(__CSS__)/, $(CSS_FILES))
@@ -63,24 +67,29 @@ $(__GZIP__)/%/:
 ## M4
 ##
 M4= $(shell which m4)
-M4_FLAGS= -P -D __IMAGES__=$(__IMG__) -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
- -D __EN__=$(__EN__) -D __ES__=$(__ES__) \
- -D __LANG__=$(__LANG__) -D __DOMAIN__="$(__DOMAIN__)" -I $(__SRC__)
+M4_FLAGS= \
+	-I /usr/share/autoconf \
+	-R /usr/share/autoconf/m4sugar/m4sugar.m4f \
+	-D __IMAGES__=$(__IMG__) \
+	-D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE) \
+	-D __EN__=$(__EN__) -D __ES__=$(__ES__) \
+	-I $(__SRC__)
 ##
 ## HTML PAGES
 ##
 #$(__ROOT__)/%.html	: $(__SRC__)/%.htm4
 # consider using private to define __LANG__ es
-$(__ROOT__)/% 		: __LANG__=$(__EN__)
-$(__ROOT__)/$(__EN__)/% : __LANG__=$(__EN__) -D __ALTERNATE__=1
-$(__ROOT__)/$(__ES__)/% : __LANG__=$(__ES__) -D __ALTERNATE__=1
+$(__ROOT__)/% 		: EXTRA_FLAGS+= -D __LANG__=$(__EN__)
+$(__ROOT__)/$(__EN__)/% : EXTRA_FLAGS+= -D __LANG__=$(__EN__) -D __ALTERNATE__=1
+$(__ROOT__)/$(__ES__)/% : EXTRA_FLAGS+= -D __LANG__=$(__ES__) -D __ALTERNATE__=1
 
 $(addprefix $(__ROOT__)/, $(HTML_FILES)): $(__SRC__)/layout.html $(__SRC__)/tpy.m4 $(__SRC__)/meta.json $(__SRC__)/$(__CSS__)/custom.css
 
 .SECONDEXPANSION:
 #%.html : %.html  | $$(@D)/
 $(addprefix $(__ROOT__)/, $(HTML_FILES)): $$(__SRC__)/$$(@F) | $$(@D)/
-	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) -D __BASE__=$(@D) -D __ROOT__=$(__ROOT__) layout.html >$@
+	$(M4) $(M4_FLAGS) $(EXTRA_FLAGS) -D __FNAME__=$(@F) \
+		-D __BASE__=$(@D) -D __ROOT__=$(__ROOT__) layout.html >$@
 ##
 ## SITEMAP.XML
 ##
@@ -88,7 +97,7 @@ $(addprefix $(__ROOT__)/, $(HTML_FILES)): $$(__SRC__)/$$(@F) | $$(@D)/
 # sources de los htmls (puede que esto no sea necesario y no haya problema
 # en regenerarlo siempre que tomemos la fecha del source
 $(__ROOT__)/sitemap.xml : $(__SRC__)/sitemap.xml | $(__ROOT__)/
-	$(M4) $(M4_FLAGS) -D __FNAME__=$(@F) \
+	$(M4) $(M4_FLAGS) $(EXTRA_FLAGS) -D __FNAME__=$(@F) \
 	-D __LIST__="$(filter-out 404.html,$(HTML_FILES))" $(__SRC__)/sitemap.xml >$@
 ##
 ## COPY TARGETS
@@ -110,19 +119,19 @@ $(__GZIP__)/%: $(__ROOT__)/% | $$(@D)/
 	gsutil $(GSUTIL_EXTRA_FLAGS) -h "Content-Encoding:gzip" -h "Content-Type:$(shell mimetype --brief $< | tr -d '\n')" cp -a public-read -r $@  gs://www.tekii.com.ar$(subst $(__GZIP__),,$(dir $@))
 
 ##
-## COMMANDS
+## COMMANDS --debug=aeqt
 ##
 PHONY += testm4
 testm4:
-	$(M4) $(M4_FLAGS) --debug=aeqt -D __FNAME__="test_tpy.m4" -D __BASE__=$(@D) -D __ROOT__=$(__ROOT__) test_tpy.m4
+	$(M4) $(M4_FLAGS) --debug= -D __FNAME__="test_tpy.m4" -D __BASE__=$(@D) -D __ROOT__=$(__ROOT__) -D __LIST__="$(filter-out 404.html,$(HTML_FILES))" test_tpy.m4
 
 PHONY += tekii
-tekii: __DOMAIN__:=http://www.tekii.com.ar
+tekii: EXTRA_FLAGS= -D __DOMAIN__=http://www.tekii.com.ar
 tekii: $(ALL_ROOT)
 	@echo [[[ DONE $@ ]]]
 
 PHONY += publish
-publish: __DOMAIN__:=http://www.tekii.com.ar
+publish: EXTRA_FLAGS= -D __DOMAIN__=http://www.tekii.com.ar
 publish: $(ALL_GZIP)
 #	gsutil web set -m en/index.html -e en/404.html gs://www.teky.io
 	@echo [[[ DONE $@ ]]]

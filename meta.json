@@ -1,6 +1,7 @@
+m4_changequote(«,»)«»dnl
 <script type="application/ld+json">
     [
-        { 
+        {
             "@context" : "http://schema.org",
             "@type" : "Organization",
             "name": "TEKii SRL",
@@ -13,33 +14,33 @@
                 "addressLocality": "Ciudad Autonoma de Buenos Aires, Argentina",
                 "postalCode": "C1437ELC",
                 "streetAddress": "Elia 551"
-            },      
+            },
             "foundingDate":"2006-11-1",
             "email": "contacto(at)tekii.com.ar",
             "url" : "http://www.tekii.com.ar",
-            "sameAs" : [ 
+            "sameAs" : [
                 "https://www.google.com/+tekiiar",
                 "https://github.com/tekii",
                 "https://ar.linkedin.com/company/tekii-s-r-l-",
                 "http://www.teky.io",
                 "http://www.teky.co",
                 "http://www.teky.com.ar"
-            ], 
+            ],
             "contactPoint" : [
-                { 
+                {
                     "@type" : "ContactPoint",
                     "telephone" : "+54-11-4911-2704",
                     "contactType" : "customer service"
-                } 
+                }
             ]
         },
-        {  
+        {
             "@context" : "http://schema.org",
             "@type" : "WebSite",
             "name" : "TEKii SRL",
             "alternateName" : "TEKY SRL",
             "url" : "http://www.tekii.com.ar",
-            "sameAs" : [ 
+            "sameAs" : [
                 "https://www.google.com/+tekiiar",
                 "https://github.com/tekii",
                 "https://ar.linkedin.com/company/tekii-s-r-l-",
@@ -50,3 +51,4 @@
         }
     ]
 </script>
+m4_changequote([,])[]dnl
