@@ -1,6 +1,12 @@
-m4_include([tpy.m4])[]dnl
-m4_include(__FNAME__)[]dnl
-m4_divert_push([DEFAULT])[]dnl
+__BUILD_COPY([img/logo.png])
+__BUILD_COPY([img/close.svg])
+__BUILD_COPY([img/hamburger.svg])
+__BUILD_COPY([img/hamburger_white.svg])
+__BUILD_COPY([img/logo-blue.svg])
+__BUILD_COPY([img/lang-icon.svg])
+__BUILD_COPY([img/lang-icon-inverted.svg])
+
+m4_divert_push([BUILD])dnl
 <!DOCTYPE html>
 <html ⚡ lang="__LANG__">
   <head>
@@ -245,5 +251,4 @@ y            __EN__,[Since 2006 __TEKII__ delivers solutions and large scale web
             m4_changequote([,])[]</script>-->
   </body>
 </html>
-m4_divert_pop([DEFAULT])[]dnl
-m4_cleardivert([SITEMAP])[]dnl
+m4_divert_pop([BUILD])dnl

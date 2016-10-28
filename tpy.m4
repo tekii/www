@@ -7,26 +7,19 @@
 # 6 amp custom elements
 #
 m4_define([_m4_divert(DEFAULT)], 0)
-m4_define([_m4_divert(SITEMAP)], 1)
-m4_define([_m4_divert(HEADER)], 2)
-m4_define([_m4_divert(BODY)], 3)
+m4_define([_m4_divert(DEPEND)], 1)
+m4_define([_m4_divert(SITEMAP)], 2)
+m4_define([_m4_divert(HEADER)], 3)
+m4_define([_m4_divert(BODY)], 4)
 m4_define([_m4_divert(AMP_CUSTOM_STYLES)], 5)
 m4_define([_m4_divert(AMP_CUSTOM_ELEMENTS)], 6)
-
-# foreach(x, (item_1, item_2, ..., item_n), stmt)
-#   parenthesized list, simple version
-#m4_define(«tpy_foreach», «m4_pushdef(«$1»)_foreach($@)m4_popdef(«$1»)»)
-#m4_define(«_arg1», «$1»)
-#m4_define(«_foreach», «m4_ifelse(«$2», «()», «»,
-# «m4_define(«$1», _arg1$2)$3«»$0(«$1», (m4_shift$2), «$3»)»)»)
-
+m4_define([_m4_divert(BUILD)], 7)
 #
 # constants
 #
 m4_define([__TEKII__],[<strong>TEKii$1</strong>])
 m4_define([__TEKII_SRL_]_,__TEKII__([ SRL]))
 m4_define([__AMP_BOILERPLATE__],[<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>])
-
 #
 # LANG conditionals
 #
@@ -52,15 +45,11 @@ m4_define([__LANG_NAME__], __LANG_NAME(__LANG__))
 m4_define([TPY_LANG],
 [m4_if(__LANG__,[$1],[$2],__LANG__,[$3],[$4])])
 
-#m4_define(«TPY_LAN4»,«m4_ifelse(«$#»,«0»,,«$#»,«1»,,__LANG__,«$1»,«$2»,«$0(m4_shift(m4_shift($@)))»)»)
-
 m4_define([TPY_ESEN],
 m4_case(__LANG__,__ES__,$1,__EN__,$2))
 
 m4_define([TPY_ENES],
 m4_case(__LANG__,__EN__,$1,__ES__,$2))
-
-#m4_define(«TPY_DEPS»,«$1»)
 
 #
 # calculate path jump relative to __BASE__ or $2
@@ -73,3 +62,66 @@ m4_define([__FNAME],
 
 m4_define([__RDATE],
 [m4_chomp_all(m4_esyscmd(date --reference=$1 +%Y-%m-%d))])
+
+#
+# BUILD MACROS
+#
+m4_define([__BUILD_LANG],[
+m4_divert_text([DEPEND],[
+__ROOT__/$1/__FNAME__: EXTRA_BUILD_FLAGS+= -D __LANG__=$1 -D __ALTERNATE__
+[#] __ROOT__/$1/__FNAME__: __SRC__/__FNAME__
+build: __ROOT__/$1/__FNAME__
+clean:: ; [$(RM)] __ROOT__/$1/__FNAME__
+])])
+
+m4_define([__BUILD_TOP],[
+m4_divert_text([DEPEND],[
+__ROOT__/__FNAME__: EXTRA_BUILD_FLAGS+= -D __LANG__=$1
+build: __ROOT__/__FNAME__
+clean:: ; [$(RM)] __ROOT__/__FNAME__
+])])
+
+m4_define([__BUILD_COPY],[
+m4_divert_text([DEPEND],[
+__SRC__/__FNAME__ : $1
+build: __ROOT__/static/$1
+clean:: ; [$(RM)] __ROOT__/[$(__STATIC__)]/$1
+])])
+
+dnl
+dnl PAGE PROCESS STARTS HERE
+dnl
+m4_include(__FNAME__)
+dnl
+dnl NOW THE LAYOUT
+dnl
+m4_include(layout.html)
+dnl
+dnl AND FINALLY CHOOSE WHAT TO EMIT
+dnl
+m4_case(__DO__,
+[MAKEBUILD],[
+m4_divert_text([DEFAULT],[m4_undivert([BUILD])])
+m4_cleardivert([SITEMAP])
+m4_cleardivert([DEPEND])
+],
+[MAKEDEPEND],[
+m4_divert_text([DEFAULT],[m4_undivert([DEPEND])])
+m4_cleardivert([SITEMAP])
+m4_cleardivert([HEADER])
+m4_cleardivert([BODY])
+m4_cleardivert([AMP_CUSTOM_STYLES])
+m4_cleardivert([AMP_CUSTOM_ELEMENTS])
+m4_cleardivert([BUILD])
+],
+[
+m4_fatal([Unmached [__DO__]:__DO__],[1])
+m4_cleardivert([DEPEND])
+m4_cleardivert([SITEMAP])
+m4_cleardivert([HEADER])
+m4_cleardivert([BODY])
+m4_cleardivert([AMP_CUSTOM_STYLES])
+m4_cleardivert([AMP_CUSTOM_ELEMENTS])
+m4_cleardivert([BUILD])]
+
+)
