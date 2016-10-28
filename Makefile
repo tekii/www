@@ -29,8 +29,9 @@ PAGES := 404.html index.html about.html contact.html
 ##
 ##
 ##
-RM:= @-rm
+RM:= @-rm -f
 #RM:= [ -e file ] && rm file
+RMDIR:= @-rmdir
 
 ##
 ## M4
@@ -145,14 +146,11 @@ cleangzip:
 	rm -f $(ALL_GZIP)
 
 PHONY += realclean
-realclean: clean cleangzip
-	-rm -f $(patsubst %,$(__DEPS__)/%.d,$(basename $(PAGES)))
-#	rmdir $(addprefix $(__ROOT__)/, $(TREE))
-#	rmdir $(addprefix $(__GZIP__)/, $(TREE))
-
-#	rmdir $(__DEPS__)
-#	rmdir $(__ROOT__)
-#	-rmdir $(__GZIP__)
+realclean:: clean
+	$(RM) $(patsubst %,$(__DEPS__)/%.d,$(basename $(PAGES)))
+	$(RMDIR) $(__DEPS__)
+	$(RMDIR) $(__ROOT__)
+#	$(RMDIR) $(__GZIP__)
 	@echo [[[ DONE $@ ]]]
 
 #gsutil -m rsync -ndr ../bucket/ gs://www.teky.io

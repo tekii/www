@@ -72,6 +72,7 @@ __ROOT__/$1/__FNAME__: EXTRA_BUILD_FLAGS+= -D __LANG__=$1 -D __ALTERNATE__
 [#] __ROOT__/$1/__FNAME__: __SRC__/__FNAME__
 build: __ROOT__/$1/__FNAME__
 clean:: ; [$(RM)] __ROOT__/$1/__FNAME__
+realclean:: ; [$(RMDIR)] __ROOT__/$1
 ])])
 
 m4_define([__BUILD_TOP],[
