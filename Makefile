@@ -61,7 +61,7 @@ $(__ROOT__)/%/:
 #$(addprefix $(__SRC__)/, $(PAGES)): $(__SRC__)/layout.html $(__SRC__)/tpy.m4
 #$(__SRC__)/%.html: $(__SRC__)/layout.html $(__SRC__)/tpy.m4
 ##
-LAYOUT_FILES:= $(__SRC__)/layout.html $(__SRC__)/tpy.m4
+LAYOUT_FILES:= $(__SRC__)/layout.html $(__SRC__)/tpy.m4 $(__SRC__)/css/amp--.css
 
 $(__SRC__)/%.html: EXTRA_BUILD_FLAGS+= -D __IMAGES__=$(__IMG__) -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE)
 
