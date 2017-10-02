@@ -24,7 +24,8 @@ AMP__EXT:=.amp.html
 BOOTSTRAP_FILE:=bootstrap.css
 GLYPH:=glyphicons-halflings-regular
 
-PAGES := 404.html index.html about.html contact.html
+PAGES := 404.html index.html about.html contact.html nearshore.html blog.html \
+	jobs.html jobs-fd03.html jobs-ja01.html
 
 ##
 ##
@@ -65,6 +66,8 @@ LAYOUT_FILES:= $(__SRC__)/layout.html $(__SRC__)/tpy.m4
 
 $(__SRC__)/%.html: EXTRA_BUILD_FLAGS+= -D __IMAGES__=$(__IMG__) -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE)
 
+## $< instead $(@F) allows nested paths but the menus needs some work
+## to detects the choosen one
 define build-page
 $(M4) $(M4_FLAGS) -D __DO__=MAKEBUILD \
 	$(EXTRA_BUILD_FLAGS) \
