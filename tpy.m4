@@ -45,14 +45,15 @@ m4_define([__LANG_NAME__], __LANG_NAME(__LANG__))
 m4_define([TPY_LANG],
 [m4_if(__LANG__,[$1],[$2],__LANG__,[$3],[$4])])
 
-m4_define([TPY_ESEN],
+m4_define([__ESEN],
 m4_case(__LANG__,__ES__,$1,__EN__,$2))
 
-m4_define([TPY_ENES],
+m4_define([__ENES],
 m4_case(__LANG__,__EN__,$1,__ES__,$2))
 
 #
 # calculate path jump relative to __BASE__ or $2
+# TODO: strip fragments #xxx
 #
 m4_define([__HREF],
 [m4_esyscmd_s(relpath $1 m4_default([$2],[__BASE__]))])

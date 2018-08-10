@@ -8,7 +8,7 @@ __BUILD_COPY([img/lang-icon-inverted.svg])
 
 m4_divert_push([BUILD])dnl
 <!DOCTYPE html>
-<html ⚡ lang="__LANG__">
+<html lang="__LANG__">
   <head>
     <meta charset="utf-8">
     <link rel="canonical" href="__HREF([__BASE__/__FNAME__],[__ROOT__])">
@@ -16,98 +16,67 @@ m4_divert_push([BUILD])dnl
     <meta name="msvalidate.01" content="62098880540BA63FB5E4BCEED0264D10" />
     <link rel="shortcut icon" href="__HREF(__ROOT__/favicon.ico)" type="image/x-icon" />
     m4_ifdef([__ALTERNATE__],[<link
-                                 rel="alternate"
-                                 hreflang="TPY_ESEN(__EN__,__ES__)"
-                                 href="__HREF(__ROOT__/TPY_ESEN(__EN__,__ES__)/__FNAME__)"/>])
+                                rel="alternate"
+                                hreflang="__ESEN(__EN__,__ES__)"
+                                href="__HREF(__ROOT__/__ESEN(__EN__,__ES__)/__FNAME__)"/>])
     <!-- XXX -->
-dnl    <link href="__HREF(__ROOT__/css/__BOOTSTRAP_FILE__)" rel="stylesheet" media="screen">
+    dnl    <link href="__HREF(__ROOT__/css/__BOOTSTRAP_FILE__)" rel="stylesheet" media="screen">
     <!-- -->
-    m4_undivert(HEADER)[]dnl <!-- header content -->
-    m4_include([meta.json])[]dnl <!-- -->
-    __AMP_BOILERPLATE__
-    <!-- -->
-    <style amp-custom>
-      /*----------------------*/
-
-      m4_include([css/amp--.css])
-
-      /*----------------------*/
+    <style>
       m4_changequote(«,»)
-      section[expanded] .show-more {
-      display: none;
-      }
-      section:not([expanded]) .show-less {
-      display: none;
-      }
+      <!-- -->
+
+      <!-- -->
       m4_changequote([,])
       /* amp custom styles */
       m4_undivert(AMP_CUSTOM_STYLES)[]dnl
     </style>
-    <!-- begin amp custom elements -->
-    <script async custom-element="amp-analytics"
-            src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-    <script async custom-element="amp-sidebar"
-            src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
-    <script async custom-element="amp-accordion"
-            src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
-    m4_undivert([AMP_CUSTOM_ELEMENTS])[]dnl
-    <!-- end amp custom elements -->
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    m4_undivert(HEADER)[]dnl <!-- header content -->
+    m4_include([meta.json])[]dnl <!-- -->
   </head>
-  <!-- -->
-  <!-- BODY BODY BODY BODY BODY BODY -->
-  <!-- -->
+
   <body>
-    <!-- -->
-    <!-- amp-sidebar -->
-    <!-- -->
-    <amp-sidebar id='sidebar' side="right" layout='nodisplay'>
-      <!-- close button -->
-      <button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'></button>
-      <nav>
-        <div class="language desktop">
-          <amp-accordion>
-            <section>
-              <h6 class="current">
-                <a class="flag-__LANG__"><span>__LANG_NAME__</span></a>
-              </h6>
-              <div class="others">
-                m4_ifdef([__ALTERNATE__],[
-                __FOREACH_LANG_EXCEPT([__LANG__],[__L__],[__N__],[
-                <div>
-                  <a href="__HREF(__ROOT__/__L__/__FNAME__)"
-                     class="flag-__L__">
-                    <span>__N__</span>
-                  </a>
-                </div>
-                ])])dnl
-              </div>
-            </section>
-          </amp-accordion>
-        </div>
-        <amp-accordion>
-          m4_define([__SECTION],[
-          <section class="tab"  m4_if($1,__FNAME__,[expanded])>
-            <h3>$2</h3>
-            <ul>
-              <li>
-                <a href="__HREF(__ROOT__/__LANG__/$1)" m4_if($1,__FNAME__,[itemprop="url"])>
-                  <span m4_if($1,__FNAME__,[itemprop="title"])>$2</span>
-                </a>
-              </li>
-            </ul>
-          </section>])[]dnl
-          __SECTION([about.html],TPY_ESEN([Acerca de],[About]))
-          __SECTION([contact.html],TPY_ESEN([Contacto],[Contact]))
-          m4_undefine([__SECTION])
-        </amp-accordion>
-      </nav>
-    </amp-sidebar>
-    <!-- -->
-    <!-- -->
-    <!-- -->
-    <!-- https://github.com/ampproject/docs/blob/master/views/partials/header.html -->
+    <!-- NAV -->
+    <!-- NAV -->
+    <!-- NAV -->
+    dnl<button class="tab hamburger" id="menu-button" on='tap:sidebar.toggle'></button>
+    <nav>
+      <ul>
+        <li class="current">
+          <a class="flag-__LANG__"><span>__LANG_NAME__</span></a>
+        </li>
+        m4_ifdef([__ALTERNATE__],[
+        __FOREACH_LANG_EXCEPT([__LANG__],[__L__],[__N__],[
+        <li>
+          <a href="__HREF(__ROOT__/__L__/__FNAME__)"
+             class="flag-__L__">
+            <span>__N__</span>
+          </a>
+        </li>
+        ])])dnl
+      </ul>
+      <ul>
+        m4_define([__SECTION],[
+        <div class="menuitem-class" m4_if($1,__FNAME__,[expanded id="bcb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"]) >
+          dnl<h3>$2</h3>
+          <li>
+            <a href="__HREF(__ROOT__/__LANG__/$1)" m4_if($1,__FNAME__,[itemprop="url"])>
+              <span m4_if($1,__FNAME__,[itemprop="title"])>$2</span>
+            </a>
+          </li>
+        </div>])[]dnl
+        __SECTION([about.html],__ESEN([Acerca de],[About]))
+        __SECTION([contact.html],__ESEN([Contacto],[Contact]))
+        m4_undefine([__SECTION])
+      </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <!-- HEADER -->
+    <!-- HEADER -->
     <header class="header fixed">
+      m4_divert_push(KILL)
       <div class="container">
         <div class="nav-container">
           <div class="left-nav">
@@ -125,8 +94,8 @@ dnl    <link href="__HREF(__ROOT__/css/__BOOTSTRAP_FILE__)" rel="stylesheet" med
               </a>
             </div>])
 
-            N_I([about.html],TPY_ESEN([Acerca de],[About]))
-            N_I([contact.html],TPY_ESEN([Contacto],[Contact]))
+            N_I([about.html],__ESEN([Acerca de],[About]))
+            N_I([contact.html],__ESEN([Contacto],[Contact]))
             <!-- -->
             <!-- -->
             <!-- -->
@@ -154,6 +123,7 @@ dnl    <link href="__HREF(__ROOT__/css/__BOOTSTRAP_FILE__)" rel="stylesheet" med
           </div>
         </div>
       </div>
+      m4_divert_pop(KILL)
     </header>
     <!-- -->
     <!-- -->
@@ -161,10 +131,10 @@ dnl    <link href="__HREF(__ROOT__/css/__BOOTSTRAP_FILE__)" rel="stylesheet" med
     <div class="container clearfix">
       m4_undivert([BODY])[]dnl
     </div>
-    <!-- -->
-    <!-- -->
-    m4_divert_push(KILL)
-    <!-- begin footer -->
+
+    <!-- BEGIN FOOTER -->
+    <!-- BEGIN FOOTER -->
+    <!-- BEGIN FOOTER -->
     <div class="container tpy_footer">
       <!-- begin desktop footer footer_columns_wrap clearfix -->
       <div class="row footer_desktop">
@@ -172,7 +142,7 @@ dnl    <link href="__HREF(__ROOT__/css/__BOOTSTRAP_FILE__)" rel="stylesheet" med
           <h5>__TEKII_SRL__</h5>
           <p>
             TPY_LANG(
-y            __EN__,[Since 2006 __TEKII__ delivers solutions and large scale web applications
+            __EN__,[Since 2006 __TEKII__ delivers solutions and large scale web applications
             that are secure and ready for high traffic.],
             __ES__,[<strong>CONTINUIDAD + INNOVACIÓN</strong><br>Desde 2006 __TEKII__ provee soluciones con altos niveles de seguridad y un excelente historial de continuidad.]
             )
@@ -180,7 +150,7 @@ y            __EN__,[Since 2006 __TEKII__ delivers solutions and large scale web
         </div>
         <div class="twelve columns col-xs-12 col-md-2 footer_col">
           <h5>
-	    <a href="__HREF(__ROOT__/__LANG__/about.html)">TPY_ENES(About,[Acerca de])</a>
+	    <a href="__HREF(__ROOT__/__LANG__/about.html)">__ENES(About,[Acerca de])</a>
           </h5>
           m4_divert_push(KILL)
           <ul>
@@ -190,7 +160,7 @@ y            __EN__,[Since 2006 __TEKII__ delivers solutions and large scale web
         </div>
         <div class="twelve columns col-xs-12 col-md-2 footer_col">
           <h5>
-	    <a href="__HREF(__ROOT__/__LANG__/contact.html)">TPY_ENES(Contact,Contacto)</a>
+	    <a href="__HREF(__ROOT__/__LANG__/contact.html)">__ENES(Contact,Contacto)</a>
 	  </h5>
           m4_divert_push(KILL)
           <ul>
@@ -204,12 +174,12 @@ y            __EN__,[Since 2006 __TEKII__ delivers solutions and large scale web
       <div class="row clearfix footer_mobile">
         <div class="col-xs-6">
           <h5>
-            <a href="__HREF(__ROOT__/__LANG__/about.html)">TPY_ENES(About,[Acerca de])</a>
+            <a href="__HREF(__ROOT__/__LANG__/about.html)">__ENES(About,[Acerca de])</a>
           </h5>
         </div>
         <div class="col-xs-6">
           <h5>
-            <a href="__HREF(__ROOT__/__LANG__/contact.html)">TPY_ENES(Contact,Contacto)</a>
+            <a href="__HREF(__ROOT__/__LANG__/contact.html)">__ENES(Contact,Contacto)</a>
           </h5>
         </div>
         m4_divert_push(KILL)
@@ -218,37 +188,26 @@ y            __EN__,[Since 2006 __TEKII__ delivers solutions and large scale web
         </div>
         m4_divert_pop(KILL)
       </div>
-      m4_divert_pop(KILL)
       <!--      </div>-->
-      <!-- end footer -->
-      dnl<script src="../js/main.js"></script>
 
-      <amp-analytics type="googleanalytics"
-                     id="analytics1">
-        <script type="application/json">
-          {
-          "vars": {
-          "account": "UA-7509381-3"
-          },
-          "triggers": {
-          "trackPageview": {
-          "on": "visible",
-          "request": "pageview"
-          }
-          }
-          }
-        </script>
-      </amp-analytics>
-      <!--
-          <script>m4_changequote(«,»)«»dnl
+      <!-- END FOOTER -->
+      <!-- END FOOTER -->
+      <!-- END FOOTER -->
+
+      <!-- BEGIN ANALITICS -->
+      dnl<script src="../js/main.js"></script>
+      m4_divert_push(KILL)
+      <!--<script>m4_changequote(«,»)«»dnl
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+            Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
             ga('create', 'UA-7509381-3', 'auto');
             ga('send', 'pageview');
             m4_changequote([,])[]</script>-->
+      m4_divert_pop(KILL)
+      <!-- END ANALITICS -->
   </body>
 </html>
 m4_divert_pop([BUILD])dnl
