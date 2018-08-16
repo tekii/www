@@ -55,12 +55,8 @@ m4_case(__LANG__,__EN__,$1,__ES__,$2))
 # calculate path jump relative to __BASE__ or $2
 # TODO: strip fragments #xxx
 #
-dnl m4_define([__HREF],
-dnl[m4_esyscmd_s(python -c 'import os.path,sys; sys.stdout.write( os.path.relpath($1, m4_default([$2],[__BASE__])))])
-
 m4_define([__HREF],
-[m4_esyscmd_s(relpath $1 m4_default([$2],[__BASE__]))])
-
+[m4_esyscmd_s(realpath --canonicalize-missing --relative-to=m4_default([$2],[__BASE__]) $1 )])
 
 m4_define([__FNAME],
 [m4_bregexp($1,[\([^/]+\..+\)$], [\1])])
