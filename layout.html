@@ -8,7 +8,7 @@ __BUILD_COPY([img/lang-icon-inverted.svg])
 
 m4_divert_push([BUILD])dnl
 <!DOCTYPE html>
-<html lang="__LANG__">
+<html lang="__LANG__" ⚡>
   <head>
     <meta charset="utf-8">
     <link rel="canonical" href="__HREF([__BASE__/__FNAME__],[__ROOT__])">
@@ -21,8 +21,12 @@ m4_divert_push([BUILD])dnl
                                 href="__HREF(__ROOT__/__ESEN(__EN__,__ES__)/__FNAME__)"/>])
     <!-- XXX -->
     dnl    <link href="__HREF(__ROOT__/css/__BOOTSTRAP_FILE__)" rel="stylesheet" media="screen">
+    __AMP_BOILERPLATE__
+
+
     <!-- -->
     <style>
+      m4_include([css/amp--.css])
       m4_changequote(«,»)
       <!-- -->
 
@@ -31,9 +35,9 @@ m4_divert_push([BUILD])dnl
       /* amp custom styles */
       m4_undivert(AMP_CUSTOM_STYLES)[]dnl
     </style>
-
     m4_undivert(HEADER)[]dnl <!-- header content -->
     m4_include([meta.json])[]dnl <!-- -->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
 
   <body>
