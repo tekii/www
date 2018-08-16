@@ -29,6 +29,11 @@ PAGES := 404.html index.html about.html contact.html
 ##
 ##
 ##
+__UNAME__:=$(shell uname -s)
+
+##
+##
+##
 RM:= @-rm -f
 #RM:= [ -e file ] && rm file
 RMDIR:= @-rmdir
@@ -37,9 +42,19 @@ RMDIR:= @-rmdir
 ## M4
 ##
 M4= $(shell which m4)
-M4_FLAGS= \
+ifeq ($(__UNAME__),Linux)
+M4_FLAGS:= \
 	-I /usr/share/autoconf \
 	-R /usr/share/autoconf/m4sugar/m4sugar.m4f \
+	-D __RP__=$(shell which realpath)
+else
+M4_FLAGS:= \
+	-I /usr/local/Cellar/autoconf/2.69/share/autoconf \
+	-R /usr/local/Cellar/autoconf/2.69/share/autoconf/m4sugar/m4sugar.m4f \
+	-D __RP__=$(shell which grealpath)
+endif
+
+M4_FLAGS+= \
 	-D __EN__=$(__EN__) -D __ES__=$(__ES__) \
 	-I $(__SRC__)
 

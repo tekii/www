@@ -23,7 +23,7 @@ m4_define([__AMP_BOILERPLATE__],[<style amp-boilerplate>body{-webkit-animation:-
 #
 # LANG conditionals
 #
-m4_define([__LANGS__],[[en,[English]], [es,[Español]], [pt,[Portuguese]]])
+m4_define([__LANGS__],[ [en,[English]], [es,[Español]] ])
 
 m4_define([__FOREACH_LANG],
 [m4_foreach([Iter], [__LANGS__],
@@ -56,7 +56,7 @@ m4_case(__LANG__,__EN__,$1,__ES__,$2))
 # TODO: strip fragments #xxx
 #
 m4_define([__HREF],
-[m4_esyscmd_s(realpath --canonicalize-missing --relative-to=m4_default([$2],[__BASE__]) $1 )])
+[m4_esyscmd_s(__RP__ --canonicalize-missing --relative-to=m4_default([$2],[__BASE__]) $1 )])
 
 m4_define([__FNAME],
 [m4_bregexp($1,[\([^/]+\..+\)$], [\1])])
