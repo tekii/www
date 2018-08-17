@@ -19,7 +19,7 @@ m4_define([_m4_divert(BUILD)], 7)
 #
 m4_define([__TEKII__],[<strong>TEKii$1</strong>])
 m4_define([__TEKII_SRL_]_,__TEKII__([ SRL]))
-m4_define([__AMP_BOILERPLATE__],[<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>])
+
 #
 # LANG conditionals
 #
@@ -106,6 +106,8 @@ m4_case(__DO__,
 m4_divert_text([DEFAULT],[m4_undivert([BUILD])])
 m4_cleardivert([SITEMAP])
 m4_cleardivert([DEPEND])
+m4_cleardivert([AMP_CUSTOM_STYLES])
+m4_cleardivert([AMP_CUSTOM_ELEMENTS])
 ],
 [MAKEDEPEND],[
 m4_divert_text([DEFAULT],[m4_undivert([DEPEND])])

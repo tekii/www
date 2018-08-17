@@ -8,7 +8,7 @@ __BUILD_COPY([img/lang-icon-inverted.svg])
 
 m4_divert_push([BUILD])dnl
 <!DOCTYPE html>
-<html lang="__LANG__" ⚡>
+<html ⚡ lang="__LANG__">
   <head>
     <meta charset="utf-8">
     <link rel="canonical" href="__HREF([__BASE__/__FNAME__],[__ROOT__])">
@@ -19,24 +19,26 @@ m4_divert_push([BUILD])dnl
                                 rel="alternate"
                                 hreflang="__ESEN(__EN__,__ES__)"
                                 href="__HREF(__ROOT__/__ESEN(__EN__,__ES__)/__FNAME__)"/>])
-    <!-- XXX -->
-    dnl    <link href="__HREF(__ROOT__/css/__BOOTSTRAP_FILE__)" rel="stylesheet" media="screen">
-    __AMP_BOILERPLATE__
-
-
     <!-- -->
     <style>
-      m4_include([css/amp--.css])
-      m4_changequote(«,»)
-      <!-- -->
+      dnl[]m4_include([css/amp--.css])
 
-      <!-- -->
+      m4_changequote(«,»)
+      <!-- local headeer stuff here  -->
       m4_changequote([,])
+    </style>
+
+    m4_undivert(HEADER)[]dnl <!-- header content -->
+    m4_include([meta.json])[]dnl <!-- -->
+    <!-- amp-custom elements -->
+    m4_undivert([AMP_CUSTOM_ELEMENTS])[]dnl
+   <!-- amp-custom styles -->
+    <style>
       /* amp custom styles */
       m4_undivert(AMP_CUSTOM_STYLES)[]dnl
     </style>
-    m4_undivert(HEADER)[]dnl <!-- header content -->
-    m4_include([meta.json])[]dnl <!-- -->
+    <!-- amp-boilerplate -->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
 

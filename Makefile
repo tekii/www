@@ -21,7 +21,6 @@ __DEPS__:=/tmp/bucket/deps
 HTML_EXT:=.html
 AMP__EXT:=.amp.html
 
-BOOTSTRAP_FILE:=bootstrap.css
 GLYPH:=glyphicons-halflings-regular
 
 PAGES := 404.html index.html about.html contact.html
@@ -53,7 +52,6 @@ M4_FLAGS:= \
 	-R /usr/local/Cellar/autoconf/2.69/share/autoconf/m4sugar/m4sugar.m4f \
 	-D __RP__=$(shell which grealpath)
 endif
-
 M4_FLAGS+= \
 	-D __EN__=$(__EN__) -D __ES__=$(__ES__) \
 	-I $(__SRC__)
@@ -78,7 +76,7 @@ $(__ROOT__)/%/:
 ##
 LAYOUT_FILES:= $(__SRC__)/layout.html $(__SRC__)/tpy.m4 $(__SRC__)/css/amp--.css
 
-$(__SRC__)/%.html: EXTRA_BUILD_FLAGS+= -D __IMAGES__=$(__IMG__) -D __BOOTSTRAP_FILE__=$(BOOTSTRAP_FILE)
+$(__SRC__)/%.html: EXTRA_BUILD_FLAGS+= -D __IMAGES__=$(__IMG__)
 
 define build-page
 $(M4) $(M4_FLAGS) -D __DO__=MAKEBUILD \
@@ -114,7 +112,6 @@ $(__ROOT__)/$(__STATIC__)/% : $(__SRC__)/% | $$(@D)/
 ## GZIPED TARGETS
 ##
 GSUTIL_EXTRA_FLAGS:=
-#$(__GZIP__)/$(__CSS__)/$(BOOTSTRAP_FILE): GSUTIL_EXTRA_FLAGS=-h "Cache-Control:public,max-age=86400"
 #$(__GZIP__)/$(__IMG__)/logo.png: GSUTIL_EXTRA_FLAGS=-h "Cache-Control:public,max-age=3600"
 #$(__GZIP__)/$(__IMG__)/es.png: GSUTIL_EXTRA_FLAGS=-h "Cache-Control:public,max-age=86400"
 #$(__GZIP__)/$(__IMG__)/us.png: GSUTIL_EXTRA_FLAGS=-h "Cache-Control:public,max-age=86400"
