@@ -90,6 +90,11 @@ build: __ROOT__/static/$1
 clean:: ; [$(RM)] __ROOT__/[$(__STATIC__)]/$1
 ])])
 
+m4_define([__INCL],[
+m4_divert_text([DEPEND],[
+__SRC__/__FNAME__ : $1
+])[]m4_include([$1])])
+
 dnl
 dnl PAGE PROCESS STARTS HERE
 dnl

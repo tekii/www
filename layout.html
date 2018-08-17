@@ -21,15 +21,14 @@ m4_divert_push([BUILD])dnl
            href="__HREF(__ROOT__/__ESEN(__EN__,__ES__)/__FNAME__)"/>])
     <!-- -->
     <style>
-      dnl[]m4_include([css/amp--.css])
-
       m4_changequote(«,»)
       <!-- local headeer stuff here  -->
       m4_changequote([,])
     </style>
 
     m4_undivert(HEADER)[]dnl <!-- header content -->
-    m4_include([meta.json])[]dnl <!-- -->
+
+    __INCL([meta.json])[]dnl <!-- -->
     <!-- amp-custom elements -->
     m4_undivert([AMP_CUSTOM_ELEMENTS])[]dnl
     <!-- amp-custom styles -->
